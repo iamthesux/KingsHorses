@@ -59,6 +59,7 @@ class det5_weapons(Crate):
 		['DemoCharge_Remote_Mag', 50],
 		['SatchelCharge_Remote_Mag', 50],
 		['APERSTripMine_Wire_Mag', 50],
+		['RH_6Rnd_454_Mag', 50],
 		
 	]
 	
