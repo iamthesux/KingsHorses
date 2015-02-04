@@ -94,7 +94,7 @@ class cdf_sl(cdf_rifleman):
 			['rhs_GRD40_green', 2],
 			['rhs_GRD40_red', 2],
 			['rhs_VOG25', 5],
-			['rhs_vg40tb', 2],
+			['rhs_VOG25p', 2],
 		]
 
 ################  Vehicle Crew Driver/Gunner
@@ -117,7 +117,7 @@ class cdf_mg(cdf_base):
 	class Primary:
 		weapon = 'rhs_weap_pkp'
 		mags = [
-			['rhs_100Rnd_762x54mmR', 30],
+			['rhs_100Rnd_762x54mmR', 100],
 		]
 	class Vest(cdf_base.Vest):
 		items = cdf_base.Vest.items + [

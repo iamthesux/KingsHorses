@@ -43,23 +43,31 @@ teams['sasr'] = dict(
     ],
 )
 
-teams['sasr'] = dict(
-    name = 'SASR',
+teams['soar'] = dict(
+    name = 'SOAR',
     side = 'WEST',
     groups = [
         [
-            { 'role': "C/Sgt Pursehouse", 'loadout': 'sasr_base', },
-            { 'role': "C/Sgt Constanti", 'loadout': 'sasr_base', },
-            { 'role': "C/Sgt MacDowell", 'loadout': 'sasr_base', },
-            { 'role': "Sgt Archibald", 'loadout': 'sasr_base', },
-            { 'role': "Cpl Sowers", 'loadout': 'sasr_base', },
-            { 'role': "Cpl Deckert", 'loadout': 'sasr_base', },
+            { 'role': "Pilot", 'loadout': 'soar_pilot', },
+            { 'role': "Pilot", 'loadout': 'soar_pilot', },
+            { 'role': "Pilot", 'loadout': 'soar_pilot', },
+            { 'role': "Pilot", 'loadout': 'soar_pilot', },
+            { 'role': "Pilot", 'loadout': 'soar_pilot', },
+            { 'role': "Pilot", 'loadout': 'soar_pilot', },
+            { 'role': "Pilot", 'loadout': 'soar_pilot', },
+            { 'role': "Pilot", 'loadout': 'soar_pilot', },
+            { 'role': "Crew Chief", 'loadout': 'soar_crew_chief', },
+            { 'role': "Crew Chief", 'loadout': 'soar_crew_chief', },
+            { 'role': "Crew Chief", 'loadout': 'soar_crew_chief', },
+            { 'role': "Crew Chief", 'loadout': 'soar_crew_chief', },
+            { 'role': "Crew Chief", 'loadout': 'soar_crew_chief', },
+            { 'role': "Crew Chief", 'loadout': 'soar_crew_chief', },
         ],
     ],
 )
 
 teams['rifles'] = dict(
-    name = 'MCRU',
+    name = '1st Plt.',
     side = 'WEST',
 
     groups = [
@@ -94,7 +102,7 @@ teams['rifles'] = dict(
     ],
 )
 teams['weapons'] = dict(
-    name = 'MCRU',
+    name = 'Wpns Plt.',
     side = 'WEST',
 
     groups = [
@@ -117,11 +125,10 @@ teams['weapons'] = dict(
             { 'role': "Assistant Gunner", 'loadout': 'marine_tl', 'callsign': 'RAIDER 4-1-B' },
             { 'role': "Gunner", 'loadout': 'marine_ar' },
             { 'role': "Ammuntion Bearer", 'loadout': 'marine_aar' },
-			
 		],
     ],
 )
-teams['weapons'] = dict(
+teams['tanks'] = dict(
     name = 'MCRU',
     side = 'WEST',
 
@@ -167,10 +174,8 @@ teams['pubs'] = dict(
 			{ 'role': "SL / BTR Commander", 'loadout': 'cdf_sl', 'callsign': 'LANCER 1-1'},
 			{ 'role': "BTR Driver", 'loadout': 'cdf_crew', },
 			{ 'role': "BTR Gunner", 'loadout': 'cdf_asl_gunner', },
-			
 			{ 'role': "Machine Gunner", 'loadout': 'cdf_mg', },
 			{ 'role': "Medic", 'loadout': 'cdf_medic', },
-			
 			{ 'role': "Grenadier", 'loadout': 'cdf_grenadier' },
 			{ 'role': "Asst. Grenadier", 'loadout': 'cdf_grenadier' },
 			{ 'role': "Senior Rifleman", 'loadout': 'cdf_rifleman' },
@@ -180,10 +185,8 @@ teams['pubs'] = dict(
 			{ 'role': "SL / BTR Commander", 'loadout': 'cdf_sl', 'callsign': 'LANCER 1-2'},
 			{ 'role': "BTR Driver", 'loadout': 'cdf_crew', },
 			{ 'role': "BTR Gunner", 'loadout': 'cdf_asl_gunner', },
-			
 			{ 'role': "Machine Gunner", 'loadout': 'cdf_mg', },
 			{ 'role': "Medic", 'loadout': 'cdf_medic', },
-			
 			{ 'role': "Grenadier", 'loadout': 'cdf_grenadier' },
 			{ 'role': "Asst. Grenadier", 'loadout': 'cdf_grenadier' },
 			{ 'role': "Senior Rifleman", 'loadout': 'cdf_rifleman' },

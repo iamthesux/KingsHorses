@@ -4,8 +4,8 @@ class marine_base(Base):
 	headgear = 'H_VTN_LWH_WDL'
 	
 	items = Base.items + [
-		'tf_anprc152_2',
 		'rhsusf_ANPVS_15',
+		'tf_rf7800str',
 	]
 	class HandGun:
 		weapon = 'CUP_hgun_M9'
@@ -46,16 +46,11 @@ class marine_rifleman(marine_base):
 			['rhs_mag_30Rnd_556x45_M855A1_Stanag', 5],
 		]
 
-class marine_sl(marine_rifleman):
-	class Primary:
-		weapon = 'RH_M16A4gl'
-		optic = 'RH_ta31rco_2D'
-		rail = 'rhsusf_acc_anpeq15A'
-		mags = [
-			['rhs_mag_30Rnd_556x45_M855A1_Stanag', 30],
-			['1Rnd_HE_Grenade_shell', 1],
-		]
+
 class marine_tl(marine_rifleman):
+	items = Base.items + [
+		'tf_anprc152',
+	]
 	class Primary:
 		weapon = 'RH_M16A4gl'
 		optic = 'RH_ta31rco_2D'
@@ -75,6 +70,16 @@ class marine_tl(marine_rifleman):
 			['1Rnd_SmokeRed_Grenade_shell', 2],
 			['1Rnd_SmokeGreen_Grenade_shell', 2],
 			['1Rnd_HE_Grenade_shell', 10],
+		]
+
+class marine_sl(marine_tl):
+	class Primary:
+		weapon = 'RH_M16A4gl'
+		optic = 'RH_ta31rco_2D'
+		rail = 'rhsusf_acc_anpeq15A'
+		mags = [
+			['rhs_mag_30Rnd_556x45_M855A1_Stanag', 30],
+			['1Rnd_HE_Grenade_shell', 1],
 		]
 
 class marine_ar(marine_base):
