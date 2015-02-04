@@ -31,10 +31,8 @@ class det5_base(Base):
 		]
 	binoc = 'AGM_Vector'
 
-	class singleton_det5(Det5_base):
+class singleton_det5(det5_Base):
 	class HandGun:
 		weapon = 'RH_bull'
 		mags = [['RH_6Rnd_454_Mag', 6]]
-		rail = [['', 6]]
-		suppressor = [['', 6]]
 		]
