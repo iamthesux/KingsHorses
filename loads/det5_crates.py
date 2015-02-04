@@ -13,6 +13,10 @@ class det5_weapons(Crate):
 		['rhs_weap_M136', 50],
 		['rhs_weap_M136_hedp', 50],
 		['rhs_weap_M136_hp', 50],
+		['SMA_MK16', 50],
+		['SMA_Mk16QCB', 50],
+		['SMA_Mk16_EGLM', 50],
+		['RH_Mk12mod1', 50],
 	]
 	magazines = [
 		['rhs_fgm148_magazine_AT', 100],
@@ -60,7 +64,13 @@ class det5_weapons(Crate):
 		['SatchelCharge_Remote_Mag', 50],
 		['APERSTripMine_Wire_Mag', 50],
 		['RH_6Rnd_454_Mag', 50],
-		
+		['SMA_30Rnd_556x45_M855A1', 50],
+		['SMA_30Rnd_556x45_M855A1_Tracer', 50],
+		['SMA_30Rnd_556x45_M855A1_IR', 50],
+		['RH_30Rnd_556x45_Mk262', 50],
+		['30Rnd_556x45_Stanag_Tracer_Red', 50],
+		['RH_30Rnd_556x45_M855A1', 50],
+		['RH_30Rnd_556x45_Mk318', 50],
 	]
 	
 	backpacks = [
@@ -148,4 +158,6 @@ class det5_weapons(Crate):
 		['AV_PlateCarrier2_khk', 50],
 		['U_mas_usr_B_IndUniform1_o', 50],
 		['U_mas_usr_B_IndUniform2_o', 50],
+		['SMA_supp2btanSCAR_556', 50],
+		['RH_spr_mbs', 50],
 	]
