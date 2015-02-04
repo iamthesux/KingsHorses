@@ -160,4 +160,8 @@ class det5_weapons(Crate):
 		['U_mas_usr_B_IndUniform2_o', 50],
 		['SMA_supp2btanSCAR_556', 50],
 		['RH_spr_mbs', 50],
+		['RH_pas13cl', 50],
+		['RH_pas13cm', 50],
+		['RH_pas13cmg', 50],
+		['RH_pas13ch', 50],
 	]
