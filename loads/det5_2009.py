@@ -9,8 +9,8 @@ class det5_base(Base):
 	class HandGun:
 		weapon = 'RH_p226'
 		mags = [['RH_15Rnd_9x19_SIG', 15]]
-		rail = [['RH_X300', 15]]
-		suppressor = [['RH_suppr9', 15]]
+		rail = 'RH_X300'
+		suppressor = 'RH_suppr9'
 
 	class Uniform:
 		type = 'U_mas_usr_B_IndUniform2_o'
@@ -35,4 +35,3 @@ class singleton_det5(det5_Base):
 	class HandGun:
 		weapon = 'RH_bull'
 		mags = [['RH_6Rnd_454_Mag', 6]]
-		]
