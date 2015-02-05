@@ -146,6 +146,52 @@ class cdf_medic(cdf_rifleman):
 			['cse_nasopharyngeal_tube', 2],
 		]
 
-#class cdf_asst_grenadier(cdf_grenadier):
 
+################  Platoon Leader
 
+class cdf_pl(cdf_rifleman):
+	items = cdf_rifleman.items + [
+		'tf_anprc152_2',
+	]
+	binoc = 'Binocular'
+
+	class Primary:
+		weapon = 'rhs_weap_ak74m_gp25'
+		mags = [
+			['rhs_30Rnd_545x39_AK', 30],
+			['rhs_VOG25', 1],
+		]
+	class Vest(cdf_rifleman.Vest):
+		type = 'LOP_V_CarrierRig_CDF'
+		items = cdf_rifleman.Vest.items + [
+			['rhs_VOG25', 5],
+		]
+
+	class Backpack(cdf_rifleman.Backpack):
+		items = cdf_rifleman.Backpack.items + [
+			['rhs_vg40op_white', 5],
+			['rhs_GRD40_white', 2],
+			['rhs_GRD40_green', 2],
+			['rhs_GRD40_red', 2],
+			['rhs_VOG25', 5],
+			['rhs_VOG25p', 2],
+		]
+
+################  Platoon RTO
+
+class cdf_rto(cdf_rifleman):
+	items = cdf_rifleman.items + [
+		'tf_anprc152_2',
+	]
+	binoc = 'Binocular'
+
+	class Primary:
+		weapon = 'rhs_weap_ak74m'
+		mags = [
+			['rhs_30Rnd_545x39_AK', 30],
+		]
+
+	class Backpack:
+		type = 'tf_anprc155_coyote'
+		items = cdf_rifleman.Backpack.items + [
+			['tf_anprc148_2', 1],
