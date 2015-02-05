@@ -17,6 +17,7 @@ class det5_weapons(Crate):
 		['SMA_Mk16QCB', 50],
 		['SMA_Mk16_EGLM', 50],
 		['RH_Mk12mod1', 50],
+		['CUP_launch_MAAWS', 50],
 	]
 	magazines = [
 		['rhs_fgm148_magazine_AT', 100],
@@ -71,6 +72,8 @@ class det5_weapons(Crate):
 		['30Rnd_556x45_Stanag_Tracer_Red', 50],
 		['RH_30Rnd_556x45_M855A1', 50],
 		['RH_30Rnd_556x45_Mk318', 50],
+		['CUP_MAAWS_HEAT_M', 50],
+		['CUP_MAAWS_HEDP_M', 50],
 	]
 	
 	backpacks = [
@@ -164,4 +167,5 @@ class det5_weapons(Crate):
 		['RH_pas13cm', 50],
 		['RH_pas13cmg', 50],
 		['RH_pas13ch', 50],
+		['CUP_optic_MAAWS_Scope', 50],
 	]
