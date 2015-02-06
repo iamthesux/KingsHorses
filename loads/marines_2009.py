@@ -133,6 +133,7 @@ class marine_amg(marine_rifleman):
 	class Backpack(marine_rifleman.Backpack):
 		items = marine_rifleman.Backpack.items + [
 			['rhsusf_100Rnd_762x51', 5],
+			['tf_anprc152_2', 1],
 		]
 
 class marine_at(marine_rifleman):
@@ -154,6 +155,7 @@ class marine_aat(marine_rifleman):
 		items = marine_rifleman.Backpack.items + [
 			['CUP_SMAW_HEDP_M', 1],
 			['CUP_SMAW_HEAA_M', 1],
+			['tf_anprc152_2', 1],
 		]
 
 class marine_pl(marine_base):
@@ -174,6 +176,7 @@ class marine_pl(marine_base):
 		items = marine_base.Backpack.items + [
 			['RH_30Rnd_556x45_M855A1', 5],
 			['alive_tablet', 1],
+			['1Rnd_HE_Grenade_shell', 5],
 		]
 	
 class marine_rto(marine_rifleman):
@@ -198,3 +201,18 @@ class marine_corpsman(marine_rifleman):
 			['cse_nasopharyngeal_tube', 2],
 			['cse_personal_aid_kit', 1],
 		]
+
+class marine_Crewman(marine_rifleman):
+	headgear = 'rhsusf_cvc_green_helmet'
+		]
+		
+class marine_commander(marine_rifleman):
+	class Backpack(marine_base.Backpack):
+		items = marine_base.Backpack.items + [
+			['RH_30Rnd_556x45_M855A1', 5],
+			['tf_anprc152_2', 5],
+			
+	headgear = 'rhsusf_cvc_green_helmet'
+		]
+
+		
