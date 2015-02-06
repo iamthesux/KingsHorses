@@ -184,3 +184,17 @@ class marine_rto(marine_rifleman):
 			['alive_tablet', 1],
 			['tf_anprc152_2', 5],
 		]
+
+class marine_corpsman(marine_rifleman):
+	class Backpack(marine_base.Backpack):
+		items = marine_base.Backpack.items + [
+			['cse_bandage_basic', 10],
+			['cse_packing_bandage', 10],
+			['cse_tourniquet', 2],
+			['cse_morphine', 2],
+			['cse_epinephrine', 2],
+			['cse_saline_iv_250', 2],
+			['cse_quikclot', 10],
+			['cse_nasopharyngeal_tube', 2],
+			['cse_personal_aid_kit', 1],
+		]
