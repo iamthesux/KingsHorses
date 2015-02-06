@@ -29,16 +29,15 @@ teams['det5'] = dict(
     ],
 )
 teams['sasr'] = dict(
-    name = 'SASR',
+    name = 'CDFSF',
     side = 'WEST',
     groups = [
         [
-            { 'role': "C/Sgt Pursehouse", 'loadout': 'sasr_base', },
-            { 'role': "C/Sgt Constanti", 'loadout': 'sasr_base', },
-            { 'role': "C/Sgt MacDowell", 'loadout': 'sasr_base', },
-            { 'role': "Sgt Archibald", 'loadout': 'sasr_base', },
-            { 'role': "Cpl Sowers", 'loadout': 'sasr_base', },
-            { 'role': "Cpl Deckert", 'loadout': 'sasr_base', },
+            { 'role': "C/Sgt Pursehouse", 'loadout': 'cdfsf_sl', },
+            { 'role': "C/Sgt Constanti", 'loadout': 'cdfsf_gren', },
+            { 'role': "C/Sgt MacDowell", 'loadout': 'cdfsf_tl', },
+            { 'role': "Cpl Sowers", 'loadout': 'cdfsf_svd', },
+            { 'role': "Cpl Deckert", 'loadout': 'cdfsf_rifleman', },
         ],
     ],
 )
@@ -66,6 +65,21 @@ teams['soar'] = dict(
     ],
 )
 
+teams['company_hq'] = dict(
+    name = 'HQ',
+    side = 'WEST',
+
+    groups = [
+        [
+            { 'role': "Company Commander", 'loadout': 'marine_pl', 'callsign': 'RAIDER 1-6', },
+            { 'role': "Executive Officer", 'loadout': 'marine_pl', 'callsign': 'RAIDER 1-7', },
+            { 'role': "First Sergeant", 'loadout': 'marine_pl', },
+            { 'role': "Gunnery Sergeant", 'loadout': 'marine_pl', },
+            { 'role': "Property NCO", 'loadout': 'marine_pl', },			
+            { 'role': "Messenger", 'loadout': 'marine_rifleman', },			
+		],
+	]
+)
 teams['rifles'] = dict(
     name = '1st Plt.',
     side = 'WEST',
@@ -74,33 +88,36 @@ teams['rifles'] = dict(
         # rifles plt hq
         [
             { 'role': "Platoon Leader", 'loadout': 'marine_pl', 'callsign': 'RAIDER 1-6', },
-            { 'role': "Platoon Sergeant", 'loadout': 'marine_psg', 'callsign': 'RAIDER 1-7', },
-            { 'role': "Platoon Guide", 'loadout': 'marine_guide', },
+            { 'role': "Platoon Sergeant", 'loadout': 'marine_pl', 'callsign': 'RAIDER 1-7', },
+            { 'role': "Platoon Guide", 'loadout': 'marine_rto', },
             { 'role': "Corpsmen", 'loadout': 'marine_medic', },
             { 'role': "Corpsmen", 'loadout': 'marine_medic', },			
             { 'role': "Corpsmen", 'loadout': 'marine_medic', },			
 		],
         # rifles squad 1
-        [
-            { 'role': "Squad Leader", 'loadout': 'marine_sl', 'callsign': 'RAIDER 1-1', },
-			
-            { 'role': "Alpha - Team Leader", 'loadout': 'marine_tl', 'callsign': 'RAIDER 1-1-A' },
-            { 'role': "Automatic Rifleman", 'loadout': 'marine_ar' },
-            { 'role': "Assistant AR", 'loadout': 'marine_aar' },
-            { 'role': "Rifleman", 'loadout': 'marine_rifleman' },
-			
-            { 'role': "Bravo - Team Leader", 'loadout': 'marine_tl', 'callsign': 'RAIDER 1-1-B' },
-            { 'role': "Automatic Rifleman", 'loadout': 'marine_ar' },
-            { 'role': "Assistant AR", 'loadout': 'marine_aar' },
-            { 'role': "Rifleman", 'loadout': 'marine_rifleman' },
-			
-            { 'role': "Charlie - Team Leader", 'loadout': 'marine_tl', 'callsign': 'RAIDER 1-1-C' },
-            { 'role': "Automatic Rifleman", 'loadout': 'marine_ar' },
-            { 'role': "Assistant AR", 'loadout': 'marine_aar' },
-            { 'role': "Rifleman", 'loadout': 'marine_rifleman' },
-		],
     ],
 )
+
+for i in range(1,4):
+	teams['rifles']['groups'].append([
+		{ 'role': "Squad Leader", 'loadout': 'marine_sl', 'callsign': 'RAIDER 1-%d' % i },
+		
+		{ 'role': "Alpha - Team Leader", 'loadout': 'marine_tl', 'callsign': 'RAIDER 1-%d-A' % i },
+		{ 'role': "Automatic Rifleman", 'loadout': 'marine_ar' },
+		{ 'role': "Assistant AR", 'loadout': 'marine_aar' },
+		{ 'role': "Rifleman", 'loadout': 'marine_rifleman' },
+		
+		{ 'role': "Bravo - Team Leader", 'loadout': 'marine_tl', 'callsign': 'RAIDER 1-%d-B' % i },
+		{ 'role': "Automatic Rifleman", 'loadout': 'marine_ar' },
+		{ 'role': "Assistant AR", 'loadout': 'marine_aar' },
+		{ 'role': "Rifleman", 'loadout': 'marine_rifleman' },
+		
+		{ 'role': "Charlie - Team Leader", 'loadout': 'marine_tl', 'callsign': 'RAIDER 1-%d-C' % i },
+		{ 'role': "Automatic Rifleman", 'loadout': 'marine_ar' },
+		{ 'role': "Assistant AR", 'loadout': 'marine_aar' },
+		{ 'role': "Rifleman", 'loadout': 'marine_rifleman' },
+	])
+
 teams['weapons'] = dict(
     name = 'Wpns Plt.',
     side = 'WEST',
@@ -109,25 +126,36 @@ teams['weapons'] = dict(
         # weapons hq
         [
             { 'role': "Platoon Leader", 'loadout': 'marine_pl', 'callsign': 'RAIDER 4-6', },
-            { 'role': "Platoon Sergeant", 'loadout': 'marine_psg', 'callsign': 'RAIDER 4-7', },
-            { 'role': "Platoon Guide", 'loadout': 'marine_guide', },
-            { 'role': "Corpsmen", 'loadout': 'marine_medic', },
-            { 'role': "Corpsmen", 'loadout': 'marine_medic', },
-            { 'role': "Corpsmen", 'loadout': 'marine_medic', },
+            { 'role': "Platoon Sergeant", 'loadout': 'marine_pl', 'callsign': 'RAIDER 4-7', },
 		],
-        # weapons mg 1
-        [
-            { 'role': "Squad Leader", 'loadout': 'marine_sl', 'callsign': 'RAIDER 4-1', },
+		# mg squad
+		[
+			{ 'role': "MG Squad Leader", 'loadout': 'marine_sl', 'callsign': 'RAIDER 4-1' % i, },
 			
-            { 'role': "Assistant Gunner", 'loadout': 'marine_tl', 'callsign': 'RAIDER 4-1-A' },
-            { 'role': "Gunner", 'loadout': 'marine_ar' },
-            { 'role': "Ammuntion Bearer", 'loadout': 'marine_aar' },
-            { 'role': "Assistant Gunner", 'loadout': 'marine_tl', 'callsign': 'RAIDER 4-1-B' },
-            { 'role': "Gunner", 'loadout': 'marine_ar' },
-            { 'role': "Ammuntion Bearer", 'loadout': 'marine_aar' },
+			{ 'role': "Assistant Gunner", 'loadout': 'marine_tl', 'callsign': 'RAIDER 4-1-G' % i },
+			{ 'role': "Gunner", 'loadout': 'marine_ar' },
+			{ 'role': "Ammuntion Bearer", 'loadout': 'marine_aar' },
+			{ 'role': "Assistant Gunner", 'loadout': 'marine_tl', 'callsign': 'RAIDER 4-1-H' % i },
+			{ 'role': "Gunner", 'loadout': 'marine_ar' },
+			{ 'role': "Ammuntion Bearer", 'loadout': 'marine_aar' },
 		],
+		# mg squad
+		[
+			{ 'role': "Assault Squad Leader", 'loadout': 'marine_sl', 'callsign': 'RAIDER 4-2' % i, },
+			
+			{ 'role': "Assistant Gunner", 'loadout': 'marine_tl', 'callsign': 'RAIDER 4-2-G' % i },
+			{ 'role': "Gunner", 'loadout': 'marine_ar' },
+			{ 'role': "Ammuntion Bearer", 'loadout': 'marine_aar' },
+			{ 'role': "Assistant Gunner", 'loadout': 'marine_tl', 'callsign': 'RAIDER 4-2-H' % i },
+			{ 'role': "Gunner", 'loadout': 'marine_ar' },
+			{ 'role': "Ammuntion Bearer", 'loadout': 'marine_aar' },
+		],	
     ],
 )
+
+for i in range(1,4):
+	teams['rifles']['groups'].append()
+
 teams['tanks'] = dict(
     name = 'MCRU',
     side = 'WEST',

@@ -1,19 +1,11 @@
 import os
-from loads.cdf_2009 import *
-from loads.marines_2009 import *
+import inspect
+import importlib
 
 os.chdir(os.path.join('KingsHorses.Chernarus_Summer', 'loads'))
 
-cdf_sl().write()
-cdf_crew().write()
-cdf_asl_gunner().write()
-cdf_rifleman().write()
-cdf_grenadier().write()
-cdf_mg().write()
-cdf_medic().write()
-
-marine_sl().write()
-marine_tl().write()
-marine_rifleman().write()
-marine_ar().write()
-marine_aar().write()
+for grp in ['cdf_2009', 'marines_2009']:
+	lib = importlib.import_module('loads.' + grp)
+	for name, obj in inspect.getmembers(lib):
+		if inspect.isclass(obj) and 'NoWrite' not in obj.__dict__:
+			obj().write()

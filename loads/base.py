@@ -1,6 +1,7 @@
 from p4a.loadout import LoadOut
 
 class Base(LoadOut):
+	class NoWrite: pass
 	def __init__(self):
 		super(Base, self).__init__()
 		self.remove('all')

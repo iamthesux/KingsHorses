@@ -1,6 +1,6 @@
 from base import Base
 
-class One60th_base(Base):
+class soar_base(Base):
 	headgear = 'rhsusf_hgu56p'
 	
 	items = Base.items + [
@@ -30,7 +30,7 @@ class One60th_base(Base):
 			['SmokeShell', 1],
 		]
 
-class One60th_Pilot(One60th_base):
+class soar_pilot(soar_base):
 	class Primary:
 		weapon = 'RH_M4_ris'
 		optic = 'RH_compM2l'
@@ -38,10 +38,10 @@ class One60th_Pilot(One60th_base):
 		mags = [
 			['30Rnd_556x45_Stanag', 30],
 		]
-	class Vest(One60th_base.Vest):
-		items = One60th_base.Vest.items + [
+	class Vest(soar_base.Vest):
+		items = soar_base.Vest.items + [
 			['30Rnd_556x45_Stanag', 4],
 		]
 
-class One60th_Crew(One60th_Pilot):
+class soar_crew(soar_pilot):
 	headgear = 'rhsusf_hgu56p_mask'

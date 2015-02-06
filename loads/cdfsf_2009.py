@@ -57,6 +57,7 @@ class cdfsf_sl(cdfsf_rifleman):
 	class Backpack(cdfsf_rifleman.Backpack):
 		items = cdfsf_rifleman.Backpack.items + [
 			['rhs_30Rnd_545x39_7n10_AK', 5],
+			['alive_tablet', 1],
 		]
 class cdfsf_tl(cdfsf_rifleman):
 	class Primary:

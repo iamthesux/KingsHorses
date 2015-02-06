@@ -27,6 +27,7 @@ class det5_base(Base):
 		type = 'B_Kitbag_cbr'
 		items = [
 			['SmokeShell', 1],
+			['alive_tablet', 1],
 			['rhs_mag_m67', 3],
 		]
 	binoc = 'AGM_Vector'

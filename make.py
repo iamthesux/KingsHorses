@@ -26,6 +26,8 @@ elif arg == '3d':
 	run("make_3d")
 elif arg == 'slots':
 	run("make_slots")
+elif arg == 'crates':
+	run("make_crates")
 elif arg == 'loads':
 	make_loads()
 else:

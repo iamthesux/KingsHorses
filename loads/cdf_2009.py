@@ -1,4 +1,3 @@
-from p4a.loadout import Crate
 from base import Base
 
 class cdf_base(Base):
@@ -175,16 +174,16 @@ class cdf_pl(cdf_rifleman):
 			['rhs_GRD40_red', 2],
 			['rhs_VOG25', 5],
 			['rhs_VOG25p', 2],
+			['alive_tablet', 1],
 		]
 
 ################  Platoon RTO
 
 class cdf_rto(cdf_rifleman):
+	binoc = 'Binocular'
 	items = cdf_rifleman.items + [
 		'tf_anprc152_2',
 	]
-	binoc = 'Binocular'
-
 	class Primary:
 		weapon = 'rhs_weap_ak74m'
 		mags = [
@@ -195,3 +194,4 @@ class cdf_rto(cdf_rifleman):
 		type = 'tf_anprc155_coyote'
 		items = cdf_rifleman.Backpack.items + [
 			['tf_anprc148_2', 1],
+		]

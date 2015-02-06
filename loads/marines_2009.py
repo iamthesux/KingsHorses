@@ -1,6 +1,8 @@
 from base import Base
 
 class marine_base(Base):
+	class NoWrite: pass
+
 	headgear = 'H_VTN_LWH_WDL'
 	
 	items = Base.items + [
@@ -73,6 +75,7 @@ class marine_tl(marine_rifleman):
 		]
 
 class marine_sl(marine_tl):
+	binoc = 'Binocular'
 	class Primary:
 		weapon = 'RH_M4_ris_M203'
 		optic = 'RH_ta31rco_2D'
@@ -81,7 +84,6 @@ class marine_sl(marine_tl):
 			['RH_30Rnd_556x45_M855A1', 30],
 			['1Rnd_HE_Grenade_shell', 1],
 		]
-	binoc = 'Binocular'
 
 class marine_ar(marine_base):
 	class Primary:
@@ -155,6 +157,7 @@ class marine_aat(marine_rifleman):
 		]
 
 class marine_pl(marine_base):
+	binoc = 'AGM_Vector'
 	class Primary:
 		weapon = 'RH_M4_ris'
 		optic = 'RH_ta31rco_2D'
@@ -170,13 +173,14 @@ class marine_pl(marine_base):
 	class Backpack(marine_base.Backpack):
 		items = marine_base.Backpack.items + [
 			['RH_30Rnd_556x45_M855A1', 5],
+			['alive_tablet', 1],
 		]
-	binoc = 'AGM_Vector'
 	
 class marine_rto(marine_rifleman):
+	binoc = 'Binocular'
 	class Backpack:
 		type = 'tf_anprc155_coyote'
-		items = [
+		items = marine_rifleman.Backpack.items + [
+			['alive_tablet', 1],
 			['tf_anprc152_2', 5],
-	binoc = 'Binocular'
 		]
