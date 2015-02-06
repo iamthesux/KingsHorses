@@ -176,5 +176,7 @@ class marine_pl(marine_base):
 class marine_rto(marine_rifleman):
 	class Backpack:
 		type = 'tf_anprc155_coyote'
+		items = [
+			['tf_anprc152_2', 5],
 	binoc = 'Binocular'
 		]
