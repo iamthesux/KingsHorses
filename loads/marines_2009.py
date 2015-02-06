@@ -81,6 +81,7 @@ class marine_sl(marine_tl):
 			['RH_30Rnd_556x45_M855A1', 30],
 			['1Rnd_HE_Grenade_shell', 1],
 		]
+	binoc = 'Binocular'
 
 class marine_ar(marine_base):
 	class Primary:
@@ -151,4 +152,29 @@ class marine_aat(marine_rifleman):
 		items = marine_rifleman.Backpack.items + [
 			['CUP_SMAW_HEDP_M', 1],
 			['CUP_SMAW_HEAA_M', 1],
+		]
+
+class marine_pl(marine_base):
+	class Primary:
+		weapon = 'RH_M4_ris'
+		optic = 'RH_ta31rco_2D'
+		rail = 'RH_peq15'
+		mags = [
+			['RH_30Rnd_556x45_M855A1', 30],
+			['1Rnd_HE_Grenade_shell', 1],
+		]
+	class Vest(marine_base.Vest):
+		items = marine_base.Vest.items + [
+			['RH_30Rnd_556x45_M855A1', 5],
+		]
+	class Backpack(marine_base.Backpack):
+		items = marine_base.Backpack.items + [
+			['RH_30Rnd_556x45_M855A1', 5],
+		]
+	binoc = 'AGM_Vector'
+	
+class marine_rto(marine_rifleman):
+	class Backpack:
+		type = 'tf_anprc155_coyote'
+	binoc = 'Binocular'
 		]
