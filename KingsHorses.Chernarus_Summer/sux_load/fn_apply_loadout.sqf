@@ -36,20 +36,20 @@ sux_apply_weapon =
 	_wep = _this select 1;
 	_type = _this select 2;
 	
-	diag_log "apply weappy";
-	diag_log _wep;
+	//diag_log "apply weappy";
+	//diag_log _wep;
 	if (count _wep == 5) then
 	{
 		
 		_v = _wep select _MAGS;
-		diag_log _v;
+		//diag_log _v;
 		if (count _v > 0) then {
 			{ _unit addMagazine _x; } foreach _v;
 		};
 		_v = _wep select _WEAPON;
 		if (_v != "") then {
 			_unit addWeapon _v;
-			diag_log format ["add %1", _v];
+			//diag_log format ["add %1", _v];
 		};
 		for "_i" from 1 to 3 do {
 			_v = _wep select _i;
@@ -76,7 +76,7 @@ _flags = _load select _FLAGS;
 
 if (REMOVE_ALL in _flags) then 
 {
-	diag_log "removing all";
+	//diag_log "removing all";
 	removeAllWeapons _unit; 
 	removeAllItems _unit;
 	removeAllAssignedItems _unit;

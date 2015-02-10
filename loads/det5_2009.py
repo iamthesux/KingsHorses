@@ -3,7 +3,7 @@ from base import Base
 class det5_base(Base):
 	
 	items = Base.items + [
-		'tf_anprc152_2',
+		'tf_anprc152',
 		'rhsusf_ANPVS_15',
 	]
 	class HandGun:
@@ -32,7 +32,7 @@ class det5_base(Base):
 		]
 	binoc = 'AGM_Vector'
 
-class singleton_det5(det5_Base):
+class singleton_det5(det5_base):
 	class HandGun:
 		weapon = 'RH_bull'
 		mags = [['RH_6Rnd_454_Mag', 6]]

@@ -1,10 +1,11 @@
 from base import Base
 
 class cdfsf_base(Base):
-	headgear = 'H_Booniehat_oli'
+	class NoWrite: pass
 	
+	headgear = 'H_Booniehat_oli'
 	items = Base.items + [
-		'tf_rf7800str_1',
+		'tf_rf7800str',
 		'rhsusf_ANPVS_15',
 	]
 	class HandGun:
@@ -57,6 +58,7 @@ class cdfsf_sl(cdfsf_rifleman):
 	class Backpack(cdfsf_rifleman.Backpack):
 		items = cdfsf_rifleman.Backpack.items + [
 			['rhs_30Rnd_545x39_7n10_AK', 5],
+			['tf_anprc152', 1],
 			['alive_tablet', 1],
 		]
 class cdfsf_tl(cdfsf_rifleman):

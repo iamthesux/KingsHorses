@@ -22,8 +22,11 @@ vics = [
 	'RHS_CH_47F',
 	'RHS_UH60M_d',
 	'rhsusf_m1a1fep_wd',
-	'rhsusf_m1a2sep1tuskiwd_usarmy',
-	'RHS_M2A3_BUSKIII',
+	'B_Heli_Light_01_armed_F',
+	'RHS_Ural_Fuel_VMF_01',
+	'rhs_gaz66o_msv',
+	'rhs_gaz66_ammo_vmf',
+	'ffaa_et_rg31_samson',
 	'B_UAV_02_CAS_F'
 ]
 
@@ -44,7 +47,7 @@ for part in parts3d:
 	k['skill'] = 1.0
 	k['init'] = "this setPos [%f, %f, %f];" % tuple(pos)
 	if k['vehicle'] not in vics:
-		k['init'] += "this enableSimulation false; this allowDamage false;"
+		k['init'] += "[this, '%s'] call kh_fnc_disable_sim;"
 	
 	if part('Arguments')['NAME']:
 		k['text'] = part('Arguments')['NAME']

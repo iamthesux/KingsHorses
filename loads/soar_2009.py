@@ -1,10 +1,12 @@
+from p4a.loadout import Crate
 from base import Base
 
 class soar_base(Base):
+	class NoWrite: pass
 	headgear = 'rhsusf_hgu56p'
 	
 	items = Base.items + [
-		'tf_anprc152_2',
+		'tf_anprc152',
 		'rhsusf_ANPVS_15',
 	]
 	class HandGun:
@@ -45,3 +47,19 @@ class soar_pilot(soar_base):
 
 class soar_crew(soar_pilot):
 	headgear = 'rhsusf_hgu56p_mask'
+	
+
+class soar_vehicle(Crate):
+	magazines = [
+		['30Rnd_556x45_Stanag', 45],
+		['30Rnd_556x45_Stanag_Tracer_Red', 15],
+		['SmokeShellBlue', 5],
+		['SmokeShell', 5],
+		['SmokeShellGreen', 5],
+		['rhs_mag_m67', 10],
+		['cse_bandage_basic', 25],
+		['cse_bandageElastic', 15],
+		['cse_tourniquet', 5],
+		['DemoCharge_Remote_Mag', 4],
+	]
+

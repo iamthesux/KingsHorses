@@ -5,9 +5,9 @@ class header {
 	playerCountMultipleOf = 1;  //Coop type missions use 1, Team type missions use 2
 };
 
-author = "sux";
+author = "Detachment 5";
 onLoadMission = "Murica. Fuck yeah";
-onLoadName = "Bear Trap";
+onLoadName = "Kings Horses";
 
 respawn = "BASE";
 respawnTemplates[] = {"MenuPosition"};
@@ -19,4 +19,13 @@ enableDebugConsole = 1;
 
 class CfgFunctions {
 #include "sux_load\cfgFunctions.hpp"
+
+	class kh
+	{
+		class mission_stuff
+		{
+			file = "fnc";
+			class disable_sim { recompile = 1; };
+		};
+	};
 };

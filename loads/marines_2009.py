@@ -50,9 +50,6 @@ class marine_rifleman(marine_base):
 
 
 class marine_tl(marine_rifleman):
-	items = Base.items + [
-		'tf_anprc152',
-	]
 	class Primary:
 		weapon = 'RH_M16A4gl'
 		optic = 'RH_ta31rco_2D'
@@ -68,6 +65,7 @@ class marine_tl(marine_rifleman):
 		items = marine_rifleman.Backpack.items + [
 			['UGL_FlareWhite_F', 2],
 			['UGL_FlareRed_F', 1],
+			['tf_anprc152', 1],
 			['1Rnd_Smoke_Grenade_shell', 4],
 			['1Rnd_SmokeRed_Grenade_shell', 2],
 			['1Rnd_SmokeGreen_Grenade_shell', 2],
@@ -133,7 +131,7 @@ class marine_amg(marine_rifleman):
 	class Backpack(marine_rifleman.Backpack):
 		items = marine_rifleman.Backpack.items + [
 			['rhsusf_100Rnd_762x51', 5],
-			['tf_anprc152_2', 1],
+			['tf_anprc152', 1],
 		]
 
 class marine_at(marine_rifleman):
@@ -145,6 +143,7 @@ class marine_at(marine_rifleman):
 
 	class Backpack(marine_rifleman.Backpack):
 		items = marine_rifleman.Backpack.items + [
+			['tf_anprc152', 1],
 			['CUP_SMAW_HEAA_M', 1],
 			['CUP_SMAW_HEDP_M', 1],
 			['CUP_optic_SMAW_Scope', 1],
@@ -155,7 +154,6 @@ class marine_aat(marine_rifleman):
 		items = marine_rifleman.Backpack.items + [
 			['CUP_SMAW_HEDP_M', 1],
 			['CUP_SMAW_HEAA_M', 1],
-			['tf_anprc152_2', 1],
 		]
 
 class marine_pl(marine_base):
@@ -175,6 +173,7 @@ class marine_pl(marine_base):
 	class Backpack(marine_base.Backpack):
 		items = marine_base.Backpack.items + [
 			['RH_30Rnd_556x45_M855A1', 5],
+			['tf_anprc152', 2],
 			['alive_tablet', 1],
 			['1Rnd_HE_Grenade_shell', 5],
 		]
@@ -182,15 +181,16 @@ class marine_pl(marine_base):
 class marine_rto(marine_rifleman):
 	binoc = 'Binocular'
 	class Backpack:
-		type = 'tf_anprc155_coyote'
+		type = 'tf_rt1523g_green'
 		items = marine_rifleman.Backpack.items + [
 			['alive_tablet', 1],
-			['tf_anprc152_2', 5],
+			['tf_anprc152', 5],
 		]
 
 class marine_corpsman(marine_rifleman):
 	class Backpack(marine_base.Backpack):
 		items = marine_base.Backpack.items + [
+			['tf_anprc152', 1],
 			['cse_bandage_basic', 10],
 			['cse_packing_bandage', 10],
 			['cse_tourniquet', 2],
@@ -202,17 +202,13 @@ class marine_corpsman(marine_rifleman):
 			['cse_personal_aid_kit', 1],
 		]
 
-class marine_Crewman(marine_rifleman):
+class marine_crewman(marine_rifleman):
 	headgear = 'rhsusf_cvc_green_helmet'
-		]
 		
-class marine_commander(marine_rifleman):
+class marine_commander(marine_crewman):
 	class Backpack(marine_base.Backpack):
-		items = marine_base.Backpack.items + [
-			['RH_30Rnd_556x45_M855A1', 5],
-			['tf_anprc152_2', 5],
-			
-	headgear = 'rhsusf_cvc_green_helmet'
+		items = marine_crewman.Backpack.items + [
+			['tf_anprc152', 2],
 		]
 
 		

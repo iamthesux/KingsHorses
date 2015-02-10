@@ -2,6 +2,7 @@ from p4a.loadout import Crate
  
 class marine_explosives(Crate):
 	title = 'Marine Explosives and CSW'
+	base = 'CUP_USVehicleBox'
 	magazines = [
 		['rhs_mag_m67', 100],
 		['SmokeShell', 100],
@@ -20,7 +21,7 @@ class marine_explosives(Crate):
 		['UGL_FlareWhite_F', 100],
 		['UGL_FlareYellow_F', 100],
 		['UGL_FlareGreen_F', 100],
-	
+	]
 	backpacks = [
 		['RHS_M2_MiniTripod_Bag', 10], 
 		['RHS_M2_Gun_Bag', 10],
@@ -32,6 +33,7 @@ class marine_explosives(Crate):
  
 class marine_launchers(Crate):
 	title = 'Marine Launchers and Warheads'
+	base = 'CUP_USVehicleBox'
 	weapons = [
 		['rhs_weap_fgm148', 50],
 		['rhs_weap_M136', 35],
@@ -47,6 +49,7 @@ class marine_launchers(Crate):
  
 class marine_weapons(Crate):
 	title = 'Marine Rifles and Ammo'
+	base = 'CUP_USVehicleBox'
 	weapons = [
 		['RH_M16A4gl', 15],
 		['rhs_weap_m249_pip', 10],
@@ -62,6 +65,7 @@ class marine_weapons(Crate):
 
 class marine_radios(Crate):
 	title = 'Marine Radios'
+	base = 'CUP_USBasicAmmunitionBox'
 	items = [
 		['tf_rf7800str_1', 75],
 		['tf_anprc152_2', 75],

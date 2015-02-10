@@ -1,6 +1,8 @@
-import sys, os
+import sys, os, shutil
 import shutil
 import subprocess
+
+import settings as cfg
 
 arg=''
 if len(sys.argv) > 1:
@@ -9,16 +11,14 @@ if len(sys.argv) > 1:
 def run(script):
 	subprocess.call("python %s.py" % script)
 
-def make_loads():
-	wd = os.getcwd()
-	os.chdir(os.path.join(wd, 'loads'))
-	for x in ['cdf_2009', 'marines_2009']:
-		run(x)
-	sys.path.pop(0)
-	os.chdir(wd)
-
 def make_core():
 	shutil.copy2("KingsHorses_core.Chernarus_Summer/mission.sqm", "./KingsHorses.Chernarus_Summer/")
+
+def install():
+	dest = os.path.join(cfg.mpmissions_folder, cfg.mish)
+	if os.path.isdir(dest):
+		shutil.rmtree(dest)
+	shutil.copytree(cfg.mish, dest)
 
 if arg == 'core':
 	make_core()
@@ -29,10 +29,12 @@ elif arg == 'slots':
 elif arg == 'crates':
 	run("make_crates")
 elif arg == 'loads':
-	make_loads()
+	run("make_loads")
+elif arg == 'install':
+	install()
 else:
 	make_core()
-	make_loads()
+	run("make_loads")
 	run("make_3d")
 	run("make_slots")
-
+	install()

@@ -1,7 +1,8 @@
 from p4a.loadout import Crate
 
-class det5_weapons(Crate):
+class det5_crate(Crate):
 	title = 'DET5 Weapons'
+	base = 'CUP_USVehicleBox'
 	weapons = [
 		['SMA_Mk17_EGLM', 5],
 		['SMA_Mk17', 5],
@@ -79,7 +80,7 @@ class det5_weapons(Crate):
 	backpacks = [
 		['B_AssaultPack_cbr', 10],
 		['B_Kitbag_cbr', 10],
-		['tf_anprc155_coyote', 10],
+		['tf_rt1523g_green', 10],
 		
 		['B_Kitbag_mcamo', 10],
 		['B_AssaultPack_mcamo', 10],
@@ -152,8 +153,8 @@ class det5_weapons(Crate):
 		['AGM_Vector', 5],
 		['tf_microdagr', 5],
 		['rhsusf_ANPVS_15', 10],
-		['tf_anprc148jem_1', 100],
-		['tf_anprc152_2', 50],
+		['tf_rf7800str', 100],
+		['tf_anprc152', 50],
 		['RH_suppr9', 50],
 		['RH_X300', 50],
 		['AV_PlateCarrier3_khk', 50],

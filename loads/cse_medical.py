@@ -1,7 +1,8 @@
 from p4a.loadout import Crate
 
-class cse_medical(Crate):
-	title = 'cse medical'
+class med_supplies(Crate):
+	base = 'CUP_USBasicAmmunitionBox'
+	title = 'Medical Supplies'
 	items = [
 		['cse_bandage_basic', 200],
 		['cse_packing_bandage', 200],

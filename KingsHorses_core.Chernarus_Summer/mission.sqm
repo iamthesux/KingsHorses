@@ -573,7 +573,7 @@ class Mission
 						};
 						class Item16
 						{
-							value="LOP_ChDKZ";
+							value="sh_opfor_chdkz";
 							parentCls="ALiVE_civ_placement";
 							typeName="faction";
 						};
@@ -651,7 +651,7 @@ class Mission
 						};
 						class Item8
 						{
-							value="[""LOP_ChDKZ""]";
+							value="[""sh_opfor_chdkz""]";
 							parentCls="ALiVE_mil_OPCOM";
 							typeName="factions";
 						};
@@ -817,7 +817,7 @@ class Mission
 						};
 						class Item15
 						{
-							value="LOP_ChDKZ";
+							value="sh_opfor_chdkz";
 							parentCls="ALiVE_mil_placement";
 							typeName="faction";
 						};

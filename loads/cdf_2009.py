@@ -8,12 +8,12 @@ class cdf_base(Base):
 		mags = [['RH_8Rnd_9x18_Mak', 8]]
 
 	class Uniform:
-		type = 'LOP_U_CDF_Fatigue_01'
+		type = 'sh_cdf_uniform_01'
 		items = Base.Uniform.items + [
 			['RH_8Rnd_9x18_Mak', 2],
 		]
 	class Vest:
-		type = 'LOP_V_CarrierLite_CDF'
+		type = 'sh_chdkz_v_carrierlite_cdf'
 		items = [
 			['rhs_mag_rgd5', 1],
 			['rhs_mag_rdg2_white', 1],
@@ -56,7 +56,7 @@ class cdf_grenadier(cdf_rifleman):
 			['rhs_rpg26_mag', 1],
 		]
 	class Vest(cdf_rifleman.Vest):
-		type = 'LOP_V_CarrierRig_CDF'
+		type = 'sh_chdkz_v_carrier_cdf'
 		items = cdf_rifleman.Vest.items + [
 			['rhs_VOG25', 5],
 		]
@@ -70,7 +70,7 @@ class cdf_grenadier(cdf_rifleman):
 
 class cdf_sl(cdf_rifleman):
 	items = cdf_rifleman.items + [
-		'tf_anprc152_2',
+		'tf_rf7800str',
 	]
 	binoc = 'Binocular'
 
@@ -81,7 +81,7 @@ class cdf_sl(cdf_rifleman):
 			['rhs_VOG25', 1],
 		]
 	class Vest(cdf_rifleman.Vest):
-		type = 'LOP_V_CarrierRig_CDF'
+		type = 'sh_chdkz_v_carrier_cdf'
 		items = cdf_rifleman.Vest.items + [
 			['rhs_VOG25', 5],
 		]
@@ -107,7 +107,7 @@ class cdf_crew(cdf_rifleman):
 
 class cdf_asl_gunner(cdf_crew):
 	items = cdf_crew.items + [
-		'tf_anprc152_2',
+		'tf_rf7800str',
 	]
 
 
@@ -161,7 +161,7 @@ class cdf_pl(cdf_rifleman):
 			['rhs_VOG25', 1],
 		]
 	class Vest(cdf_rifleman.Vest):
-		type = 'LOP_V_CarrierRig_CDF'
+		type = 'sh_chdkz_v_carrier_cdf'
 		items = cdf_rifleman.Vest.items + [
 			['rhs_VOG25', 5],
 		]
@@ -182,7 +182,7 @@ class cdf_pl(cdf_rifleman):
 class cdf_rto(cdf_rifleman):
 	binoc = 'Binocular'
 	items = cdf_rifleman.items + [
-		'tf_anprc152_2',
+		'tf_anprc152',
 	]
 	class Primary:
 		weapon = 'rhs_weap_ak74m'
@@ -191,7 +191,7 @@ class cdf_rto(cdf_rifleman):
 		]
 
 	class Backpack:
-		type = 'tf_anprc155_coyote'
+		type = 'tf_rt1523g_green'
 		items = cdf_rifleman.Backpack.items + [
-			['tf_anprc148_2', 1],
+			['tf_anprc152', 1],
 		]
