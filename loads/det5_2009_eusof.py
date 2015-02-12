@@ -141,6 +141,7 @@ class demolitions_det5(rifleman_det5):
 		items = det5_base.Backpack.items + [
 			['DemoCharge_Remote_Mag', 3],
 		]
+		
 class medic_det5(rifleman_det5):
 	class Primary:
 		weapon = 'VTN_AKMS_T_P'
