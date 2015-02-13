@@ -1,7 +1,7 @@
 from p4a.loadout import Crate
  
 class cdfsf_explosives(Crate):
- 	base = 'CUP_RUSpecialWeaponsBox'
+ 	base = 'rhs_weapons_crate_ak_standard'
 	title = 'CDFSF Explosives'
 	magazines = [
 		['rhs_mag_rgd5', 100],
@@ -10,7 +10,8 @@ class cdfsf_explosives(Crate):
 		['rhs_mag_nspn_yellow', 100],
 		['rhs_mag_nspn_red', 100],
 		['rhs_mag_nspn_green', 100],
-		['rhs_mine_tm62m', 100],
+		['rhs_mine_tm62m_mag', 100],
+		['rhs_mine_pmn2_mag', 100],
 
 		['DemoCharge_Remote_Mag', 100],
 		['rhs_VOG25', 100],
@@ -25,7 +26,7 @@ class cdfsf_explosives(Crate):
  
 class cdfsf_launchers(Crate):
 	title = 'CDFSF Launchers and Warheads'
- 	base = 'CUP_RUOrdnanceBox'
+ 	base = 'rhs_weapons_crate_ak_standard'
 	weapons = [
 		['rhs_weap_rpg7', 10],
 		['rhs_weap_rpg26', 100],
@@ -39,7 +40,7 @@ class cdfsf_launchers(Crate):
  
 class cdfsf_weapons(Crate):
 	title = 'CDFSF Rifles and Ammo'
- 	base = 'CUP_RUBasicWeaponsBox'
+ 	base = 'rhs_weapons_crate_ak_standard'
 	weapons = [
 		['rhs_weap_ak74m', 5],
 		['rhs_weap_ak74m_folded', 5],
@@ -58,7 +59,7 @@ class cdfsf_weapons(Crate):
 
 class cdfsf_radios(Crate):
 	title = 'CDFSF Radios'
- 	base = 'CUP_RUBasicAmmunitionBox'
+ 	base = 'rhs_weapons_crate_ak_ammo_545x39_standard'
 	items = [
 		['tf_anprc152', 50],
 		['tf_rt1523g_green', 10],

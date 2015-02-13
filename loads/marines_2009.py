@@ -67,7 +67,7 @@ class marine_tl(marine_rifleman):
 		items = marine_rifleman.Backpack.items + [
 			['1Rnd_HE_Grenade_shell', 6],
 			['VTN_M18R', 1],
-			['VTN_M16P', 1]
+			['VTN_M16P', 1],
 			['UGL_FlareCIR_F', 1],
 			['UGL_FlareRed_F', 1],
 			['tf_anprc152', 1],

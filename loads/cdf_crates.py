@@ -2,7 +2,7 @@ from p4a.loadout import Crate
 
 class cdf_explosives(Crate):
 	title = 'CDF Explosives and CSW'
- 	base = 'CUP_RUVehicleBox'
+ 	base = 'B_supplyCrate_F'
 	magazines = [
 		
 		['rhs_mag_rgd5', 100],
@@ -11,7 +11,7 @@ class cdf_explosives(Crate):
 		['rhs_mag_nspn_yellow', 100],
 		['rhs_mag_nspn_red', 100],
 		['rhs_mag_nspn_green', 100],
-		['rhs_mine_tm62m', 100],
+		['rhs_mine_tm62m_mag', 100],
 
 		['rhs_VOG25', 100],
 		['rhs_VOG25p', 100],
@@ -42,7 +42,7 @@ class cdf_explosives(Crate):
 
 class cdf_launchers(Crate):
 	title = 'CDF Launchers and Warheads'
- 	base = 'CUP_RUVehicleBox'
+ 	base = 'rhs_weapons_crate_ak_standard'
 	weapons = [
 		['rhs_weap_rpg7', 10],
 		['rhs_weap_rpg26', 100],
@@ -56,7 +56,7 @@ class cdf_launchers(Crate):
 
 class cdf_weapons(Crate):
 	title = 'CDF Rifles and Ammo'
- 	base = 'CUP_RUVehicleBox'
+ 	base = 'B_supplyCrate_F'
 	weapons = [
 		['rhs_weap_ak74m', 5],
 		['rhs_weap_ak74m_folded', 5],

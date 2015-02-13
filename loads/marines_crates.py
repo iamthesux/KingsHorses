@@ -2,7 +2,7 @@ from p4a.loadout import Crate
  
 class marine_explosives(Crate):
 	title = 'Marine Explosives and CSW'
-	base = 'CUP_USVehicleBox'
+	base = 'B_supplyCrate_F'
 	magazines = [
 		['rhs_mag_m67', 100],
 		['SmokeShell', 100],
@@ -33,7 +33,7 @@ class marine_explosives(Crate):
  
 class marine_launchers(Crate):
 	title = 'Marine Launchers and Warheads'
-	base = 'CUP_USVehicleBox'
+	base = 'B_supplyCrate_F'
 	weapons = [
 		['rhs_weap_fgm148', 50],
 		['rhs_weap_M136', 35],
@@ -49,23 +49,23 @@ class marine_launchers(Crate):
  
 class marine_weapons(Crate):
 	title = 'Marine Rifles and Ammo'
-	base = 'CUP_USVehicleBox'
+	base = 'B_supplyCrate_F'
 	weapons = [
 		['RH_M16A4gl', 15],
 		['rhs_weap_m249_pip', 10],
 		['rhs_weap_m16a4_carryhandle', 25],
-		['CUP_hgun_M9', 10],
+		['RH_m9', 10],
 	]
 	magazines = [
 		['rhs_mag_30Rnd_556x45_M855A1_Stanag', 200],
 		['rhsusf_100Rnd_556x45_soft_pouch', 100],
 		['30Rnd_556x45_Stanag_Tracer_Red', 100],
-		['CUP_15Rnd_9x19_M9', 85],
+		['RH_15Rnd_9x19_M9', 85],
 	]
 
 class marine_radios(Crate):
 	title = 'Marine Radios'
-	base = 'CUP_USBasicAmmunitionBox'
+	base = 'B_supplyCrate_F'
 	items = [
 		['tf_rf7800str_1', 75],
 		['tf_anprc152_2', 75],

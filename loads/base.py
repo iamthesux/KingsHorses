@@ -10,14 +10,12 @@ class Base(LoadOut):
 	items = [
 		'ItemWatch',
 		'ItemMap',
-		'ItemCompass',
-		'NVGoggles_BLUFOR',
+		'ItemCompass'
 	]
 	
 	class Uniform:
 		items = [
 			['AGM_MapTools', 1],
-			['AGM_EarBuds', 1],
 			['cse_bandage_basic', 5],
 			['cse_bandageElastic', 3],
 			['cse_packing_bandage', 3],

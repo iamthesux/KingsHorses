@@ -30,6 +30,7 @@ class soar_base(Base):
 		type = 'tf_anarc210'
 		items = [
 			['SmokeShell', 1],
+			['B_UAVTerminal', 1],
 		]
 
 class soar_pilot(soar_base):

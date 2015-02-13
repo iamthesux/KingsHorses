@@ -35,6 +35,7 @@ elif arg == 'install':
 else:
 	make_core()
 	run("make_loads")
+	run("make_crates")
 	run("make_3d")
 	run("make_slots")
 	install()

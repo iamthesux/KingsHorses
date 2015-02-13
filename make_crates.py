@@ -13,15 +13,15 @@ cfg = Klass()
 
 
 class empty_crate(Crate):
-	base = 'CUP_USBasicAmmunitionBox'
+	base = 'rhs_weapons_crate_ak_ammo_545x39_standard'
 	title = 'Empty Crate'
 
 class empty_crate_lg(Crate):
-	base = 'CUP_USVehicleBox'
+	base = 'B_supplyCrate_F'
 	title = 'Empty Crate (Large)'
 
 class cdf_medical(med_supplies):
-	base = 'CUP_RUBasicAmmunitionBox'
+	base = 'rhs_weapons_crate_ak_ammo_545x39_standard'
 	title = 'CDF Medical Supplies'
 
 patch = Klass('sh_alive_boxes')

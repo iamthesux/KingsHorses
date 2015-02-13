@@ -2,7 +2,7 @@ from p4a.loadout import Crate
 
 class det5_crate(Crate):
 	title = 'DET5 Weapons'
-	base = 'CUP_USVehicleBox'
+	base = 'B_supplyCrate_F'
 	weapons = [
 		['SMA_Mk17_EGLM', 5],
 		['SMA_Mk17', 5],

@@ -1,7 +1,7 @@
 class header {
 	gametype = COOP;
 	minplayers = 1;
-	maxplayers = 20;
+	maxplayers = 165;
 	playerCountMultipleOf = 1;  //Coop type missions use 1, Team type missions use 2
 };
 
@@ -10,14 +10,15 @@ onLoadMission = "Murica. Fuck yeah";
 onLoadName = "Kings Horses";
 
 respawn = "BASE";
-respawnTemplates[] = {"MenuPosition"};
+//respawnTemplates[] = {"MenuPosition"};
 RespawnDialog = 0;
 respawnDelay = 10;
 aikills = 1;
 disabledAI = 1;
 enableDebugConsole = 1;
 
-class CfgFunctions {
+class CfgFunctions
+{
 #include "sux_load\cfgFunctions.hpp"
 
 	class kh
@@ -26,6 +27,7 @@ class CfgFunctions {
 		{
 			file = "fnc";
 			class disable_sim { recompile = 1; };
+			class make_medic { recompile = 1; };
 		};
 	};
 };
