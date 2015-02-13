@@ -9,9 +9,6 @@ class marine_base(Base):
 		'rhsusf_ANPVS_14',
 		'tf_rf7800str',
 	]
-	class HandGun:
-		weapon = 'RH_m9'
-		mags = [['RH_15Rnd_9x19_M9', 15]]
 
 	class Uniform:
 		type = 'VTN_U_FROG_WDL'
@@ -82,6 +79,9 @@ class marine_sl(marine_tl):
 			['RH_30Rnd_556x45_M855A1', 30],
 			['1Rnd_HE_Grenade_shell', 1],
 		]
+	class HandGun:
+		weapon = 'RH_m9'
+		mags = [['RH_15Rnd_9x19_M9', 15]]
 
 class marine_ar(marine_base):
 	class Primary:
@@ -91,6 +91,9 @@ class marine_ar(marine_base):
 		mags = [
 			['rhsusf_100Rnd_556x45_soft_pouch', 100],
 		]
+	class HandGun:
+		weapon = 'RH_m9'
+		mags = [['RH_15Rnd_9x19_M9', 15]]
 	class Vest(marine_base.Vest):
 		type = 'V_MTV_MG'
 
@@ -166,6 +169,9 @@ class marine_pl(marine_base):
 			['RH_30Rnd_556x45_M855A1', 30],
 			['1Rnd_HE_Grenade_shell', 1],
 		]
+	class HandGun:
+		weapon = 'RH_m9'
+		mags = [['RH_15Rnd_9x19_M9', 15]]
 	class Vest(marine_base.Vest):
 		items = marine_base.Vest.items + [
 			['RH_30Rnd_556x45_M855A1', 5],
@@ -206,6 +212,9 @@ class marine_crewman(marine_rifleman):
 	headgear = 'rhsusf_cvc_green_helmet'
 		
 class marine_commander(marine_crewman):
+	class HandGun:
+		weapon = 'RH_m9'
+		mags = [['RH_15Rnd_9x19_M9', 15]]
 	class Backpack(marine_base.Backpack):
 		items = marine_crewman.Backpack.items + [
 			['tf_anprc152', 2],
