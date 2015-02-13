@@ -225,7 +225,14 @@ teams['pubs'] = dict(
 			{ 'role': "Senior Rifleman", 'loadout': 'cdf_rifleman' },
 			{ 'role': "Rifleman", 'loadout': 'cdf_rifleman' },
 		],		
-		[
+		
+    ]
+)
+teams['pubs'] = dict(
+    name = 'tbd',
+    side = 'WEST',
+    groups = [
+        [
 			{ 'role': "SL / BTR Commander", 'loadout': 'cdf_sl', 'callsign': 'LANCER 1-3'},
 			{ 'role': "BTR Driver", 'loadout': 'cdf_crew', },
 			{ 'role': "BTR Gunner", 'loadout': 'cdf_asl_gunner', },
@@ -234,11 +241,10 @@ teams['pubs'] = dict(
 			{ 'role': "Grenadier", 'loadout': 'cdf_grenadier' },
 			{ 'role': "Asst. Grenadier", 'loadout': 'cdf_grenadier' },
 			{ 'role': "Senior Rifleman", 'loadout': 'cdf_rifleman' },
-			{ 'role': "Rifleman", 'loadout': 'cdf_rifleman' },
+			{ 'role': "Rifleman/Marksman", 'loadout': 'cdf_rifleman' },
 		],
     ]
 )
-
 mish = Reader('KingsHorses.Chernarus_Summer/mission.sqm').read()
 top_id = id_count = mish.nextid()
 g_count = mish('Mission')('Groups')['items']
