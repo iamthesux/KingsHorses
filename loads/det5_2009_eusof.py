@@ -10,10 +10,10 @@ class det5_base(Base):
 		'G_Balaclava_blk',
 	]
 	class HandGun:
-		weapon = 'RH_g17'
-		mags = [['RH_17Rnd_9x19_g17', 17]]
-		rail = 'RH_M6X'
-		suppressor = 'RH_gemtech9'
+		weapon = 'RH_mak'
+		mags = [['RH_8Rnd_9x18_Mak', 8]]
+		rail = 'RH_pmIR'
+		suppressor = 'RH_pmsd'
 
 	class Uniform:
 		type = 'VTN_U_GORKA_S'
