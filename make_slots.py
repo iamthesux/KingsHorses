@@ -10,18 +10,18 @@ teams['det5'] = dict(
     side = 'WEST',
     groups = [
         [
-            { 'role': "MAJ Singleton", 'loadout': 'singleton_det5', },
-            { 'role': "SGM Dodds", 'loadout': 'det5_base', },
-            { 'role': "CW2 Moore", 'loadout': 'det5_base', },
-            { 'role': "MSG Nichols", 'loadout': 'det5_base', },
-            { 'role': "SFC Furlong", 'loadout': 'det5_base', },
-            { 'role': "SFC Cannon", 'loadout': 'det5_base', },
-            { 'role': "SFC Bryhni", 'loadout': 'det5_base', },
-            { 'role': "SFC Cline", 'loadout': 'det5_base', },
-            { 'role': "SSG Lewis", 'loadout': 'det5_base', },
-            { 'role': "SFC Lee", 'loadout': 'det5_base', },
-            { 'role': "SSG Andresen", 'loadout': 'det5_base', },
-            { 'role': "SFC Sage", 'loadout': 'det5_base', },
+            { 'role': "MAJ Singleton", 'loadout': 'det5_officer', },
+            { 'role': "SGM Dodds", 'loadout': 'sniper_det5', },
+            { 'role': "CW2 Moore", 'loadout': 'det5_officer', },
+            { 'role': "MSG Nichols", 'loadout': 'det5_rifleman', },
+            { 'role': "SFC Furlong", 'loadout': 'sniper_det5', },
+            { 'role': "SFC Cannon", 'loadout': 'gunner_det5', },
+            { 'role': "SFC Bryhni", 'loadout': 'gunner_det5', },
+            { 'role': "SFC Cline", 'loadout': 'demolitions_det5', },
+            { 'role': "SSG Lewis", 'loadout': 'demolitions_det5', },
+            { 'role': "SFC Lee", 'loadout': 'medic_det5', },
+            { 'role': "SSG Andresen", 'loadout': 'medic_det5', },
+            { 'role': "SFC Sage", 'loadout': 'commo_det5', },
         ],
     ],
 )
@@ -30,7 +30,7 @@ teams['sfqc'] = dict(
     side = 'WEST',
     groups = [
 		[
-			{ 'role': "SGT Bayley", 'loadout': 'det5_base', },
+			{ 'role': "SGT Bayley", 'loadout': 'rifleman_det5', },
 		]
     ],
 )

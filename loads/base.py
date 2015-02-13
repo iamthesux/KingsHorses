@@ -22,6 +22,6 @@ class Base(LoadOut):
 			['cse_bandageElastic', 3],
 			['cse_packing_bandage', 3],
 			['cse_quikclot', 3],
-			['cse_tourniquet', 1],
+			['cse_tourniquet', 4],
 			['cse_nasopharyngeal_tube', 1],
 		]
