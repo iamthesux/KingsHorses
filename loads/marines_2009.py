@@ -213,7 +213,7 @@ class marine_corpsman(marine_rifleman):
 		]
 
 class marine_crewman(marine_rifleman):
-	headgear = 'rhsusf_cvc_green_helmet'
+	headgear = 'H_VTN_DH132A'
 		
 class marine_commander(marine_crewman):
 	class HandGun:

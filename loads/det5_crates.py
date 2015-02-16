@@ -4,21 +4,7 @@ class det5_crate(Crate):
 	title = 'DET5 Weapons'
 	base = 'B_supplyCrate_F'
 	weapons = [
-		['SMA_Mk17_EGLM', 5],
-		['SMA_Mk17', 5],
-		['RH_m110', 50],
-		['rhs_weap_m240B', 50],
-		['rhs_weap_m249_pip', 50],
-		['RH_p226', 50],
-		['rhs_weap_fgm148', 50],
-		['rhs_weap_M136', 50],
-		['rhs_weap_M136_hedp', 50],
-		['rhs_weap_M136_hp', 50],
-		['SMA_MK16', 50],
-		['SMA_Mk16QCB', 50],
-		['SMA_Mk16_EGLM', 50],
-		['RH_Mk12mod1', 50],
-		['CUP_launch_MAAWS', 50],
+		['rhs_weap_svd', 50],
 	]
 	magazines = [
 		['rhs_fgm148_magazine_AT', 100],
@@ -93,6 +79,13 @@ class det5_crate(Crate):
 	]
 
 	items = [
+		['V_KORA_K_CHICOM', 5],
+		['V_KORA_K_6Sh104AKGP', 5],
+		['V_KORA_K_6Sh104SVD', 5],
+		['V_KORA_K_6Sh104PK', 5],
+		
+		
+		
 		['RH_eotech553', 5],
 		['RH_eotech553mag', 5],
 		['RH_eotech553_tan', 5],
