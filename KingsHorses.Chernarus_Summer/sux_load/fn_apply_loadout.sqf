@@ -11,7 +11,7 @@ sux_apply_carryable =
 		_v = _load select 0;
 		if (_v != "") then {
 			switch (_type) do {
-				case _UNIFORM: { _unit addUniform _v; };
+				case _UNIFORM: { _unit forceAddUniform _v; };
 				case _VEST: { _unit addVest _v; };
 				case _BACKPACK: { _unit addBackpack _v; };
 			};
