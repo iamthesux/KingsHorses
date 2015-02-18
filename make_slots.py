@@ -1,11 +1,61 @@
 from p4a.formats.rap.text import Reader, Writer
 from p4a.formats.rap import Klass
 from copy import deepcopy
+import math
 
-base_pos = [4800,6,2260]
+class Vector:
+	def __init__(self, x, y):
+		self.x = float(x)
+		self.y = float(y)
+	def __add__(self, v):
+		return Vector(self.x + v.x, self.y + v.y)
+	def __mul__(self, v):
+		return Vector(self.x * v, self.y * v)
+	def perp(self):
+		return Vector(self.y, -self.x)
+
+spawns = dict(
+	sasr = dict(
+		azimuth = 30.05,
+		pos = Vector(4812,2544),
+		limit = 'x',
+		max = 2,
+	),
+	cdf = dict(
+		azimuth = 30.05,
+		pos = Vector(4725,2572),
+		limit = 'y',
+		max = 10,
+	),
+	marines = dict(
+		azimuth = 30.05,
+		pos = Vector(4760.5,2551.5),
+		limit = 'y',
+		max = 10,
+	),
+	det5 = dict(
+		azimuth = 27.5045,
+		pos = Vector(4392,2248),
+		limit = 'x',
+		max = 2,
+	),
+	cdn = dict(
+		azimuth = 356.2,
+		pos = Vector(4710,2612),
+		limit = 'y',
+		max = 2,
+	),
+)
+
+for v in spawns.values():
+	v['count'] = 0
+	v['curpos'] = v['pos']
+	
+	v['unit'] = Vector(round(math.sin(v['azimuth']*math.pi/180), 3), round(math.cos(v['azimuth']*math.pi/180), 3))
 
 teams = {}
 teams['det5'] = dict(
+	spawn = 'det5',
 	name = 'SFOD-A 4125',
 	faction = 'det5',
 	side = 'WEST',
@@ -26,6 +76,7 @@ teams['det5'] = dict(
 	],
 )
 teams['sfqc'] = dict(
+	spawn = 'det5',
 	name = 'SFQC',
 	faction = 'det5',
 	side = 'WEST',
@@ -36,22 +87,24 @@ teams['sfqc'] = dict(
 	],
 )
 teams['sasr'] = dict(
+	spawn = 'sasr',
 	name = 'CDFSF',
 	faction = 'sasr',
 	side = 'WEST',
 	groups = [
 		[
-			{ 'role': "C/Sgt Pursehouse", 'loadout': 'cdfsf_sl', },
-			{ 'role': "C/Sgt Constanti", 'loadout': 'cdfsf_gren', },
-			{ 'role': "C/Sgt MacDowell", 'loadout': 'cdfsf_tl', },
-			{ 'role': "Cpl Sowers", 'loadout': 'cdfsf_svd', },
-			{ 'role': "Cpl Deckert", 'loadout': 'cdfsf_rifleman', },
+			{ 'role': "C/Sgt Pursehouse", 'loadout': 'cdf_recce_sl', },
+			{ 'role': "C/Sgt Constanti", 'loadout': 'cdf_recce_gren', },
+			{ 'role': "C/Sgt MacDowell", 'loadout': 'cdf_recce_tl', },
+			{ 'role': "Cpl Sowers", 'loadout': 'cdf_recce_svd', },
+			{ 'role': "Cpl Deckert", 'loadout': 'cdf_recce_rifleman', },
 		],
 	],
 )
 
 teams['soar'] = dict(
-	name = '160th SOAR',
+	spawn = 'cdn',
+	name = '10th TAB',
 	side = 'WEST',
 	faction = 'det5',
 	groups = [
@@ -75,6 +128,7 @@ teams['soar'] = dict(
 )
 
 teams['company_hq'] = dict(
+	spawn = 'marines',
 	name = 'HQ',
 	side = 'WEST',
 	faction = 'marines',
@@ -90,6 +144,7 @@ teams['company_hq'] = dict(
 	]
 )
 teams['rifles'] = dict(
+	spawn = 'marines',
 	name = '1st Plt.',
 	side = 'WEST',
 	faction = 'marines',
@@ -128,6 +183,7 @@ for i in range(1,4):
 	])
 
 teams['weapons'] = dict(
+	spawn = 'marines',
 	name = 'Wpns Plt.',
 	side = 'WEST',
 	faction = 'marines',
@@ -165,6 +221,7 @@ for i in range(1,4):
 	])
 
 teams['tanks'] = dict(
+	spawn = 'marines',
 	name = 'M1A1 Plt.',
 	side = 'WEST',
 	faction = 'marines',
@@ -198,6 +255,7 @@ teams['tanks'] = dict(
 )
 
 teams['pubs'] = dict(
+	spawn = 'cdf',
 	name = 'CDF',
 	faction = 'cdf',
 	side = 'WEST',
@@ -233,6 +291,7 @@ teams['pubs'] = dict(
 	]
 )
 teams['tbd'] = dict(
+	spawn = 'cdf',
 	name = 'tbd',
 	side = 'WEST',
 	faction = 'cdf',
@@ -277,7 +336,15 @@ for team in kys:
 		v_count = 0
 		for unit in grp:
 			u = Klass('Item' + str(v_count))
-			u['position'] = [base_pos[0]+int((id_count-top_id)/10), base_pos[1], base_pos[2]+((id_count-top_id) % 10)]
+			
+			spwn = spawns[teams[team]['spawn']]
+			if spwn['limit'] == 'x':
+				pos = spwn['pos'] + (spwn['unit'] * int(spwn['count']/spwn['max'])) + (spwn['unit'].perp() * int(spwn['count'] % spwn['max']))
+			else:
+				pos = spwn['pos'] + (spwn['unit'].perp() * int(spwn['count']/spwn['max'])) + (spwn['unit'] * int(spwn['count'] % spwn['max']))
+			spwn['count'] += 1
+			u['position'] = [pos.x, 0, pos.y]
+			u['azimut'] = spwn['azimuth']
 			u['id'] = id_count
 			u['side'] = teams[team]['side']
 			u['vehicle'] = 'sh_faction_%s_unit' % teams[team]['faction']
