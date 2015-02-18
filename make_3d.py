@@ -16,25 +16,33 @@ id = mish2d("Mission").nextid()
 dic = {}
 
 vics = [
-	'rhsusf_m1025_w_s_m2',
-	'rhsusf_m1025_w_s_Mk19',
-	'RHS_AH64D',
-	'RHS_CH_47F',
-	'RHS_UH60M_d',
-	'rhsusf_m1a1fep_wd',
-	'B_Heli_Light_01_armed_F',
-	'RHS_Ural_Fuel_VMF_01',
-	'rhs_gaz66o_msv',
-	'rhs_gaz66_ammo_vmf',
-	'ffaa_et_rg31_samson',
-	'B_UAV_02_CAS_F',
-	'RHS_UAZ_MSV_01',
 	'B_Quadbike_01_F',
+	'B_G_Quadbike_01_F',
+	'rhs_tigr_vmf',
+
+	'rhsusf_m1a1fep_wd',
+	'ffaa_et_rg31_samson',
+	'RHS_Ural_Fuel_VMF_01',
+
 	'rhs_gaz66_repair_vdv',
-	'rhs_gaz66_repair_msv'
+	'rhs_gaz66_ammo_vmf',
+	
+	'rhs_uaz_open_MSV_01',
+	
+	'RHS_Mi8AMTSh_vvs',
+	'RHS_Mi24V_vdv',
+	'RHS_Su25SM_vvsc',
+	
+	'rhs_t72bc_tv',	
+	'rhs_gaz66o_msv',
+	'rhs_bmp1_vv',
+	'RHS_UAZ_MSV_01',
 ]
 medical = ['US_WarfareBFieldhHospital_Base_EP1','MASH_EP1']
 for part in parts3d:
+	# if part('Arguments')['TYPE'] not in vics:
+		# continue
+
 	k = Klass('Item'+str(c))
 	
 	pos = eval(part('Arguments')['POSITION'])
@@ -59,11 +67,12 @@ for part in parts3d:
 		k['init'] += part('Arguments')['INIT']
 	if k['vehicle'] in medical:
 		k['init'] += 'this setvariable["cse_medical_facility", true];'
-	mish2d("Mission")("Vehicles")(k)
+	
 	
 	# increment our item counter and set the number of items in our Vehicles class
 	c+=1
 	id+=1
+	mish2d("Mission")("Vehicles")(k)
 	mish2d("Mission")("Vehicles")["items"] = c
 	dic[part('Arguments')['TYPE']] = 1
 mish2d("Mission")("Intel")["briefingName"] = "Kings Horses";
