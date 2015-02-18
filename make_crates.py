@@ -11,7 +11,6 @@ from loads.cse_medical import med_supplies
 
 cfg = Klass()
 
-
 class empty_crate(Crate):
 	base = 'rhs_weapons_crate_ak_ammo_545x39_standard'
 	title = 'Empty Crate'
@@ -36,26 +35,25 @@ cfg(Klass('cfgVehicles'))
 
 #print cfg("cfgPatches")('spearhead_alive_boxes')['units']
 
-base_classes = set([])
-crates = [empty_crate(prefix='sh_alive_').generate_config()]
-crates += [empty_crate_lg(prefix='sh_alive_').generate_config()]
-crates += [med_supplies(prefix='sh_alive_').generate_config()]
-crates += [cdf_medical(prefix='sh_alive_').generate_config()]
+base_classes = {}
+crates = [
+	empty_crate(prefix='sh_alive_').generate_config(),
+	empty_crate_lg(prefix='sh_alive_').generate_config(),
+	med_supplies(prefix='sh_alive_').generate_config(),
+	cdf_medical(prefix='sh_alive_').generate_config()
+]
 
-for grp in ['cdf_crates', 'marines_crates', 'cdfsf_crates', 'soar_crates']:
+for grp in ['cdf_crates', 'marines_crates', 'cdf_recce_crates', 'soar_crates']:
 	lib = importlib.import_module('loads.' + grp)
 	for name, obj in inspect.getmembers(lib):
 		if inspect.isclass(obj) and 'NoWrite' not in obj.__dict__:
-			crate = obj(prefix='sh_alive_').generate_config()
-			if crate.inherits and crate.inherits not in base_classes:
-				base_classes.add(crate.inherits)
-			crates.append(crate)
+			crates.append(obj(prefix='sh_alive_').generate_config())
 
-# for c in crates:
-	# if c.inherits and c.inherits not in base_classes:
-		# base_classes.add(c.inherits)
+for c in crates:
+	if c.inherits and c.inherits not in base_classes:
+		base_classes[c.inherits] = True
 
-for b in base_classes:
+for b in base_classes.keys():
 	k = Klass(b)
 	k.extern = True
 	cfg("cfgVehicles")(k)
@@ -66,4 +64,4 @@ for c in crates:
 	#cfg("cfgPatches")('spearhead_alive_boxes')['units'].append(c.cname)
 	
 
-Writer('sh_ammo_crates/config.cpp').write(cfg)
+Writer('mods/sh_ammo_crates/config.cpp').write(cfg)

@@ -1,7 +1,7 @@
 from base import Base
 
 class cdf_base(Base):
-	headgear = 'LOP_H_PASGTHelmet_cover_CDF'
+	headgear = 'H_VTN_6B26'
 	
 	class HandGun:
 		weapon = 'RH_mak'
@@ -19,7 +19,7 @@ class cdf_base(Base):
 			['rhs_mag_rdg2_white', 1],
 		]
 	class Backpack:
-		type = 'B_Kitbag_mcamo'
+		type = 'B_Kitbag_rgr'
 		items = [
 			['rhs_mag_rdg2_white', 1],
 			['rhs_mag_rgd5', 2],
@@ -28,83 +28,107 @@ class cdf_base(Base):
 
 class cdf_rifleman(cdf_base):
 	class Primary:
-		weapon = 'rhs_weap_ak74m'
+		weapon = 'VTN_AKM'
 		mags = [
-			['rhs_30Rnd_545x39_AK', 30],
+			['VTN_AKM_30b_TRC', 30],
 		]
 	class Vest(cdf_base.Vest):
 		items = cdf_base.Vest.items + [
-			['rhs_30Rnd_545x39_AK', 5],
+			['VTN_AKM_30b_SC', 5],
 		]
 	class Backpack(cdf_base.Backpack):
 		items = cdf_base.Backpack.items + [
-			['rhs_30Rnd_545x39_AK_green', 5],
+			['VTN_AKM_30b_TRC', 5],
 		]
 
+class cdf_rifleman_light(cdf_base):
+	class Primary:
+		weapon = 'VTN_AK74_76'
+		mags = [
+			['VTN_AKM_30b_TRC', 30],
+		]
+	class Vest(cdf_base.Vest):
+		items = cdf_base.Vest.items + [
+			['VTN_AK74_30b_SC', 5],
+		]
+	class Backpack(cdf_base.Backpack):
+		items = cdf_base.Backpack.items + [
+			['VTN_AK74_30b_TRC', 5],
+		]
+
+		
 ################  Grenadier 
 
-class cdf_grenadier(cdf_rifleman):
+class cdf_grenadier(cdf_rifleman_light):
 	class Primary:
-		weapon = 'rhs_weap_ak74m_gp25'
+		weapon = 'VTN_AK74_GP25'
 		mags = [
-			['rhs_30Rnd_545x39_AK', 30],
-			['rhs_VOG25', 1],
+			['VTN_AK74_30b_TRC', 30],
+			['VTN_VOG25', 1],
 		]
 	class Secondary:
 		weapon = 'rhs_weap_rpg26'
 		mags = [
 			['rhs_rpg26_mag', 1],
 		]
-	class Vest(cdf_rifleman.Vest):
+	class Vest(cdf_rifleman_light.Vest):
 		type = 'sh_chdkz_v_carrier_cdf'
-		items = cdf_rifleman.Vest.items + [
-			['rhs_VOG25', 5],
+		items = cdf_rifleman_light.Vest.items + [
+			['VTN_AK74_30b_TRC', 5],
+			['VTN_VOG25', 5],
 		]
 
-	class Backpack(cdf_rifleman.Backpack):
-		items = cdf_rifleman.Backpack.items + [
-			['rhs_VOG25', 5],
+	class Backpack(cdf_rifleman_light.Backpack):
+		items = cdf_rifleman_light.Backpack.items + [
+			['VTN_AK74_30b_SC', 5],
+			['VTN_VOG25P', 5],
+			['VTN_VG40MD', 5],
+			['VTN_VG40OP', 10],
 		]
 
 ################  Squad Leader
 
 class cdf_sl(cdf_rifleman):
+	headgear = 'rhs_6b28_green'
 	items = cdf_rifleman.items + [
 		'tf_rf7800str',
 	]
-	binoc = 'Binocular'
+	binoc = 'VTN_B8'
 
 	class Primary:
-		weapon = 'rhs_weap_ak74m_gp25'
+		weapon = 'VTN_AKM_GP25_30b'
 		mags = [
-			['rhs_30Rnd_545x39_AK', 30],
-			['rhs_VOG25', 1],
+			['VTN_AKM_30b_TRC', 30],
+			['VTN_VOG25', 1],
 		]
 	class Vest(cdf_rifleman.Vest):
 		type = 'sh_chdkz_v_carrier_cdf'
 		items = cdf_rifleman.Vest.items + [
-			['rhs_VOG25', 5],
+			['VTN_VOG25P', 5],
 		]
 
 	class Backpack(cdf_rifleman.Backpack):
 		items = cdf_rifleman.Backpack.items + [
-			['rhs_vg40op_white', 5],
-			['rhs_GRD40_white', 2],
-			['rhs_GRD40_green', 2],
-			['rhs_GRD40_red', 2],
-			['rhs_VOG25', 5],
-			['rhs_VOG25p', 2],
+			['VTN_VG40MD', 5],
+			['VTN_VG40OP', 10],
+			['VTN_VGS401', 5],
+			['VTN_VGS402', 5],
+			['VTN_BN1', 1],
 		]
-
+		
+class cdf_tl(cdf_sl):
+	headgear = 'rhs_6b27m_green'
 ################  Vehicle Crew Driver/Gunner
 
-class cdf_crew(cdf_rifleman):
+class cdf_crew(cdf_rifleman_light):
+	headgear = 'rhs_tsh4'
 	class Primary:
-		weapon = 'rhs_weap_ak74m_folded'
+		weapon = 'VTN_AKS74U_B'
 		mags = [
-			['rhs_30Rnd_545x39_AK', 30],
+			['VTN_AK74_30b_SC', 30],
 		]
-
+	class Backpack:
+		pass
 class cdf_asl_gunner(cdf_crew):
 	items = cdf_crew.items + [
 		'tf_rf7800str',
@@ -113,29 +137,35 @@ class cdf_asl_gunner(cdf_crew):
 
 ################  Medium Machine Gunner
 class cdf_mg(cdf_base):
+	binoc = 'VTN_B8'
 	class Primary:
-		weapon = 'rhs_weap_pkp'
+		weapon = 'VTN_PKM'
 		mags = [
-			['rhs_100Rnd_762x54mmR', 100],
+			['VTN_PK_100s_TRC', 100],
 		]
 	class Vest(cdf_base.Vest):
 		items = cdf_base.Vest.items + [
-			['rhs_100Rnd_762x54mmR', 1],
+			['VTN_PK_100s_TRC', 1],
 		]
 	class Backpack(cdf_base.Backpack):
 		items = cdf_base.Backpack.items + [
-			['rhs_100Rnd_762x54mmR', 2],
+			['VTN_PK_100s_SC', 2],
+			['VTN_MUZZLE_FLASHSUPRESSOR_PKM1', 1],
 		]
 
 ################  Medic
-class cdf_medic(cdf_rifleman):
-	class Vest(cdf_base.Vest):
-		items = cdf_base.Vest.items + [
-			['rhs_100Rnd_762x54mmR', 1],
+class cdf_medic(cdf_rifleman_light):
+	class Primary:
+		weapon = 'VTN_AKS74U_B'
+		mags = [
+			['VTN_AK74_30b_TRC', 30],
+		]
+	class Vest(cdf_rifleman_light.Vest):
+		items = cdf_rifleman_light.Vest.items + [
 			['rhs_mag_rdg2_white', 4],
 		]
-	class Backpack(cdf_rifleman.Backpack):
-		items = cdf_rifleman.Backpack.items + [
+	class Backpack(cdf_rifleman_light.Backpack):
+		items = cdf_rifleman_light.Backpack.items + [
 			['rhs_mag_rdg2_black', 5],
 			['cse_bandage_basic', 5],
 			['cse_bandageElastic', 7],
@@ -152,44 +182,31 @@ class cdf_pl(cdf_rifleman):
 	items = cdf_rifleman.items + [
 		'tf_anprc152_2',
 	]
-	binoc = 'Binocular'
-
+	binoc = 'VTN_B8'
+	headgear = 'H_VTN_BERET'
 	class Primary:
-		weapon = 'rhs_weap_ak74m_gp25'
+		weapon = 'VTN_AKMS_P'
+		optic = 'VTN_6CH3'
+		suppressor = 'VTN_MUZZLE_DTK1L'
 		mags = [
-			['rhs_30Rnd_545x39_AK', 30],
-			['rhs_VOG25', 1],
-		]
-	class Vest(cdf_rifleman.Vest):
-		type = 'sh_chdkz_v_carrier_cdf'
-		items = cdf_rifleman.Vest.items + [
-			['rhs_VOG25', 5],
+			['VTN_AKM_30s_TRC', 30],
 		]
 
 	class Backpack(cdf_rifleman.Backpack):
 		items = cdf_rifleman.Backpack.items + [
-			['rhs_vg40op_white', 5],
-			['rhs_GRD40_white', 2],
-			['rhs_GRD40_green', 2],
-			['rhs_GRD40_red', 2],
-			['rhs_VOG25', 5],
-			['rhs_VOG25p', 2],
+			['rhs_mag_rdg2_white', 4],
+			['VTN_AKM_30s_TRC', 5],
+			['VTN_BN1', 1],
 			['alive_tablet', 1],
 		]
 
 ################  Platoon RTO
 
-class cdf_rto(cdf_rifleman):
-	binoc = 'Binocular'
+class cdf_rto(cdf_rifleman_light):
+	binoc = 'VTN_B8'
 	items = cdf_rifleman.items + [
 		'tf_anprc152',
 	]
-	class Primary:
-		weapon = 'rhs_weap_ak74m'
-		mags = [
-			['rhs_30Rnd_545x39_AK', 30],
-		]
-
 	class Backpack:
 		type = 'tf_rt1523g_green'
 		items = cdf_rifleman.Backpack.items + [

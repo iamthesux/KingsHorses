@@ -1,12 +1,11 @@
 from base import Base
 
-class cdfsf_base(Base):
+class cdf_recce_base(Base):
 	class NoWrite: pass
-	
+	binoc = 'VTN_B15'
 	headgear = 'H_Booniehat_oli'
 	items = Base.items + [
 		'tf_rf7800str',
-		'rhsusf_ANPVS_15',
 	]
 	class HandGun:
 		weapon = 'RH_tt33'
@@ -18,102 +17,94 @@ class cdfsf_base(Base):
 			['AGM_IR_Strobe_Item', 1],
 		]
 	class Vest:
-		type = 'TRYK_V_ChestRig'
+		type = 'sh_chdkz_v_carrierlite_olv'
 		items = [
-			['HandGrenade', 1],
-			['SmokeShell', 1],
+			['rhs_mag_rdg2_white', 1],
 		]
 	class Backpack:
-		type = 'TRYK_B_FieldPack_Wood'
+		type = 'B_Kitbag_rgr'
 		items = [
-			['SmokeShell', 1],
-			['HandGrenade', 3],
+			['VTN_BN3', 1],
+			['rhs_mag_rdg2_white', 1],
+			['HandGrenade', 2],
 		]
 
-class cdfsf_rifleman(cdfsf_base):
+class cdf_recce_rifleman(cdf_recce_base):
 	class Primary:
-		weapon = 'rhs_weap_ak74m_2mag_camo'
-		optic = 'rhs_acc_1p29'
-		supressor = 'rhs_acc_tgpa'
+		weapon = 'VTN_AKMSN_40s'
 		mags = [
-			['rhs_30Rnd_545x39_7n10_AK', 30],
+			['VTN_RPK_40s_SC', 40],
 		]
-	class Vest(cdfsf_base.Vest):
-		items = cdfsf_base.Vest.items + [
-			['rhs_30Rnd_545x39_7n10_AK', 5],
+	class Vest(cdf_recce_base.Vest):
+		items = cdf_recce_base.Vest.items + [
+			['VTN_RPK_40s_SC', 2],
 		]
-	class Backpack(cdfsf_base.Backpack):
-		items = cdfsf_base.Backpack.items + [
-			['rhs_30Rnd_545x39_7n10_AK', 5],
+	class Backpack(cdf_recce_base.Backpack):
+		items = cdf_recce_base.Backpack.items + [
+			['VTN_RPK_40s_AP', 1],
+			['VTN_RPK_40s_TRC', 1],
+			['VTN_MUZZLE_PBS1', 1],
+			['VTN_6CH3', 1],
+			['VTN_MUZZLE_DTK1L', 1],
 		]
 
-class cdfsf_sl(cdfsf_rifleman):
+class cdf_recce_sl(cdf_recce_rifleman):
 	class Primary:
-		weapon = 'rhs_weap_ak74m_camo'
-		optic = 'rhs_acc_1p29'
-		supressor = 'rhs_acc_tgpa'		
+		weapon = 'VTN_AKMS_T_P'
 		mags = [
-			['rhs_30Rnd_545x39_7n10_AK', 30],
+			['VTN_RPK_40s_SC', 40],
 		]
-	class Backpack(cdfsf_rifleman.Backpack):
-		items = cdfsf_rifleman.Backpack.items + [
-			['rhs_30Rnd_545x39_7n10_AK', 5],
+	class Backpack(cdf_recce_rifleman.Backpack):
+		items = cdf_recce_rifleman.Backpack.items + [
 			['tf_anprc152', 1],
 			['alive_tablet', 1],
 		]
-class cdfsf_tl(cdfsf_rifleman):
+
+class cdf_recce_tl(cdf_recce_base):
 	class Primary:
-		weapon = 'rhs_weap_ak74m_gp25'
-		optic = 'rhs_acc_1p29'
-		supressor = 'rhs_acc_tgpa'
+		weapon = 'VTN_AK74M_GP30M'
 		mags = [
-			['rhs_30Rnd_545x39_7n10_AK', 30],
-			['1Rnd_HE_Grenade_shell', 1],
+			['VTN_AK74_30p_SC', 30],
+			['VTN_VOG25', 1],
 		]
-	class Vest(cdfsf_rifleman.Vest):
-		type = 'TRYK_V_ChestRig_L'
-
-	class Backpack(cdfsf_rifleman.Backpack):
-		items = cdfsf_rifleman.Backpack.items + [
-			['rhs_vg40op_white', 2],
-			['rhs_GRD40_white', 4],
-			['rhs_GRD40_green', 2],
-			['rhs_GRD40_red', 2],
-			['rhs_VOG25', 10],
+	class Vest(cdf_recce_base.Vest):
+		type = 'V_I_G_resistanceLeader_F'
+		items = cdf_recce_base.Vest.items + [
+			['VTN_VOG25P', 5],
+			['VTN_VG40MD', 5],
 		]
 
-class cdfsf_gren(cdfsf_base):
+	class Backpack(cdf_recce_base.Backpack):
+		items = cdf_recce_base.Backpack.items + [
+			['VTN_MUZZLE_DTK_AKS545', 1],
+			['VTN_VG40MD', 5],
+			['VTN_VG40OP', 10],
+			['VTN_VGS401', 2],
+			['VTN_VGS402', 2],
+		]
+
+class cdf_recce_gren(cdf_recce_tl):
+	class Primary(cdf_recce_tl.Primary):
+		weapon = 'VTN_AKS74N_GP25_30p'
+
+	class Backpack(cdf_recce_tl.Backpack):
+		items = cdf_recce_tl.Backpack.items + [
+			['VTN_VOG25P', 5],
+		]
+
+class cdf_recce_svd(cdf_recce_base):
 	class Primary:
-		weapon = 'rhs_weap_ak74m_gp25'
-		optic = 'rhs_acc_1p29'
-		supressor = 'rhs_acc_tgpa'
+		weapon = 'VTN_SVD'
+		optic = 'VTN_OPTIC_1P43M2'
 		mags = [
-			['rhs_30Rnd_545x39_7n10_AK', 30],
-			['1Rnd_HE_Grenade_shell', 1],
+			['VTN_SVD_10s_SC', 10],
 		]
-	class Vest(cdfsf_base.Vest):
-		type = 'TRYK_V_ChestRig_L'
-
-	class Backpack(cdfsf_rifleman.Backpack):
-		items = cdfsf_rifleman.Backpack.items + [
-			['rhs_vg40op_white', 2],
-			['rhs_GRD40_white', 4],
-			['rhs_GRD40_green', 2],
-			['rhs_GRD40_red', 2],
-			['rhs_VOG25', 10],
+	class Vest(cdf_recce_base.Vest):
+		items = cdf_recce_base.Vest.items + [
+			['VTN_SVD_10s_TRC', 1],
 		]
-
-class cdfsf_svd(cdfsf_rifleman):
-	class Primary:
-		weapon = 'rhs_weap_svdp'
-		optic = 'rhs_acc_pso1m2'
-		mags = [
-			['rhs_10Rnd_762x54mmR_7N1', 10],
-		]
-	class Vest(cdfsf_rifleman.Vest):
-		type = 'TRYK_V_ChestRig'
-
-	class Backpack(cdfsf_rifleman.Backpack):
-		items = cdfsf_rifleman.Backpack.items + [
-			['rhs_10Rnd_762x54mmR_7N1', 5],
+	class Backpack(cdf_recce_base.Backpack):
+		items = cdf_recce_base.Backpack.items + [
+			['VTN_SVD_10s_SC', 3],
+			['VTN_SVD_10s_AP', 4],
 		]

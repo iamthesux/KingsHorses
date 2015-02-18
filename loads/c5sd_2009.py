@@ -3,10 +3,9 @@ from base import Base
 class det5_base(Base):
 	class NoWrite: pass
 	headgear = 'rhsusf_opscore_01'
-	
+	binoc = 'VTN_B15'
 	items = Base.items + [
 		'tf_pnr1000a',
-		'VTN_ANPVS15',
 		'G_Balaclava_blk',
 	]
 	class HandGun:
@@ -29,9 +28,10 @@ class det5_base(Base):
 	class Backpack:
 		type = 'B_VTN_6SH104_FLORA'
 		items = [
+			['VTN_PNV10T', 1],
 			['alive_tablet', 1],
 		]
-	binoc = 'VTN_B15'
+	
 
 class rifleman_det5(det5_base):
 	class Primary:
@@ -73,25 +73,22 @@ class officer_det5(rifleman_det5):
 class sniper_det5(rifleman_det5):
 	headgear = ''
 	class Primary:
-		weapon = 'VTN_SV98_CAMO'
-		optic = 'VTN_OPTIC_LEUPOLD_MK4_LRT_M1_ILL_MD_CAMO'
-		rail = 'VTN_CAMO_SV98'
-		supressor = 'VTN_MUZZLE_TGPV'
+		weapon = 'rhs_weap_svdp'
+		optic = 'rhs_acc_pso1m2'
 		mags = [
-			['VTN_SV98_10p_AP', 10],
-			['VTN_RGO', 1],
+			['rhs_10Rnd_762x54mmR_7N1', 10],
 		]
 	class Vest(det5_base.Vest):
 		type = 'V_KORA_K_6Sh104SVD'
 		items = det5_base.Vest.items + [
-			['VTN_SV98_10p_AP', 5],
+			['rhs_10Rnd_762x54mmR_7N1', 5],
 			['VTN_RGO', 1],
 			['VTN_RDG2B', 2],
 		]
 	class Backpack(det5_base.Backpack):
 		type = 'B_AssaultPack_mcamo'
 		items = det5_base.Backpack.items + [
-			['VTN_SV98_10p_AP', 5],
+			['rhs_10Rnd_762x54mmR_7N1', 5],
 			['ClaymoreDirectionalMine_Remote_Mag', 2],
 			['VTN_RDG2B', 1],
 		]

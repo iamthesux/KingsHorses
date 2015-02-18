@@ -1,63 +1,56 @@
 from p4a.loadout import Crate
  
-class cdfsf_explosives(Crate):
- 	base = 'rhs_weapons_crate_ak_standard'
-	title = 'CDFSF Explosives'
-	magazines = [
-		['rhs_mag_rgd5', 100],
-		['rhs_mag_rdg2_white', 100],
-		['rhs_mag_rdg2_black', 100],
-		['rhs_mag_nspn_yellow', 100],
-		['rhs_mag_nspn_red', 100],
-		['rhs_mag_nspn_green', 100],
-		['rhs_mine_tm62m_mag', 100],
-		['rhs_mine_pmn2_mag', 100],
-
-		['DemoCharge_Remote_Mag', 100],
-		['rhs_VOG25', 100],
-		['rhs_VOG25p', 100],
-		['rhs_vg40op_white', 100],
-		['rhs_vg40op_green', 100],
-		['rhs_vg40op_red', 100],
-		['rhs_GRD40_white', 100],
-		['rhs_GRD40_green', 100],
-		['rhs_GRD40_red', 100],
-	]
- 
-class cdfsf_launchers(Crate):
-	title = 'CDFSF Launchers and Warheads'
- 	base = 'rhs_weapons_crate_ak_standard'
+class cdf_recce_launchers(Crate):
+	title = 'CDFSF Launchers and Explosives'
+ 	base = 'VTN_WPNE_SN_BOX'
 	weapons = [
 		['rhs_weap_rpg7', 10],
 		['rhs_weap_rpg26', 100],
 		['rhs_weap_rshg2', 50],
 	]
 	magazines = [
-		['rhs_rpg7_PG7VL_mag', 100],
-		['rhs_rpg7_PG7VR_mag', 100],
-		['rhs_rpg7_OG7V_mag', 100],
+		['rhs_rpg7_PG7VL_mag', 200],
+		['rhs_rpg7_PG7VR_mag', 200],
+		['rhs_rpg7_OG7V_mag', 200],
+		
+		['rhs_mine_tm62m_mag', 100],
+		['rhs_mine_pmn2_mag', 100],
+
+		['DemoCharge_Remote_Mag', 100],
+		['VTN_VOG25', 100],
+		['VTN_VOG25P', 100],
+		['VTN_VG40MD', 200],
+		['VTN_VG40OP', 300],
+		['VTN_VGS401', 100],
+		['VTN_VGS402', 100],
+		['VTN_VG40TB', 50],
 	]
  
-class cdfsf_weapons(Crate):
+class cdf_recce_weapons(Crate):
 	title = 'CDFSF Rifles and Ammo'
- 	base = 'rhs_weapons_crate_ak_standard'
+ 	base = 'VTN_WPNE_LMG_BOX'
+
 	weapons = [
-		['rhs_weap_ak74m', 5],
-		['rhs_weap_ak74m_folded', 5],
-		['rhs_weap_pkp', 5],
-		['rhs_weap_svdp', 3],
-		['rhs_weap_ak74m_camo', 5],
-		['rhs_weap_ak74m_gp25', 5],
+		['VTN_PKM', 10],
+		['VTN_LPR1', 10],
 	]
 	magazines = [
-		['rhs_30Rnd_545x39_AK', 100],
-		['rhs_30Rnd_545x39_AK_green', 100],
-		['rhs_100Rnd_762x54mmR', 100],
-		['RH_8Rnd_762_tt33', 85],
-		['rhs_10Rnd_762x54mmR_7N1', 100],
+		['rhs_mag_rgd5', 100],
+		['rhs_mag_rdg2_white', 300],
+		['rhs_mag_rdg2_black', 300],
+		['rhs_mag_nspn_yellow', 200],
+		['rhs_mag_nspn_red', 200],
+		['rhs_mag_nspn_green', 200],
+
+		['RH_8Rnd_762_tt33', 100],
+		
+		['VTN_AK74_30p_SC', 200],
+		['VTN_AK74_30p_TRC', 200],
+		['VTN_AK74_30p_AP', 100],
+	
 	]
 
-class cdfsf_radios(Crate):
+class cdf_recce_radios(Crate):
 	title = 'CDFSF Radios'
  	base = 'rhs_weapons_crate_ak_ammo_545x39_standard'
 	items = [

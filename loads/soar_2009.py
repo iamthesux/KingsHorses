@@ -1,66 +1,63 @@
 from p4a.loadout import Crate
 from base import Base
 
-class soar_base(Base):
-	class NoWrite: pass
-	headgear = 'rhsusf_hgu56p'
+class soar_pilot(Base):
+	headgear = 'H_ZSH7V'
 	
 	items = Base.items + [
 		'tf_anprc152',
-		'rhsusf_ANPVS_15',
 	]
+	class Primary:
+		weapon = 'VTN_AKS74U_79'
+		suppressor = 'VTN_MUZZLE_FS_AKS74U'
+		mags = [['VTN_AK74_30b_TRC', 30],]
+
 	class HandGun:
-		weapon = 'RH_m9'
-		mags = [['RH_15Rnd_9x19_M9', 15]]
+		weapon = 'RH_mak'
+		rail = 'RH_pmIR'
+		mags = [['RH_8Rnd_9x18_Mak', 8]]
 
 	class Uniform:
-		type = 'U_mas_usn_B_CombatUniform_mcam'
+		type = 'VTN_VVS_VKK15'
 		items = Base.Uniform.items + [
-			['AGM_IR_Strobe_Item', 1],
+			['VTN_AK74_30b_TRC', 2],
+			['RH_8Rnd_9x18_Mak', 2],
 		]
 	class Vest:
-		type = 'AV_PlateCarrier2_OCP'
+		type = 'rhs_vest_commander'
 		items = [
-			['SmokeShellBlue', 1],
-			['SmokeShell', 1],
-			['SmokeShellGreen', 1],
-			['tf_anprc152_2', 1],
-		]
-	class Backpack:
-		type = 'tf_anarc210'
-		items = [
-			['SmokeShell', 1],
-			['B_UAVTerminal', 1],
-		]
-
-class soar_pilot(soar_base):
-	class Primary:
-		weapon = 'RH_M4_ris'
-		optic = 'RH_compM2l'
-		rail = 'RH_peq15b'
-		mags = [
-			['30Rnd_556x45_Stanag', 30],
-		]
-	class Vest(soar_base.Vest):
-		items = soar_base.Vest.items + [
-			['30Rnd_556x45_Stanag', 4],
+			['VTN_NSPD', 2],
+			['tf_anprc152', 1],
 		]
 
 class soar_crew(soar_pilot):
-	headgear = 'rhsusf_hgu56p_mask'
+	headgear = 'H_ZSH7VS'
 	
 
 class soar_vehicle(Crate):
+	weapons = [
+		['VTN_SP81', 1],
+		['VTN_RSP30_RED', 1],
+		['VTN_RSP30_GREEN', 1],
+		['VTN_RSP30_WHITE', 1],
+	]
 	magazines = [
-		['30Rnd_556x45_Stanag', 45],
-		['30Rnd_556x45_Stanag_Tracer_Red', 15],
-		['SmokeShellBlue', 5],
-		['SmokeShell', 5],
-		['SmokeShellGreen', 5],
-		['rhs_mag_m67', 10],
+		['VTN_OP_1k_WHITE', 10],
+		['VTN_SP_1k_GREEN', 10],
+		['VTN_SP_1k_RED', 10],
+		['VTN_AK74_30b_SC', 45],
+		['VTN_AK74_30b_TRC', 15],
+		['VTN_NSPD', 5],
+		['VTN_NSP_RED', 5],
+		['VTN_NSP_GREEN', 5],
+		['VTN_NSP_YELLOW', 5],
+		['VTN_RGO', 10],
 		['cse_bandage_basic', 25],
 		['cse_bandageElastic', 15],
 		['cse_tourniquet', 5],
-		['DemoCharge_Remote_Mag', 4],
+		['DemoCharge_Remote_Mag', 1],
+	]
+	backpacks = [
+		['rhs_sidor', 2]
 	]
 

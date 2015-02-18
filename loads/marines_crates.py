@@ -13,17 +13,21 @@ class marine_explosives(Crate):
 		['SmokeShellYellow', 100],
 		['DemoCharge_Remote_Mag', 100],
 
-		['1Rnd_HE_Grenade_shell', 100],
-		['1Rnd_SmokeGreen_Grenade_shell', 100],
-		['1Rnd_SmokeRed_Grenade_shell', 100],
-		['1Rnd_Smoke_Grenade_shell', 100],
-		['UGL_FlareRed_F', 100],
-		['UGL_FlareWhite_F', 100],
-		['UGL_FlareYellow_F', 100],
-		['UGL_FlareGreen_F', 100],
+		['VTN_M406', 200],
+		['VTN_M433', 200],
+		['VTN_M583A1', 500],
+		['VTN_M585', 500],
+		['VTN_M661', 500],
+		['VTN_M662', 500],
+		['VTN_M713', 300],
+		['VTN_M714', 300],
+		['VTN_M715', 300],
+		['VTN_M716', 300],
+		['VTN_M992', 50],
+		
 	]
 	backpacks = [
-		['RHS_M2_MiniTripod_Bag', 10], 
+		['RHS_M2_MiniTripod_Bag', 10],
 		['RHS_M2_Gun_Bag', 10],
 		['RHS_Mk19_Gun_Bag', 10],
 		['RHS_Mk19_Tripod_Bag', 10],
@@ -35,31 +39,56 @@ class marine_launchers(Crate):
 	title = 'Marine Launchers and Warheads'
 	base = 'B_supplyCrate_F'
 	weapons = [
-		['rhs_weap_fgm148', 50],
-		['rhs_weap_M136', 35],
-		['rhs_weap_M136_hedp', 35],
-		['rhs_weap_M136_hp', 35],
+		['rhs_weap_fgm148', 10],
+		['rhs_weap_M136', 200],
+		['rhs_weap_M136_hedp', 200],
+		['rhs_weap_M136_hp', 200],
+		['VTN_MK153MOD0', 10],
 	]
 	magazines = [
-		['rhs_m136_mag', 35],
-		['rhs_m136_hedp_mag', 35],
-		['rhs_m136_hp_mag', 35],
-		['rhs_fgm148_magazine_AT', 50],
+		['VTN_MK3MOD0', 200],
+		['VTN_MK6MOD0', 200],
+		['VTN_MK80MOD0', 100],
+		
+		['rhs_m136_mag', 200],
+		['rhs_m136_hedp_mag', 200],
+		['rhs_m136_hp_mag', 200],
+		['rhs_fgm148_magazine_AT', 200],
 	]
- 
 class marine_weapons(Crate):
 	title = 'Marine Rifles and Ammo'
 	base = 'B_supplyCrate_F'
 	weapons = [
-		['RH_M16A4gl', 15],
-		['rhs_weap_m249_pip', 10],
-		['rhs_weap_m16a4_carryhandle', 25],
+		['VTN_C_M4A1', 10],
+		['VTN_C_M4A1_M203', 10],
+		['VTN_FN_M16A4', 50],
+		['VTN_FN_M16A4_M203', 10],
+		['VTN_M249_SAW', 10],
+		['VTN_M240G', 10],
+		
 		['RH_m9', 10],
 	]
 	magazines = [
-		['rhs_mag_30Rnd_556x45_M855A1_Stanag', 200],
-		['rhsusf_100Rnd_556x45_soft_pouch', 100],
-		['30Rnd_556x45_Stanag_Tracer_Red', 100],
+		['VTN_M249_100c_SC', 200],
+		['VTN_M249_100c_TRC', 200],
+		['VTN_M249_100c_TRCN', 200],
+		
+		['VTN_M249_200c_SC', 200],
+		['VTN_M249_200c_TRC', 200],
+		['VTN_M249_200c_TRCN', 200],
+
+		['VTN_M240_50c_SC', 200],
+		['VTN_M240_50c_TRC', 200],
+		['VTN_M240_50c_TRCN', 200],
+		
+		['VTN_M240_100c_SC', 200],
+		['VTN_M240_100c_TRC', 200],
+		['VTN_M240_100c_TRCN', 200],
+		
+		['VTN_STANAG4172_30p_SC', 500],
+		['VTN_STANAG4172_30p_TRC', 500],
+		['VTN_STANAG4172_30p_TRCN', 500],
+
 		['RH_15Rnd_9x19_M9', 85],
 	]
 
