@@ -1,6 +1,6 @@
 class CfgPatches
 {
-	class sh_rhrhs
+	class sh_fix_vtn
 	{
 		units[]= {};
 		weapons[]={};
@@ -29,6 +29,11 @@ class CfgSounds
 
 class CfgWeapons
 {
+	class GrenadeLauncher;
+	class Throw : GrenadeLauncher
+	{
+		muzzles[] += {"Rhs_Throw_Grenade","Rhs_Throw_Smoke","Rhs_Throw_Flare","Rhs_Throw_Flash"};
+	};
 	class Rifle_Base_F;	
 	class rhs_weap_svd;
 	class rhs_weap_svdp : rhs_weap_svd
@@ -155,6 +160,9 @@ class CfgWeapons
 	};
 	class VTN_AK103_BASE : Rifle_Base_F
 	{
+		opticsZoomMin = 0.375;
+		opticsZoomMax = 1.1;
+		opticsZoomInit = 0.75;
 		class Single : Mode_SemiAuto
 		{
 			sounds[]={"StandardSound", "SilencedSound"};
@@ -204,6 +212,9 @@ class CfgWeapons
 	};
 	class VTN_AK105_BASE : Rifle_Base_F
 	{
+		opticsZoomMin = 0.375;
+		opticsZoomMax = 1.1;
+		opticsZoomInit = 0.75;
 		class Single : Mode_SemiAuto
 		{
 			sounds[]={"StandardSound", "SilencedSound"};
@@ -255,6 +266,9 @@ class CfgWeapons
 	
 	class VTN_C_M4A1_BASE : Rifle_Base_F
 	{
+		opticsZoomMin = 0.375;
+		opticsZoomMax = 1.1;
+		opticsZoomInit = 0.75;
 		changeFireModeSound[] = {"rhsusf\addons\rhsusf_sounds\ar15_shared\firemode",0.6,1,5};
 		reloadMagazineSound[] = {"rhsusf\addons\rhsusf_sounds\ar15_shared\reload",1,1,10};
 		class Single: Mode_SemiAuto
@@ -306,6 +320,9 @@ class CfgWeapons
 	};
 	class VTN_M16_BASE : Rifle_Base_F
 	{
+		opticsZoomMin = 0.375;
+		opticsZoomMax = 1.1;
+		opticsZoomInit = 0.75;
 		changeFireModeSound[] = {"rhsusf\addons\rhsusf_sounds\ar15_shared\firemode",0.6,1,5};
 		class Single: Mode_SemiAuto
 		{
