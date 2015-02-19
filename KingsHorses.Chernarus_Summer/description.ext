@@ -5,7 +5,7 @@ class header {
 	playerCountMultipleOf = 1;  //Coop type missions use 1, Team type missions use 2
 };
 
-author = "Detachment 5";
+author = "Spearhead Gaming";
 onLoadMission = "Murica. Fuck yeah";
 onLoadName = "Kings Horses";
 
@@ -15,7 +15,6 @@ RespawnDialog = 0;
 respawnDelay = 10;
 aikills = 1;
 disabledAI = 1;
-enableDebugConsole = 1;
 
 class CfgFunctions
 {
