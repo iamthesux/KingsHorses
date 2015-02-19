@@ -3153,6 +3153,7 @@ class _vehicle_1103
 	{
 		POSITION="[4398.332, 2262.6816, 9.059906e-006]";
 		TYPE="sh_alive_empty_crate_lg";
+		INIT="[this, 'det5_crate'] call suxlo_fnc_apply_loadout_cargo;";
 		AZIMUT="-63.279839";
 		PARENT="";
 	};
