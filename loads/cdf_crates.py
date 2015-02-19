@@ -3,14 +3,26 @@ from p4a.loadout import Crate
 class cdf_explosives(Crate):
 	title = 'CDF Explosives and CSW'
  	base = 'VTN_WPNE_LMG_BOX'
+	weapons = [
+		['VTN_SP81', 50],
+		['VTN_RSP30_RED', 100],
+		['VTN_RSP30_GREEN', 100],
+		['VTN_RSP30_WHITE', 100],
+	]
 	magazines = [
+		['VTN_OP_1k_WHITE', 100],
+		['VTN_SP_1k_WHITE', 100],
+		['VTN_SP_1k_RED', 100],
+		['VTN_SP_1k_GREEN', 100],
+		['VTN_SP_1k_YELLOW', 100],
 		
-		['rhs_mag_rgd5', 100],
 		['rhs_mag_rdg2_white', 100],
 		['rhs_mag_rdg2_black', 100],
-		['rhs_mag_nspn_yellow', 100],
-		['rhs_mag_nspn_red', 100],
-		['rhs_mag_nspn_green', 100],
+
+		['VTN_NSPD', 100],
+		['VTN_NSP_RED', 100],
+		['VTN_NSP_YELLOW', 100],
+		['VTN_NSP_GREEN', 100],
 		['rhs_mine_tm62m_mag', 100],
 
 		['VTN_VOG25', 100],

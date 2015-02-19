@@ -191,9 +191,17 @@ class cdf_pl(cdf_rifleman):
 		mags = [
 			['VTN_AKM_30s_TRC', 30],
 		]
-
+	class HandGun:
+		weapon = 'VTN_SP81'
+		mags = [
+			['VTN_OP_1k_WHITE', 1],
+		]
 	class Backpack(cdf_rifleman.Backpack):
 		items = cdf_rifleman.Backpack.items + [
+			['VTN_OP_1k_WHITE', 10],
+			['VTN_SP_1k_RED', 2],
+			['VTN_SP_1k_GREEN', 2],
+			['VTN_SP_1k_YELLOW', 2],
 			['rhs_mag_rdg2_white', 4],
 			['VTN_AKM_30s_TRC', 5],
 			['VTN_BN1', 1],
