@@ -4,6 +4,7 @@ kingshorses_3dbase.chernarus_summer/mission.sqf
 KingsHorses.Chernarus_Summer/mission.sqm
 KingsHorses.Chernarus_Summer/loads/*
 slots.txt
+local_settings.py
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
