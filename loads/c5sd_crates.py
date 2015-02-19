@@ -1,8 +1,13 @@
 from p4a.loadout import Crate
 
 class det5_crate(Crate):
+	def __init__(self, **kwargs):
+		super(det5_crate, self).__init__(**kwargs)
+		self.remove('all')
+
 	title = '5th Spetsnaz Detachment Weapons'
 	base = 'VTN_WPNE_LMG_BOX'
+	
 	weapons = [
 		['rhs_weap_svd', 50],
 		['VTN_PKMN_P', 50],
@@ -22,7 +27,7 @@ class det5_crate(Crate):
 		['VTN_AK74M', 50],
 
 		['VTN_SP81', 50],
-		
+
 		['VTN_B15', 50],
 		['VTN_LPR2', 50],
 
@@ -66,10 +71,8 @@ class det5_crate(Crate):
 		['VTN_AK74_30p_SC', 500],
 		['VTN_AK74_30p_TRC', 500],
 		['VTN_AK74_30p_AP', 500],
-		['VTN_AK74_30p_INC', 500],
-		['VTN_AK74_30p_API', 500],
-		['VTN_AK74_30p_SS', 500],
-		
+		['VTN_AK74_30p_AP2', 500],
+
 		['VTN_AKM_30s_SC', 500],
 		['VTN_AKM_30s_TRC', 500],
 		['VTN_AKM_30s_AP', 500],
@@ -82,14 +85,12 @@ class det5_crate(Crate):
 		['VTN_RPK_40s_AP', 500],
 		['VTN_RPK_40s_INC', 500],
 		['VTN_RPK_40s_API', 500],
-		['VTN_RPK_40s_SS', 500],
 
 		['VTN_RPK_75s_SC', 500],
 		['VTN_RPK_75s_TRC', 500],
 		['VTN_RPK_75s_AP', 500],
 		['VTN_RPK_75s_INC', 500],
 		['VTN_RPK_75s_API', 500],
-		['VTN_RPK_75s_SS', 500],
 
 		['VTN_AK103_30p_SC', 500],
 		['VTN_AK103_30p_TRC', 500],
