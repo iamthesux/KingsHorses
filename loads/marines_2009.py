@@ -24,7 +24,7 @@ class marine_base(Base):
 	class Backpack:
 		type = 'B_VTN_ILBE'
 		items = [
-			['VTN_ANPVS7', 1],
+			['rhsusf_ANPVS_14', 1],
 			['rhs_mag_m67', 1],
 		]
 
