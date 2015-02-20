@@ -29,10 +29,6 @@ class marine_explosives(Crate):
 	backpacks = [
 		['RHS_M2_MiniTripod_Bag', 10],
 		['RHS_M2_Gun_Bag', 10],
-		['RHS_Mk19_Gun_Bag', 10],
-		['RHS_Mk19_Tripod_Bag', 10],
-		['RDS_Tow_Gun_Bag', 10],
-		['RDS_TOW_Tripod_Bag', 10],
 	]
  
 class marine_launchers(Crate):

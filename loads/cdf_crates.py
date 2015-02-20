@@ -39,15 +39,9 @@ class cdf_explosives(Crate):
 		
 		['RDS_DShkM_Gun_Bag', 10],
 		['RDS_DShkM_TripodLow_Bag', 10],
-		
-		['RDS_Metis_Gun_Bag', 10],
-		['RDS_Metis_Tripod_Bag', 10],
 
 		['RDS_AGS30_Gun_Bag', 10],
 		['RDS_AGS30_Tripod_Bag', 10],
-
-		['RDS_SPG9_Gun_Bag', 10],
-		['RDS_SPG9_Tripod_Bag', 10],
 	]
 
 class cdf_launchers(Crate):
