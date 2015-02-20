@@ -93,11 +93,11 @@ teams['sasr'] = dict(
 	side = 'WEST',
 	groups = [
 		[
-			{ 'role': "C/Sgt Pursehouse", 'loadout': 'cdf_recce_sl', },
-			{ 'role': "C/Sgt Constanti", 'loadout': 'cdf_recce_gren', },
-			{ 'role': "C/Sgt MacDowell", 'loadout': 'cdf_recce_tl', },
-			{ 'role': "Cpl Sowers", 'loadout': 'cdf_recce_svd', },
-			{ 'role': "Cpl Deckert", 'loadout': 'cdf_recce_rifleman', },
+			{ 'role': "MAJ Pursehouse", 'loadout': 'cdf_recce_sl', },
+			{ 'role': "CPT Constanti", 'loadout': 'cdf_recce_gren', },
+			{ 'role': "SSGT MacDowell", 'loadout': 'cdf_recce_tl', },
+			{ 'role': "CPL Sowers", 'loadout': 'cdf_recce_svd', },
+			{ 'role': "CPL Deckert", 'loadout': 'cdf_recce_rifleman', },
 		],
 	],
 )

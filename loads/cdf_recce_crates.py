@@ -43,7 +43,10 @@ class cdf_recce_weapons(Crate):
 		['rhs_mag_nspn_green', 200],
 
 		['RH_8Rnd_762_tt33', 100],
-		
+
+		['VTN_PK_100s_SC', 200],
+		['VTN_PK_100s_TRC', 200],
+		['VTN_PK_100s_AP', 100],		
 		['VTN_AK74_30p_SC', 200],
 		['VTN_AK74_30p_TRC', 200],
 		['VTN_AK74_30p_AP', 100],
