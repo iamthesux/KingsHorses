@@ -155,6 +155,7 @@ class det5_crate(Crate):
 		
 		['VTN_OPTIC_1P77', 5],
 		['VTN_6CH3_3', 5],
+		['rhs_acc_pso1m2', 5],
 
 		['ItemGPS', 5],
 		['tf_microdagr', 5],
