@@ -56,6 +56,7 @@ class cdf_launchers(Crate):
 		['rhs_rpg7_PG7VL_mag', 100],
 		['rhs_rpg7_PG7VR_mag', 100],
 		['rhs_rpg7_OG7V_mag', 100],
+		['rhs_rshg2_mag', 50],
 	]
 
 class cdf_weapons(Crate):
