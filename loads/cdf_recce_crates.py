@@ -33,6 +33,7 @@ class cdf_recce_weapons(Crate):
 	weapons = [
 		['VTN_PKM', 10],
 		['VTN_LPR1', 10],
+		['rhs_weap_svd', 2],
 	]
 	magazines = [
 		['rhs_mag_rgd5', 100],
@@ -44,6 +45,8 @@ class cdf_recce_weapons(Crate):
 
 		['RH_8Rnd_762_tt33', 100],
 
+		['VTN_SVD_10s_SC', 150],
+		['VTN_SVD_10s_AP', 100],
 		['VTN_PK_100s_SC', 200],
 		['VTN_PK_100s_TRC', 200],
 		['VTN_PK_100s_AP', 100],		
