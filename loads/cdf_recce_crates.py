@@ -54,7 +54,8 @@ class cdf_recce_weapons(Crate):
 		['VTN_AK74_30p_SC', 200],
 		['VTN_AK74_30p_TRC', 200],
 		['VTN_AK74_30p_AP', 100],
-		
+
+		['VTN_OPTIC_1P77', 50],
 		['rhs_acc_pso1m2', 50],
 	]
 

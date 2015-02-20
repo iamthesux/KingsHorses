@@ -27,6 +27,7 @@ class cdf_recce_base(Base):
 			['VTN_BN3', 1],
 			['rhs_mag_rdg2_white', 1],
 			['HandGrenade', 2],
+		    ['VTN_6CH3_3', 1],
 		]
 
 class cdf_recce_rifleman(cdf_recce_base):
