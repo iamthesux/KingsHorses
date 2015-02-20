@@ -91,7 +91,9 @@ class marine_weapons(Crate):
 
 		['RH_15Rnd_9x19_M9', 85],
 	]
-
+	items = [
+		['Binocular', 25],
+	]
 class marine_radios(Crate):
 	title = 'Marine Radios'
 	base = 'B_supplyCrate_F'
