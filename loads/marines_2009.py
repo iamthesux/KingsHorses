@@ -9,7 +9,7 @@ class marine_base(Base):
 
 	class Primary:
 		optic = 'VTN_OPTIC_TA_31RCO_USMC'
-		rail = 'VTN_TPIAL_ANPEQ15_B'
+		rail = 'VTN_TPIAL_ANPEQ15_D'
 	
 	class Uniform:
 		type = 'VTN_U_FROG_WDL'
