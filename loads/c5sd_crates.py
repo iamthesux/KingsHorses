@@ -26,6 +26,10 @@ class det5_crate(Crate):
 		['VTN_AK74M_GP25', 50],
 		['VTN_AK74M', 50],
 
+		['rhs_weap_rpg7', 10],
+		['rhs_weap_rpg26', 100],
+		['rhs_weap_rshg2', 50],
+
 		['VTN_SP81', 50],
 
 		['VTN_B15', 50],
@@ -98,6 +102,11 @@ class det5_crate(Crate):
 		['VTN_AK103_30p_INC', 500],
 		['VTN_AK103_30p_API', 500],
 		['VTN_AK103_30p_SS', 500],
+
+		['rhs_rpg7_PG7VL_mag', 200],
+		['rhs_rpg7_PG7VR_mag', 200],
+		['rhs_rpg7_OG7V_mag', 200],
+		['rhs_rshg2_mag', 50],
 
 		['VTN_PK_100s_SC', 200],
 		['VTN_PK_100s_TRC', 200],
