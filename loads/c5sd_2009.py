@@ -18,6 +18,8 @@ class det5_base(Base):
 		type = 'VTN_U_GORKA_S'
 		items = Base.Uniform.items + [
 			['AGM_IR_Strobe_Item', 1],
+			['cse_morphine', 2],
+			['cse_epinephrine', 2],
 		]
 	class Vest:
 		type = 'V_KORA_K_CHICOM'
