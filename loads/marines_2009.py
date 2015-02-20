@@ -46,6 +46,9 @@ class marine_rifleman(marine_base):
 
 
 class marine_tl(marine_rifleman):
+	items = Base.items + [
+		'ItemGPS',
+	]
 	class Primary(marine_base.Primary):
 		weapon = 'VTN_FN_M16A4_M203'
 		mags = [
@@ -73,6 +76,9 @@ class marine_tl(marine_rifleman):
 
 class marine_sl(marine_tl):
 	binoc = 'VTN_M24'
+	items = Base.items + [
+		'ItemGPS',
+	]
 	class Primary(marine_tl.Primary):
 		weapon = 'VTN_C_M4A1_M203'
 	class HandGun:
@@ -184,6 +190,7 @@ class marine_aat(marine_rifleman):
 
 class marine_pl(marine_rifleman):
 	binoc = 'AGM_Vector'
+
 	class HandGun:
 		weapon = 'RH_m9'
 		mags = [['RH_15Rnd_9x19_M9', 15]]
@@ -225,6 +232,9 @@ class marine_crewman(marine_rifleman):
 	headgear = 'H_VTN_DH132A'
 		
 class marine_commander(marine_crewman):
+	items = Base.items + [
+		'ItemGPS',
+	]
 	class HandGun:
 		weapon = 'RH_m9'
 		mags = [['RH_15Rnd_9x19_M9', 15]]
@@ -234,6 +244,4 @@ class marine_commander(marine_crewman):
 	class Backpack:		
 		items = marine_crewman.Backpack.items + [
 			['tf_anprc152', 2],
-		]
-
-		
+		]		
