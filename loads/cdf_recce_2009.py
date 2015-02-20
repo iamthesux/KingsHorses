@@ -131,7 +131,7 @@ class cdf_recce_gren(cdf_recce_tl):
 		]
 
 class cdf_recce_rto(cdf_recce_base):
-	items = cdf_rifleman.items + [
+	items = cdf_recce_base.items + [
 		'tf_anprc152_2',
 	]
 	class Primary:
