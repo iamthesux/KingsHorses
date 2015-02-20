@@ -83,6 +83,43 @@ class cdf_recce_tl(cdf_recce_base):
 			['VTN_VGS402', 2],
 		]
 
+class cdf_recce_lmg(cdf_recce_base):
+	class Primary:
+		weapon = 'VTN_PKM'
+		mags = [
+			['VTN_PK_100s_SC', 100],
+		]
+	class Vest(cdf_recce_base.Vest):
+		items = cdf_recce_base.Vest.items + [
+			['VTN_PK_100s_SC', 1],
+		]
+	class Backpack(cdf_recce_base.Backpack):
+		items = cdf_recce_base.Backpack.items + [
+			['VTN_PK_100s_SC', 2],
+			['VTN_PK_100s_TRC', 1],
+		]
+
+class cdf_recce_medic(cdf_recce_base):
+	class Primary:
+		weapon = 'VTN_AKS74U_B'
+		mags = [
+			['VTN_AK74_30b_TRC', 30],
+		]
+	class Vest(cdf_recce_base.Vest):
+		items = cdf_recce_base.Vest.items + [
+			['rhs_mag_rdg2_white', 4],
+		]
+	class Backpack(cdf_recce_base.Backpack):
+		items = cdf_recce_base.Backpack.items + [
+			['rhs_mag_rdg2_black', 5],
+			['cse_bandage_basic', 5],
+			['cse_bandageElastic', 7],
+			['cse_packing_bandage', 7],
+			['cse_quikclot', 7],
+			['cse_tourniquet', 3],
+			['cse_nasopharyngeal_tube', 2],
+		]
+
 class cdf_recce_gren(cdf_recce_tl):
 	class Primary(cdf_recce_tl.Primary):
 		weapon = 'VTN_AKS74N_GP25_30p'
@@ -90,6 +127,25 @@ class cdf_recce_gren(cdf_recce_tl):
 	class Backpack(cdf_recce_tl.Backpack):
 		items = cdf_recce_tl.Backpack.items + [
 			['VTN_VOG25P', 5],
+		]
+
+class cdf_recce_rto(cdf_recce_base):
+	items = cdf_rifleman.items + [
+		'tf_anprc152_2',
+	]
+	class Primary:
+		weapon = 'VTN_AKS74U_B'
+		mags = [
+			['VTN_AK74_30p_SC', 30],
+		]
+	class Vest(cdf_recce_base.Vest):
+		items = cdf_recce_base.Vest.items + [
+			['VTN_AK74_30p_SC', 3],
+		]
+	class Backpack:
+		type = 'tf_rt1523g_green'
+		items = cdf_recce_base.Backpack.items + [
+			['tf_anprc152', 1],
 		]
 
 class cdf_recce_svd(cdf_recce_base):
