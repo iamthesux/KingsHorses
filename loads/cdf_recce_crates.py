@@ -12,6 +12,7 @@ class cdf_recce_launchers(Crate):
 		['rhs_rpg7_PG7VL_mag', 200],
 		['rhs_rpg7_PG7VR_mag', 200],
 		['rhs_rpg7_OG7V_mag', 200],
+		['rhs_rshg2_mag', 50],
 		
 		['rhs_mine_tm62m_mag', 100],
 		['rhs_mine_pmn2_mag', 100],
