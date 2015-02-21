@@ -17,7 +17,6 @@ class det5_base(Base):
 	class Uniform:
 		type = 'VTN_U_GORKA_S'
 		items = Base.Uniform.items + [
-			['AGM_IR_Strobe_Item', 1],
 			['cse_morphine', 2],
 			['cse_epinephrine', 2],
 		]
@@ -40,38 +39,47 @@ class rifleman_det5(det5_base):
 		weapon = 'VTN_AK105_P'
 		optic = 'VTN_OPTIC_EOTECH_553_B'
 		rail = 'VTN_TPIAL_ANPEQ15_B'
-		supressor = 'VTN_MUZZLE_ATG'
+		suppressor = 'VTN_MUZZLE_ATG'
 		mags = [
 			['VTN_AK74_30p_AP2', 30],
-			['VTN_RGO', 1],
 		]
 	class Vest(det5_base.Vest):
 		items = det5_base.Vest.items + [
-			['VTN_AK74_30p_AP2', 4],
+			['VTN_AK74_30p_AP2', 2],
 			['VTN_AK74_30p_TRC', 2],
+		]
+
+	class Backpack(det5_base.Backpack):
+		items = det5_base.Backpack.items + [
+			['VTN_AK74_30p_AP2', 2],
 		]
 		
 class officer_det5(rifleman_det5):
 	class Primary:
 		weapon = 'VTN_AK103_GP30M'
 		optic = 'VTN_OPTIC_1P76'
-		supressor = 'VTN_MUZZLE_ATG'
+		suppressor = 'VTN_MUZZLE_ATG'
 		mags = [
 			['VTN_AK103_30p_SS', 30],
-			['VTN_RGO', 1],
+			['VTN_VOG25P', 1],
 		]
 	class Vest(det5_base.Vest):
 		type = 'V_KORA_K_6Sh92GP'
 		items = det5_base.Vest.items + [
-			['VTN_AK103_30p_SS', 4],
+			['VTN_AK103_30p_SS', 2],
 			['VTN_AK103_30p_TRC', 2],
 			['VTN_VOG25P', 4],
 			['VTN_VG40TB', 4],
+
+		]
+	class Backpack(det5_base.Backpack):
+		items = det5_base.Backpack.items + [
+			['VTN_AK103_30p_SS', 2],
 			['VTN_VG40MD', 2],
 			['VTN_RGO', 1],
 			['VTN_RDG2B', 2],
 		]
-		
+
 class sniper_det5(rifleman_det5):
 	headgear = ''
 	class Primary:
@@ -95,7 +103,7 @@ class sniper_det5(rifleman_det5):
 			['VTN_RDG2B', 1],
 		]
 		
-class gunner_det5(rifleman_det5):
+class gunner_det5(det5_base):
 	headgear = 'H_VTN_K6'
 	class Primary:
 		weapon = 'VTN_PKP'
@@ -120,7 +128,7 @@ class demolitions_det5(rifleman_det5):
 		weapon = 'VTN_SAIGA_MK03_T_AUTO'
 		optic = 'VTN_OPTIC_TA_31RMR'
 		rail = 'VTN_TPIAL_ANPEQ15_B'
-		supressor = 'VTN_MUZZLE_DTK4M'
+		suppressor = 'VTN_MUZZLE_DTK4M'
 		mags = [
 			['VTN_SAIGA_10p_FMJ', 10],
 		]
@@ -129,11 +137,12 @@ class demolitions_det5(rifleman_det5):
 	class Vest(det5_base.Vest):
 		type = 'V_KORA_K_6Sh92AK'
 		items = det5_base.Vest.items + [
-			['VTN_SAIGA_10p_FMJ', 20],
+			['VTN_SAIGA_10p_FMJ', 10],
 		]
 	class Backpack(det5_base.Backpack):
 		type = 'rhs_assault_umbts_demo'
 		items = det5_base.Backpack.items + [
+			['VTN_SAIGA_10p_FMJ', 10],
 			['DemoCharge_Remote_Mag', 3],
 		]
 		
@@ -142,10 +151,9 @@ class medic_det5(rifleman_det5):
 		weapon = 'VTN_AKMS_T_P'
 		optic = 'VTN_OPTIC_DOCTOR'
 		rail = 'VTN_TPIAL_ANPEQ15_B'
-		supressor = 'VTN_MUZZLE_PBS1'
+		suppressor = 'VTN_MUZZLE_PBS1'
 		mags = [
 			['VTN_AKM_30s_API', 30],
-			['VTN_RGO', 1],
 		]
 	class Vest(det5_base.Vest):
 		type = 'V_KORA_K_CHICOM'
@@ -172,18 +180,15 @@ class commo_det5(rifleman_det5):
 		weapon = 'VTN_AK105_P'
 		optic = 'VTN_OPTIC_TA_01NSN'
 		rail = 'VTN_TPIAL_ANPEQ15_D'
-		supressor = 'VTN_MUZZLE_DTK4M'
+		suppressor = 'VTN_MUZZLE_DTK4M'
 		mags = [
 			['VTN_AK74_30p_AP2', 30],
-			['VTN_RGO', 1],
 		]
-	class Vest(det5_base.Vest):
+	class Vest(rifleman_det5.Vest):
 		type = 'V_KORA_K_6Sh92AK'
-		items = det5_base.Vest.items + [
+		items = rifleman_det5.Vest.items + [
 			['VTN_AK74_30p_AP2', 4],
 			['VTN_AK74_30p_TRC', 2],
 		]
-	class Backpack(det5_base.Backpack):
+	class Backpack(rifleman_det5.Backpack):
 		type = 'VTN_BP_R168KNE_FLORA'
-		items = det5_base.Backpack.items + [
-		]
