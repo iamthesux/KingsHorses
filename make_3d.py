@@ -67,8 +67,7 @@ for part in parts3d:
 		k['init'] += part('Arguments')['INIT']
 	if k['vehicle'] in medical:
 		k['init'] += 'this setvariable["cse_medical_facility", true];'
-	
-	
+
 	# increment our item counter and set the number of items in our Vehicles class
 	c+=1
 	id+=1
@@ -78,6 +77,6 @@ for part in parts3d:
 mish2d("Mission")("Intel")["briefingName"] = "Kings Horses";
 Writer('KingsHorses.Chernarus_Summer/mission.sqm').write(mish2d)
 
-for k in dic.keys():
-	if k not in vics and k not in medical:
-		print k
+# for k in dic.keys():
+	# if k not in vics and k not in medical:
+		# print k

@@ -359,7 +359,7 @@ for team in kys:
 			if 'callsign' in unit:
 				u['description'] += " // %s" % (unit['callsign'])
 
-			u['init'] = "[this, '%s'] call suxlo_fnc_init_loadout;" % unit['loadout']
+			u['init'] = "this setVariable ['sux_loadout', '%s'];" % unit['loadout']
 
 			if 'medic' in unit:
 				u['init'] += "[this] call kh_fnc_make_medic;"
