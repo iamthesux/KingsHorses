@@ -33,7 +33,8 @@ class cdf_rifleman(cdf_base):
 			['VTN_AKM_30b_TRC', 30],
 		]
 	class Vest(cdf_base.Vest):
-		items = cdf_base.Vest.items + [
+		type = 'V_CHICOM_KHAKI'
+	        items = cdf_base.Vest.items + [
 			['VTN_AKM_30b_SC', 5],
 		]
 	class Backpack(cdf_base.Backpack):
@@ -48,8 +49,9 @@ class cdf_rifleman_light(cdf_base):
 			['VTN_AKM_30b_TRC', 30],
 		]
 	class Vest(cdf_base.Vest):
-		items = cdf_base.Vest.items + [
-			['VTN_AK74_30b_SC', 5],
+		type = 'V_CHICOM_KHAKI'
+	        items = cdf_base.Vest.items + [
+			['VTN_AKM_30b_SC', 5],
 		]
 	class Backpack(cdf_base.Backpack):
 		items = cdf_base.Backpack.items + [
