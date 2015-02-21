@@ -27,7 +27,9 @@ class Mission
 		"task_force_radio_items",
 		"alive_sup_multispawn",
 		"A3_Characters_F_BLUFOR",
-		"vtn_underwear_r"
+		"vtn_underwear_r",
+		"alive_sys_data",
+		"cse_sys_cc"
 	};
 	addOnsAuto[]=
 	{
@@ -49,19 +51,23 @@ class Mission
 		"alive_mil_logistics",
 		"task_force_radio_items",
 		"alive_sup_multispawn",
+		"alive_sys_data",
+		"cse_sys_cc",
 		"aia_chernarus_summer_config"
 	};
 	randomSeed=4833677;
 	class Intel
 	{
-		timeOfChanges=1800.0002;
+		overviewText="Do the butseks on some guys in track suits";
+		resistanceWest=0;
+		resistanceEast=1;
 		startWeather=0.25;
-		startWind=0.1;
-		startWaves=0.1;
+		startWind=0.099999994;
+		startWaves=0.099999994;
 		forecastWeather=0.25;
-		forecastWind=0.1;
-		forecastWaves=0.1;
-		forecastLightnings=0.1;
+		forecastWind=0.099999994;
+		forecastWaves=0.099999994;
+		forecastLightnings=0.099999994;
 		year=2008;
 		month=10;
 		day=11;
@@ -72,7 +78,7 @@ class Mission
 	};
 	class Groups
 	{
-		items=18;
+		items=20;
 		class Item0
 		{
 			side="LOGIC";
@@ -93,7 +99,7 @@ class Mission
 						};
 						class Item1
 						{
-							value="warning";
+							value="kick";
 							parentCls="ALiVE_require";
 							typeName="ALiVE_Versioning";
 						};
@@ -139,7 +145,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={4265.3975,0.21823606,1751.4459};
+					position[]={4235.2158,0.27803439,1750.6082};
 					class args
 					{
 						items=7;
@@ -151,7 +157,7 @@ class Mission
 						};
 						class Item1
 						{
-							value="false";
+							value="true";
 							parentCls="ALiVE_sys_profile";
 							typeName="persistent";
 						};
@@ -169,7 +175,7 @@ class Mission
 						};
 						class Item4
 						{
-							value="1500";
+							value="750";
 							parentCls="ALiVE_sys_profile";
 							typeName="spawnTypeHeliRadius";
 						};
@@ -181,7 +187,7 @@ class Mission
 						};
 						class Item6
 						{
-							value="50";
+							value="80";
 							parentCls="ALiVE_sys_profile";
 							typeName="activeLimiter";
 						};
@@ -261,7 +267,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={4263.3037,0.16178483,1828.1881};
+					position[]={4235.7842,0.1285865,1827.7688};
 					class args
 					{
 						items=35;
@@ -327,7 +333,7 @@ class Mission
 						};
 						class Item10
 						{
-							value="false";
+							value="true";
 							parentCls="ALiVE_SYS_playeroptions";
 							typeName="allowDiffClass";
 						};
@@ -363,7 +369,7 @@ class Mission
 						};
 						class Item16
 						{
-							value="false";
+							value="true";
 							parentCls="ALiVE_SYS_playeroptions";
 							typeName="storeToDB";
 						};
@@ -399,13 +405,13 @@ class Mission
 						};
 						class Item22
 						{
-							value="false";
+							value="true";
 							parentCls="ALiVE_SYS_playeroptions";
 							typeName="playertags_onview_setting";
 						};
 						class Item23
 						{
-							value="true";
+							value="false";
 							parentCls="ALiVE_SYS_playeroptions";
 							typeName="playertags_displayrank_setting";
 						};
@@ -429,7 +435,7 @@ class Mission
 						};
 						class Item27
 						{
-							value="20";
+							value="10";
 							parentCls="ALiVE_SYS_playeroptions";
 							typeName="playertags_distance_setting";
 						};
@@ -1071,7 +1077,7 @@ class Mission
 						};
 						class Item5
 						{
-							value="1";
+							value="0";
 							parentCls="cse_sys_medical";
 							typeName="vehCrashes";
 						};
@@ -1273,13 +1279,13 @@ class Mission
 						items=2;
 						class Item0
 						{
-							value="8";
+							value="4";
 							parentCls="cse_sys_field_rations";
 							typeName="timeWithoutWater";
 						};
 						class Item1
 						{
-							value="4";
+							value="2";
 							parentCls="cse_sys_field_rations";
 							typeName="timeWithoutFood";
 						};
@@ -1301,7 +1307,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={4264.4258,0.2508302,1710.9183};
+					position[]={4266.4575,0.098050132,1710.9183};
 					class args
 					{
 						items=18;
@@ -1539,13 +1545,13 @@ class Mission
 						};
 						class Item3
 						{
-							value="TaskForceRadio";
+							value="Bastion of ALiVE - Final Testing Phase";
 							parentCls="tfar_ModuleTaskForceRadioEnforceUsage";
 							typeName="radio_channel_name";
 						};
 						class Item4
 						{
-							value="123";
+							value="buttseks";
 							parentCls="tfar_ModuleTaskForceRadioEnforceUsage";
 							typeName="radio_channel_password";
 						};
@@ -1617,6 +1623,122 @@ class Mission
 				};
 			};
 		};
+		class Item18
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={4233.3218,-12.669326,1887.7826};
+					class args
+					{
+						items=6;
+						class Item0
+						{
+							value="false";
+							parentCls="ALiVE_sys_data";
+							typeName="debug";
+						};
+						class Item1
+						{
+							value="CouchDB";
+							parentCls="ALiVE_sys_data";
+							typeName="source";
+						};
+						class Item2
+						{
+							value="true";
+							parentCls="ALiVE_sys_data";
+							typeName="saveDateTime";
+						};
+						class Item3
+						{
+							value="false";
+							parentCls="ALiVE_sys_data";
+							typeName="disableStats";
+						};
+						class Item4
+						{
+							value="true";
+							parentCls="ALiVE_sys_data";
+							typeName="disableAAR";
+						};
+						class Item5
+						{
+							value="true";
+							parentCls="ALiVE_sys_data";
+							typeName="disablePerf";
+						};
+					};
+					id=18;
+					side="LOGIC";
+					vehicle="ALiVE_sys_data";
+					leader=1;
+					lock="UNLOCKED";
+					skill=0.60000002;
+				};
+			};
+		};
+		class Item19
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={4576.0991,0.57105577,1806.5625};
+					class args
+					{
+						items=6;
+						class Item0
+						{
+							value="0";
+							parentCls="cse_sys_cc";
+							typeName="allowFeeds";
+						};
+						class Item1
+						{
+							value="0";
+							parentCls="cse_sys_cc";
+							typeName="showUAV";
+						};
+						class Item2
+						{
+							value="1";
+							parentCls="cse_sys_cc";
+							typeName="uavRestriction";
+						};
+						class Item3
+						{
+							value="1";
+							parentCls="cse_sys_cc";
+							typeName="allowVehicleDisplays";
+						};
+						class Item4
+						{
+							value="-1";
+							parentCls="cse_sys_cc";
+							typeName="autoAssignCallSigns";
+						};
+						class Item5
+						{
+							value="1";
+							parentCls="cse_sys_cc";
+							typeName="allowDisplayOnMainMap";
+						};
+					};
+					id=19;
+					side="LOGIC";
+					vehicle="cse_sys_cc";
+					leader=1;
+					lock="UNLOCKED";
+					skill=0.60000002;
+				};
+			};
+		};
 	};
 	class Markers
 	{
@@ -1633,52 +1755,49 @@ class Mission
 		};
 		class Item1
 		{
-			position[]={7194.3081,323.83289,8159.2061};
-			name="taor_all";
-			markerType="RECTANGLE";
-			type="Empty";
-			a=7200;
-			b=7200;
+			position[]={5148.6675,8.82407,2351.0186};
+			name="service_area_mrkr";
+			text=" Service & Supply";
+			type="b_maint";
 		};
 		class Item2
 		{
-			position[]={5135.8779,8.9189072,2341.9666};
-			name="respawn_west";
-			text=" Camp Selleck";
-			type="Faction_US";
-		};
-		class Item3
-		{
-			position[]={4717.1313,8.9950867,2579.5203};
+			position[]={4725.4971,8.9801149,2578.093};
 			name="ALiVE_SUP_MULTISPAWN_RESPAWN_sh_faction_cdf";
 			type="Empty";
 			angle=36;
 		};
-		class Item4
+		class Item3
 		{
 			position[]={4821.6328,8.7303591,2556.741};
 			name="ALiVE_SUP_MULTISPAWN_RESPAWN_sh_faction_sasr";
 			type="Empty";
 		};
-		class Item5
+		class Item4
 		{
-			position[]={4752.5449,8.825839,2556.8088};
+			position[]={4759.6865,8.6999998,2561.293};
 			name="ALiVE_SUP_MULTISPAWN_RESPAWN_sh_faction_marines";
 			type="Empty";
 			angle=36;
 		};
-		class Item6
+		class Item5
 		{
 			position[]={4387.6802,3.0198631,2239.0466};
-			name="ALiVE_SUP_MULTISPAWN_RESPAWNGROUP_det5";
+			name="ALiVE_SUP_MULTISPAWN_RESPAWN_sh_faction_det5";
 			type="Empty";
 		};
-		class Item7
+		class Item6
 		{
-			position[]={4727.2432,8.6592226,2614.1572};
+			position[]={4719.2852,8.6293278,2616.4001};
 			name="ALiVE_SUP_MULTISPAWN_RESPAWN_sh_faction_cdn";
 			type="Empty";
 			angle=36;
+		};
+		class Item7
+		{
+			position[]={5195.0952,8.5888739,2320.3218};
+			name="respawn_west";
+			type="Empty";
 		};
 	};
 };
