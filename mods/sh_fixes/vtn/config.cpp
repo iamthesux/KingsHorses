@@ -5,7 +5,7 @@ class CfgPatches
 		units[]= {};
 		weapons[]={};
 		requiredVersion=0.10000000149;
-		requiredAddons[]={"rhs_c_weapons", "VTN_Weapons_F"};
+		requiredAddons[]={"rhs_c_weapons", "VTN_Weapons_F", "VTN_U_FROG_CF", "VTN_U_GORKA_S_CF"};
 	};
 };
 class Mode_SemiAuto;
@@ -34,7 +34,8 @@ class CfgWeapons
 	{
 		muzzles[] += {"Rhs_Throw_Grenade","Rhs_Throw_Smoke","Rhs_Throw_Flare","Rhs_Throw_Flash"};
 	};
-	class Rifle_Base_F;	
+	class Rifle_Base_F;
+	class VTN_SAIGA_MK03;
 	class rhs_weap_svd;
 	class rhs_weap_svdp : rhs_weap_svd
 	{
@@ -44,6 +45,136 @@ class CfgWeapons
 			"VTN_SVD_10s_TRC",
 			"VTN_SVD_10s_AP",
 			"VTN_SVD_10s_SC"
+		};
+	};
+	class Uniform_Base;
+	class UniformItem;
+	class VTN_U_GORKA_S : Uniform_Base
+	{
+		class ItemInfo : UniformItem
+		{
+			containerClass="Supply50";
+		};
+	};
+	class VTN_U_FROG_WDL : Uniform_Base
+	{
+		class ItemInfo : UniformItem
+		{
+			containerClass="Supply50";
+		};
+	};
+	class VTN_AKS74U_BASE : Rifle_Base_F
+	{
+		opticsZoomMin = 0.375;
+		opticsZoomMax = 1.1;
+		opticsZoomInit = 0.75;
+		
+		class Single: Mode_SemiAuto
+		{
+			sounds[] = {"StandardSound","SilencedSound"};
+			class BaseSoundModeType
+			{
+				weaponSoundEffect = "DefaultRifle";
+				closure1[] = {"A3\sounds_f\weapons\closure\closure_rifle_2",0.9622777,1,300};
+				closure2[] = {"A3\sounds_f\weapons\closure\closure_rifle_3",0.9622777,1,300};
+				soundClosure[] = {"closure1",0.5,"closure2",0.5};
+			};
+			class StandardSound: BaseSoundModeType
+			{
+				begin1[] = {"rhsafrf\addons\rhs_sounds\ak74\ak74_1",2.35,1,1200};
+				begin2[] = {"rhsafrf\addons\rhs_sounds\ak74\ak74_2",2.35,1,1200};
+				soundBegin[] = {"begin1",0.5,"begin2",0.5};
+			};
+			class SilencedSound: BaseSoundModeType
+			{
+				begin1[] = {"A3\sounds_f\weapons\silenced\silent-18",0.794328,1,100};
+				begin2[] = {"A3\sounds_f\weapons\silenced\silent-19",0.794328,1,100};
+				begin3[] = {"A3\sounds_f\weapons\silenced\silent-11",0.794328,1,100};
+				soundBegin[] = {"begin1",0.333,"begin2",0.333,"begin3",0.333};
+			};
+		};
+		class FullAuto: Mode_FullAuto
+		{
+			sounds[] = {"StandardSound","SilencedSound"};
+			class BaseSoundModeType
+			{
+				weaponSoundEffect = "DefaultRifle";
+				closure1[] = {"A3\sounds_f\weapons\closure\closure_rifle_2",0.9622777,1,300};
+				closure2[] = {"A3\sounds_f\weapons\closure\closure_rifle_3",0.9622777,1,300};
+				soundClosure[] = {"closure1",0.5,"closure2",0.5};
+			};
+			class StandardSound: BaseSoundModeType
+			{
+				begin1[] = {"rhsafrf\addons\rhs_sounds\ak74\ak74_1",2.35,1,1200};
+				begin2[] = {"rhsafrf\addons\rhs_sounds\ak74\ak74_2",2.35,1,1200};
+				soundBegin[] = {"begin1",0.5,"begin2",0.5};
+			};
+			class SilencedSound: BaseSoundModeType
+			{
+				begin1[] = {"A3\sounds_f\weapons\silenced\silent-18",0.794328,1,100};
+				begin2[] = {"A3\sounds_f\weapons\silenced\silent-19",0.794328,1,100};
+				begin3[] = {"A3\sounds_f\weapons\silenced\silent-11",0.794328,1,100};
+				soundBegin[] = {"begin1",0.333,"begin2",0.333,"begin3",0.333};
+			};
+		};
+	};
+	class VTN_PKM_BASE : Rifle_Base_F
+	{
+		opticsZoomMin = 0.375;
+		opticsZoomMax = 1.1;
+		opticsZoomInit = 0.75;
+	};
+	class VTN_SAIGA_MK03_AUTO : VTN_SAIGA_MK03
+	{
+		opticsZoomMin = 0.375;
+		opticsZoomMax = 1.1;
+		opticsZoomInit = 0.75;
+		
+		class Single: Mode_SemiAuto
+		{
+			sounds[] = {"StandardSound","SilencedSound"};
+			class BaseSoundModeType
+			{
+				weaponSoundEffect = "DefaultRifle";
+				closure1[] = {"A3\sounds_f\weapons\closure\closure_rifle_4",1.41253757477,1,50};
+				closure2[] = {"A3\sounds_f\weapons\closure\closure_rifle_4",1.41253757477,1,50};
+				soundClosure[] = {"closure1",0.5,"closure2",0.5};
+			};
+			class StandardSound: BaseSoundModeType
+			{
+				begin1[]={"rhsafrf\addons\rhs_sounds\akM\akM_1",2.35,1,1300};
+				begin2[]={"rhsafrf\addons\rhs_sounds\akM\akM_2",2.35,1,1300};
+				soundBegin[] = {"begin1",0.5,"begin2",0.5};
+			};
+			class SilencedSound: BaseSoundModeType
+			{
+				begin1[]={"rhsafrf\addons\rhs_sounds\ak_shared\silenced_1", 2.2,1,600};
+				begin2[]={"rhsafrf\addons\rhs_sounds\ak_shared\silenced_2", 2.2,1,600};
+				soundBegin[]={begin1,0.5, begin2,0.5};
+			};
+		};
+		class FullAuto: Mode_FullAuto
+		{
+			sounds[] = {"StandardSound","SilencedSound"};
+			class BaseSoundModeType
+			{
+				weaponSoundEffect = "DefaultRifle";
+				closure1[] = {"A3\sounds_f\weapons\closure\closure_rifle_4",1.41253757477,1,50};
+				closure2[] = {"A3\sounds_f\weapons\closure\closure_rifle_4",1.41253757477,1,50};
+				soundClosure[] = {"closure1",0.5,"closure2",0.5};
+			};
+			class StandardSound: BaseSoundModeType
+			{
+				begin1[]={"rhsafrf\addons\rhs_sounds\akM\akM_1",2.35,1,1300};
+				begin2[]={"rhsafrf\addons\rhs_sounds\akM\akM_2",2.35,1,1300};
+				soundBegin[] = {"begin1",0.5,"begin2",0.5};
+			};
+			class SilencedSound: BaseSoundModeType
+			{
+				begin1[]={"rhsafrf\addons\rhs_sounds\ak_shared\silenced_1", 2.2,1,600};
+				begin2[]={"rhsafrf\addons\rhs_sounds\ak_shared\silenced_2", 2.2,1,600};
+				soundBegin[]={begin1,0.5, begin2,0.5};
+			};
 		};
 	};
 	class VTN_AK_BASE : Rifle_Base_F
@@ -175,7 +306,7 @@ class CfgWeapons
 			};
 			class StandardSound: BaseSoundModeType
 			{
-				begin1[] = {"rhsafrf\addons\rhs_weapons\sounds\ak74m_2",6.7782794,1,1000};
+				begin1[] = {"rhsafrf\addons\rhs_weapons\sounds\ak74m_1",6.7782794,1,1000};
 				begin2[] = {"rhsafrf\addons\rhs_weapons\sounds\ak74m_3",6.7782794,1,1000};
 				soundBegin[]={"begin1",0.5,"begin2",0.5};
 			};
@@ -198,7 +329,7 @@ class CfgWeapons
 			};
 			class StandardSound: BaseSoundModeType
 			{
-				begin1[] = {"rhsafrf\addons\rhs_weapons\sounds\ak74m_2",6.7782794,1,1000};
+				begin1[] = {"rhsafrf\addons\rhs_weapons\sounds\ak74m_1",6.7782794,1,1000};
 				begin2[] = {"rhsafrf\addons\rhs_weapons\sounds\ak74m_3",6.7782794,1,1000};
 				soundBegin[]={"begin1",0.5,"begin2",0.5};
 			};
