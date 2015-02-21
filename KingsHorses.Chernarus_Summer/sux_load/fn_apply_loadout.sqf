@@ -20,9 +20,37 @@ sux_apply_carryable =
 			_item = _x select 0;
 			_v = _x select 1;
 			switch (_type) do {
-				case _UNIFORM: { while { _v > 0} do { _unit addItemToUniform _item; _v = _v - 1; }; };
-				case _VEST: { while { _v > 0} do { _unit addItemToVest _item; _v = _v - 1; }; };
-				case _BACKPACK: { while { _v > 0} do { _unit addItemToBackpack _item; _v = _v - 1; }; };
+				case _UNIFORM: { 
+					while { _v > 0} do { 
+						if (_unit canAddItemToUniform _item) then {
+							_unit addItemToUniform _item;
+							//diag_log format ["--------------------------------------------adding  %2 to %1", _load_name, _item];
+						} else {
+							diag_log format ["--------------------------------------------Warning in load %1: No room for %2 in uniform", _load_name, _item];
+						};
+						_v = _v - 1;
+					}; 
+				};
+				case _VEST: {
+					while { _v > 0} do {
+						if (_unit canAddItemToVest _item) then {
+							_unit addItemToVest _item;
+						} else {
+							diag_log format ["--------------------------------------------Warning in load %1: No room for %2 in vest", _load_name, _item];
+						};
+						_v = _v - 1;
+					};
+				};
+				case _BACKPACK: {
+					while { _v > 0} do {
+						if (_unit canAddItemToBackpack _item) then {
+							_unit addItemToBackpack _item;
+						} else {
+							diag_log format ["--------------------------------------------Warning in load %1: No room for %2 in backpack", _load_name, _item];
+						};
+						_v = _v - 1;
+					};
+				};
 			};
 		} foreach (_load select 1);
 	};
@@ -69,7 +97,10 @@ sux_apply_weapon =
 private ["_unit","_load","_flags","_i"];
 
 _unit = [_this, 0] call bis_fnc_param;
+if (!local _unit) exitWith { diag_log "SUXLO: apply_loadout: unit not local exiting"};
 _load_name = [_this, 1] call bis_fnc_param;
+
+diag_log format ["--------------------------------------------APPLY LOAD %1 for player: %2", _load_name, _unit];
 	
 _load = call compile loadFile format ["loads\%1.sqf", _load_name];
 _flags = _load select _FLAGS;

@@ -1,3 +1,5 @@
+if (!isServer) exitwith {};
+
 #include "sux_load.hpp"
 
 private ["_unit","_load","_flags","_vals", "_load_name"];
@@ -6,6 +8,9 @@ _crate = [_this, 0] call bis_fnc_param;
 _load_name = [_this, 1] call bis_fnc_param;
 _load = call compile loadFile format ["loads\%1.sqf", _load_name];
 _flags = _load select _FLAGS;
+
+diag_log format ["APPLY VCARGO %1 for player: %2", _load_name, _crate];
+
 if (REMOVE_ALL in _flags) then 
 {
 	clearWeaponCargoGlobal _unit;

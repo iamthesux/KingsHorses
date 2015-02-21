@@ -1,3 +1,4 @@
+if (!isServer) exitwith {};
 #include "sux_load.hpp"
 
 private ["_unit","_load","_flags","_vals", "_load_name"];
@@ -7,8 +8,7 @@ _load_name = [_this, 1] call bis_fnc_param;
 _load = call compile loadFile format ["loads\%1.sqf", _load_name];
 
 _flags = _load select _FLAGS;
-diag_log "ehere";
-diag_log _load;
+diag_log format ["APPLY CARGO %1 for player: %2", _load_name, _unit];
 
 
 if (REMOVE_ALL in _flags) then 

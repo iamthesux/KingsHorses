@@ -1,9 +1,9 @@
 //call compile preprocessFileLineNumbers "loads\sux_load.sqf";
 
-// if (!isDedicated) then {
-	// waitUntil { player == player };
-	// _lo = format ["sux_lo_%1", player getVariable ["loadout", ""]];
-	// if (_lo != '') then {
-		// [player, call compile _lo] call sux_apply_loadout;
-	// };
-// };
+if (!isDedicated) then {
+	waitUntil { player == player };
+	_lo = player getVariable ["sux_loadout", ""];
+	if (_lo != '') then {
+		[player, _lo] call suxlo_fnc_apply_loadout;
+	};
+};
