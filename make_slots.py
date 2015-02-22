@@ -63,7 +63,8 @@ teams['det5'] = dict(
 		[
 			{ 'role': "MAJ Singleton", 'loadout': 'officer_det5', },
 			{ 'role': "SGM Dodds", 'loadout': 'sniper_det5', },
-			{ 'role': "CW2 Moore", 'loadout': 'officer_det5', },
+			{ 'role': "CPT Moore", 'loadout': 'officer_det5', },
+			{ 'role': "CW4 Pierce", 'loadout': 'officer_det5', },
 			{ 'role': "MSG Nichols", 'loadout': 'rifleman_det5', },
 			{ 'role': "SFC Furlong", 'loadout': 'sniper_det5', },
 			{ 'role': "SFC Cannon", 'loadout': 'gunner_det5', },
@@ -77,11 +78,12 @@ teams['det5'] = dict(
 )
 teams['sfqc'] = dict(
 	spawn = 'det5',
-	name = 'SFQC',
+	name = 'SOT-A',
 	faction = 'det5',
 	side = 'WEST',
 	groups = [
 		[
+			{ 'role': "SGT Smith", 'loadout': 'rifleman_det5', },
 			{ 'role': "SGT Bayley", 'loadout': 'rifleman_det5', },
 		]
 	],
