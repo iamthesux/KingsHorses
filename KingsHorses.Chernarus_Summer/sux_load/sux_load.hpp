@@ -24,6 +24,7 @@
 #define _ITEMS 7
 #define _HEADGEAR 8
 #define _BINOC 9
+#define _GOGGLES 10
 
 #define _WEAPON 0
 #define _SUPPRSR 1

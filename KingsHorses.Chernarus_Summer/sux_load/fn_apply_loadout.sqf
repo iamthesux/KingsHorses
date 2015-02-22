@@ -146,8 +146,10 @@ if ( (_load select _HEADGEAR)  != "") then {
 	_unit addHeadgear (_load select _HEADGEAR);
 };
 
-if ((count _load) > _BINOC) then {
+if ((_load select _BINOC)  != "") then {
 	_unit addWeapon (_load select _BINOC);
 };
-//_unit addGoggles (_load select _GOGGLES);
+if ((_load select _GOGGLES)  != "") then {
+	_unit addGoggles (_load select _GOGGLES);
+};
 
