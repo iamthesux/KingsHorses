@@ -29,7 +29,8 @@ class Mission
 		"A3_Characters_F_BLUFOR",
 		"vtn_underwear_r",
 		"alive_sys_data",
-		"cse_sys_cc"
+		"cse_sys_cc",
+		"cse_main"
 	};
 	addOnsAuto[]=
 	{
@@ -53,6 +54,7 @@ class Mission
 		"alive_sup_multispawn",
 		"alive_sys_data",
 		"cse_sys_cc",
+		"cse_main",
 		"aia_chernarus_summer_config"
 	};
 	randomSeed=4833677;
@@ -78,7 +80,7 @@ class Mission
 	};
 	class Groups
 	{
-		items=20;
+		items=21;
 		class Item0
 		{
 			side="LOGIC";
@@ -333,7 +335,7 @@ class Mission
 						};
 						class Item10
 						{
-							value="true";
+							value="false";
 							parentCls="ALiVE_SYS_playeroptions";
 							typeName="allowDiffClass";
 						};
@@ -375,7 +377,7 @@ class Mission
 						};
 						class Item17
 						{
-							value="0";
+							value="180";
 							parentCls="ALiVE_SYS_playeroptions";
 							typeName="autoSaveTime";
 						};
@@ -1733,6 +1735,46 @@ class Mission
 					id=19;
 					side="LOGIC";
 					vehicle="cse_sys_cc";
+					leader=1;
+					lock="UNLOCKED";
+					skill=0.60000002;
+				};
+			};
+		};
+		class Item20
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={4442.7295,0.28575841,1733.1738};
+					class args
+					{
+						items=3;
+						class Item0
+						{
+							value="1";
+							parentCls="cse_basicRevive";
+							typeName="enableFor";
+						};
+						class Item1
+						{
+							value="120";
+							parentCls="cse_basicRevive";
+							typeName="timer";
+						};
+						class Item2
+						{
+							value="-1";
+							parentCls="cse_basicRevive";
+							typeName="amountOf";
+						};
+					};
+					id=20;
+					side="LOGIC";
+					vehicle="cse_basicRevive";
 					leader=1;
 					lock="UNLOCKED";
 					skill=0.60000002;
