@@ -200,10 +200,7 @@ class cdf_pl(cdf_rifleman):
 		]
 	class Backpack(cdf_rifleman.Backpack):
 		items = cdf_rifleman.Backpack.items + [
-			['VTN_OP_1k_WHITE', 10],
-			['VTN_SP_1k_RED', 2],
-			['VTN_SP_1k_GREEN', 2],
-			['VTN_SP_1k_YELLOW', 2],
+			['VTN_OP_1k_WHITE', 15],
 			['rhs_mag_rdg2_white', 4],
 			['VTN_AKM_30s_TRC', 5],
 			['VTN_BN1', 1],
