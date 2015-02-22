@@ -12,7 +12,6 @@ onLoadName = "Kings Horses";
 respawn = "BASE";
 //respawnTemplates[] = {"MenuPosition"};
 RespawnDialog = 0;
-respawnDelay = 10;
 aikills = 1;
 disabledAI = 1;
 enableDebugConsole=1;
