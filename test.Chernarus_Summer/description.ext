@@ -1,0 +1,10 @@
+
+
+disabledAI = 1;
+enableDebugConsole = 1;
+
+class CfgFunctions
+{
+#include "sux_load\cfgFunctions.hpp"
+
+};

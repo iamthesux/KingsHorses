@@ -21,11 +21,19 @@ def pull():
 	shutil.copy2(os.path.join(cfg.mpmissions_folder, "KingsHorses_core.Chernarus_Summer/mission.sqm"), "./KingsHorses_core.Chernarus_Summer/")
 def install():
 	dest = os.path.join(cfg.mpmissions_folder, cfg.mish)
-	if os.path.isdir(dest):
+	#TODO make this check safer
+	if os.path.isdir(dest) and dest != cfg.mpmissions_folder:
 		shutil.rmtree(dest)
 	shutil.copytree(cfg.mish, dest)
 
-
+def test():
+	dest = os.path.join(cfg.mpmissions_folder, 'test.Chernarus_Summer')
+	#TODO make this check safer
+	if os.path.isdir(dest) and dest != 'test.Chernarus_Summer':
+		shutil.rmtree(dest)
+	shutil.copytree('test.Chernarus_Summer', dest)
+	shutil.copytree(os.path.join(cfg.mish, 'loads'), os.path.join(dest, 'loads'))
+	shutil.copytree(os.path.join(cfg.mish, 'sux_load'), os.path.join(dest, 'sux_load'))
 # def debug():
 	# mish = Reader('KingsHorses.Chernarus_Summer/mission.sqm').read()
 	# cs = mish('Mission')('Groups').filter(lambda x: x('Vehicles')('Item0')('args')('Item0') == "LOGIC")
@@ -45,6 +53,8 @@ elif arg == 'install':
 	install()
 elif arg == 'pull':
 	pull()
+elif arg == 'test':
+	test()
 else:
 	make_core()
 	run("make_loads")
