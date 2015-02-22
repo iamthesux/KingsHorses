@@ -26,17 +26,36 @@ class CfgSounds
 		titles[]={};
 	};
 };
+class RadioProtocolBase;
+class RadioProtocolBaseRUS : RadioProtocolBase
+{
+	class Words;
+};
 
+class RadioProtocolRUS : RadioProtocolBaseRUS
+{
+	class Words : Words
+	{
+		NoEnemiesInSight[]={};
+	};
+};
 class CfgWeapons
 {
 	class GrenadeLauncher;
+	class Rifle_Base_F;
+	class VTN_SAIGA_MK03;
+	class rhs_weap_svd;
+
+	class Uniform_Base;
+	class UniformItem;
+
+	class ItemCore;
+	class InventoryOpticsItem_Base_F;
+
 	class Throw : GrenadeLauncher
 	{
 		muzzles[] += {"Rhs_Throw_Grenade","Rhs_Throw_Smoke","Rhs_Throw_Flare","Rhs_Throw_Flash"};
 	};
-	class Rifle_Base_F;
-	class VTN_SAIGA_MK03;
-	class rhs_weap_svd;
 	class rhs_weap_svdp : rhs_weap_svd
 	{
 		magazines[] =
@@ -47,8 +66,6 @@ class CfgWeapons
 			"VTN_SVD_10s_SC"
 		};
 	};
-	class Uniform_Base;
-	class UniformItem;
 	class VTN_U_GORKA_S : Uniform_Base
 	{
 		class ItemInfo : UniformItem
@@ -63,6 +80,113 @@ class CfgWeapons
 			containerClass="Supply50";
 		};
 	};
+	
+	class VTN_OPTIC_1P76 : ItemCore
+	{
+		class ItemInfo : InventoryOpticsItem_Base_F
+		{
+			class OpticsModes
+			{
+				class 1P76
+				{
+					opticsZoomMin=0.375;
+					opticsZoomMax=1.1;
+					opticsZoomInit=0.75;
+				};
+			};
+		};
+	};
+	class VTN_OPTIC_1P77 : ItemCore
+	{
+		class ItemInfo : InventoryOpticsItem_Base_F
+		{
+			class OpticsModes
+			{
+				class 1P77_col
+				{
+					opticsZoomMin=0.375;
+					opticsZoomMax=1.1;
+					opticsZoomInit=0.75;
+				};
+			};
+		};
+	};
+	class VTN_OPTIC_1P78 : ItemCore
+	{
+		class ItemInfo : InventoryOpticsItem_Base_F
+		{
+			class OpticsModes
+			{
+				class 1P78_col
+				{
+					opticsZoomMin=0.375;
+					opticsZoomMax=1.1;
+					opticsZoomInit=0.75;
+				};
+			};
+		};
+	};
+	class VTN_OPTIC_1P63 : ItemCore
+	{
+		class ItemInfo : InventoryOpticsItem_Base_F
+		{
+			class OpticsModes
+			{
+				class 1P63
+				{
+					opticsZoomMin=0.375;
+					opticsZoomMax=1.1;
+					opticsZoomInit=0.75;
+				};
+			};
+		};
+	};
+	class VTN_OPTIC_PKAT : ItemCore
+	{
+		class ItemInfo : InventoryOpticsItem_Base_F
+		{
+			class OpticsModes
+			{
+				class PKA
+				{
+					opticsZoomMin=0.375;
+					opticsZoomMax=1.1;
+					opticsZoomInit=0.75;
+				};
+			};
+		};
+	};
+	class VTN_OPTIC_RAKURS_PM : ItemCore
+	{
+		class ItemInfo : InventoryOpticsItem_Base_F
+		{
+			class OpticsModes
+			{
+				class 1P76
+				{
+					opticsZoomMin=0.375;
+					opticsZoomMax=1.1;
+					opticsZoomInit=0.75;
+				};
+			};
+		};
+	};
+	class VTN_6CH3 : ItemCore
+	{
+		class ItemInfo : InventoryOpticsItem_Base_F
+		{
+			class OpticsModes
+			{
+				class 6ch3
+				{
+					opticsZoomMin=0.375;
+					opticsZoomMax=1.1;
+					opticsZoomInit=0.75;
+				};
+			};
+		};
+	};
+	
 	class VTN_AKS74U_BASE : Rifle_Base_F
 	{
 		opticsZoomMin = 0.375;
