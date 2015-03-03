@@ -1,26 +1,13 @@
 
-#include "initBriefing.hpp";
-
-
-RHSDecalsOff = true;
 tf_same_sw_frequencies_for_side = true;
 tf_same_lw_frequencies_for_side = true;
 
 tf_east_radio_code = '_bluefor';
 tf_guer_radio_code = '_bluefor';
 
-det5_sw_freqs = ["423.1","423.2","423.3","423.4","423.5","423.6","423.7","423.8"];
+det5_sw_freqs = ["420.1","420.2","420.3","420.4","420.5","420.6","420.7","420.8"];
 cdf_sw_freqs = ["320.1","320.2","320.3","320.4","320.5","320.6","320.7","320.8"];
-marine_sw_freqs = ["404.1","404.2","404.3","404.4","404.5","404.6","404.7","404.8"];
-
-if (!isDedicated) then {
-	[] spawn {
-		waitUntil { player == player; };
-		_load_name = player getVariable 'sux_loadout';
-		[player, _load_name] call suxlo_fnc_apply_loadout;
-		player addmpeventhandler ["mprespawn", "_load = (_this select 0) getVariable 'sux_loadout'; [_this select 0, _load] call suxlo_fnc_apply_loadout;"];
-	};
-};
+marine_sw_freqs = ["320.1","320.2","320.3","320.4","320.5","320.6","320.7","320.8"];
 
 lw_freqs = ["36.6","42.7","48.2","51.8","53.3","57.3","59.5","60.4","62.8"];
 if (isServer) then {

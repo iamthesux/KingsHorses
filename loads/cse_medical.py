@@ -21,7 +21,6 @@ class med_supplies(Crate):
 		['cse_saline_iv_500', 50],
 		['cse_saline_iv_250', 50],
 		['cse_quikclot', 200],
-		['cse_nasopharyngeal_tube', 200],
 		['cse_opa', 200],
 		['cse_bandageElastic', 200],
 		['cse_liquidSkin', 50],

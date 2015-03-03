@@ -19,6 +19,7 @@ def make_core():
 
 def pull():
 	shutil.copy2(os.path.join(cfg.mpmissions_folder, "KingsHorses_core.Chernarus_Summer/mission.sqm"), "./KingsHorses_core.Chernarus_Summer/")
+	shutil.copy2(os.path.join(cfg.missions_folder, "kingshorses_3dbase.chernarus_summer/mission.biedi"), "./kingshorses_3dbase.chernarus_summer/")
 def install():
 	dest = os.path.join(cfg.mpmissions_folder, cfg.mish)
 	#TODO make this check safer
@@ -27,7 +28,9 @@ def install():
 	shutil.copytree(cfg.mish, dest)
 
 def test():
+	run("make_loads")
 	dest = os.path.join(cfg.mpmissions_folder, 'test.Chernarus_Summer')
+	#print dest
 	#TODO make this check safer
 	if os.path.isdir(dest) and dest != 'test.Chernarus_Summer':
 		shutil.rmtree(dest)

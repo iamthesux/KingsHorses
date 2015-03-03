@@ -8,6 +8,8 @@ import importlib
 
 import loads.cdf_crates as cdf
 from loads.cse_medical import med_supplies
+from loads.cse_rations import int_supplies
+from loads.cse_usrations import us_supplies
 
 cfg = Klass()
 
@@ -40,7 +42,9 @@ crates = [
 	empty_crate(prefix='sh_alive_').generate_config(),
 	empty_crate_lg(prefix='sh_alive_').generate_config(),
 	med_supplies(prefix='sh_alive_').generate_config(),
-	cdf_medical(prefix='sh_alive_').generate_config()
+	cdf_medical(prefix='sh_alive_').generate_config(),
+	int_supplies(prefix='sh_alive_').generate_config(),
+	us_supplies(prefix='sh_alive_').generate_config(),
 ]
 
 for grp in ['cdf_crates', 'marines_crates', 'cdf_recce_crates', 'soar_crates']:

@@ -4,24 +4,35 @@ class soar_radios(Crate):
 	title = '160th SOAR Radios'
 	base = 'rhs_weapons_crate_ak_standard'
 	items = [
-		['tf_rf7800str', 75],
-		['tf_anprc152', 75],
+		['tf_fadak', 75],
+		['tf_anprc154', 75],
 	]
 
 	backpacks = [
-		['tf_rt1523g_black', 25],
-		['B_UAV_01_backpack_F', 25],
+		['tf_anprc155', 25],
 	]
 
 class soar_ammo(Crate):
 	title = '160th SOAR Ammo and Ordnance'
 	base = 'rhs_weapons_crate_ak_ammo_545x39_standard'
+	weapons = [
+		['VTN_SP81', 50],
+		['VTN_RSP30_RED', 500],
+		['VTN_RSP30_GREEN', 500],
+		['VTN_RSP30_WHITE', 500],
+
+	]
 	magazines = [
-		['30Rnd_556x45_Stanag', 250],
-		['30Rnd_556x45_Stanag_Tracer_Red', 100],
-		['SmokeShellBlue', 500],
-		['SmokeShell', 500],
-		['SmokeShellGreen', 500],
-		['rhs_mag_m67', 200],
-		['DemoCharge_Remote_Mag', 100],
+		['VTN_AK74_30b_TRC', 500],
+		['VTN_OP_1k_WHITE', 50],
+		['VTN_SP_1k_GREEN', 200],
+		['VTN_SP_1k_RED', 200],
+
+		['VTN_RDG2B', 500],
+		['VTN_RDG2CH', 500],
+
+		['VTN_NSPD', 50],
+		['VTN_NSP_RED', 200],
+		['VTN_NSP_GREEN', 200],
+		['VTN_NSP_YELLOW', 200],
 	]

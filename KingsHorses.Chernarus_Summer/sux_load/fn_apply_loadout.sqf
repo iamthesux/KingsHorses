@@ -97,8 +97,10 @@ sux_apply_weapon =
 private ["_unit","_load","_flags","_i"];
 
 _unit = [_this, 0] call bis_fnc_param;
-if (!local _unit) exitWith { diag_log "SUXLO: apply_loadout: unit not local exiting"};
+//if (!local _unit) exitWith { diag_log "SUXLO: apply_loadout: unit not local exiting"};
 _load_name = [_this, 1] call bis_fnc_param;
+
+//if (!isServer) exitWith { diag_log "SUXLO: apply_loadout: not server exiting"};
 
 diag_log format ["--------------------------------------------APPLY LOAD %1 for player: %2", _load_name, _unit];
 	
@@ -131,11 +133,11 @@ if (REMOVE_ALL in _flags) then
 	if (CLEAR_RUCK in _flags) then { clearAllItemsFromBackpack  _unit; };
 };
 
-_unit forceAddUniform "U_B_CombatUniform_mcam";
+_unit addBackpack "B_Carryall_oli";
 for "_i" from 1 to 3 do {
 	[_unit, (_load select _i), _i] call sux_apply_weapon;
 };
-removeUniform _unit;
+removeBackpack _unit;
 
 for "_i" from 4 to 6 do {
 	[_unit, (_load select _i), _i] call sux_apply_carryable;

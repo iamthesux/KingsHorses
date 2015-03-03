@@ -54,7 +54,7 @@ class CfgWeapons
 
 	class Throw : GrenadeLauncher
 	{
-		muzzles[] += {"Rhs_Throw_Grenade","Rhs_Throw_Smoke","Rhs_Throw_Flare","Rhs_Throw_Flash"};
+		muzzles[] += {"rhsusf_Throw_Grenade","Rhs_Throw_Grenade","Rhs_Throw_Smoke","Rhs_Throw_Flare","Rhs_Throw_Flash","rhsusf_Throw_Flash"};
 	};
 	class rhs_weap_svdp : rhs_weap_svd
 	{
@@ -518,7 +518,59 @@ class CfgWeapons
 			};
 		};
 	};
-	
+	class VTN_AK105_P_BASE : Rifle_Base_F
+	{
+		opticsZoomMin = 0.375;
+		opticsZoomMax = 1.1;
+		opticsZoomInit = 0.75;
+		class Single : Mode_SemiAuto
+		{
+			sounds[]={"StandardSound", "SilencedSound"};
+			class BaseSoundModeType
+			{
+				weaponSoundEffect = "DefaultRifle";
+				closure1[] = {"A3\sounds_f\weapons\closure\closure_rifle_2",0.9622777,1,10};
+				closure2[] = {"A3\sounds_f\weapons\closure\closure_rifle_3",0.9622777,1,10};
+				soundClosure[] = {"closure1",0.5,"closure2",0.5};
+			};
+			class StandardSound: BaseSoundModeType
+			{
+				begin1[]={"rhsafrf\addons\rhs_sounds\rpk\rpk_1",2.35,1,1300};
+				begin2[]={"rhsafrf\addons\rhs_sounds\rpk\rpk_2",2.35,1,1300};
+				soundBegin[]={"begin1",0.5,"begin2",0.5};
+			};
+			class SilencedSound: BaseSoundModeType
+			{
+				begin1[]={"rhsafrf\addons\rhs_sounds\ak_shared\silenced_1", 2.2,1,300};
+				begin2[]={"rhsafrf\addons\rhs_sounds\ak_shared\silenced_2", 2.2,1,300};
+				soundBegin[]={begin1,0.5, begin2,0.5};
+			};
+		};
+		class FullAuto: Mode_FullAuto
+		{
+			sounds[] = {"StandardSound","SilencedSound"};
+			reloadTime = 0.095;
+			class BaseSoundModeType
+			{
+				weaponSoundEffect = "DefaultRifle";
+				closure1[] = {"A3\sounds_f\weapons\closure\closure_rifle_2",0.9622777,1,10};
+				closure2[] = {"A3\sounds_f\weapons\closure\closure_rifle_3",0.9622777,1,10};
+				soundClosure[] = {"closure1",0.5,"closure2",0.5};
+			};
+			class StandardSound: BaseSoundModeType
+			{
+				begin1[]={"rhsafrf\addons\rhs_sounds\rpk\rpk_1",2.35,1,1300};
+				begin2[]={"rhsafrf\addons\rhs_sounds\rpk\rpk_2",2.35,1,1300};
+				soundBegin[]={"begin1",0.5,"begin2",0.5};
+			};
+			class SilencedSound: BaseSoundModeType
+			{
+				begin1[]={"rhsafrf\addons\rhs_sounds\ak_shared\silenced_1", 2.2,1,300};
+				begin2[]={"rhsafrf\addons\rhs_sounds\ak_shared\silenced_2", 2.2,1,300};
+				soundBegin[]={begin1,0.5, begin2,0.5};
+			};
+		};
+	};
 	class VTN_C_M4A1_BASE : Rifle_Base_F
 	{
 		opticsZoomMin = 0.375;

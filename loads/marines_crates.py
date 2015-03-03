@@ -87,18 +87,16 @@ class marine_weapons(Crate):
 
 		['RH_15Rnd_9x19_M9', 85],
 	]
-	items = [
-		['Binocular', 25],
-	]
+
 class marine_radios(Crate):
 	title = 'Marine Radios'
 	base = 'B_supplyCrate_F'
 	items = [
-		['tf_rf7800str_1', 75],
-		['tf_anprc152_2', 75],
-		['tf_anprc148jem', 100],
+		['tf_rf7800str', 100],
+		['tf_anprc152', 40],
+		['tf_anprc152', 40],
 	]
 
-	backpacks = [            
-		['tf_rt1523g_rhs', 25],
+	backpacks = [
+		['tf_rt1523g_big', 4],
 	]

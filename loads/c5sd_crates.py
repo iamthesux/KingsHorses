@@ -28,7 +28,7 @@ class det5_crate(Crate):
 
 		['rhs_weap_rpg7', 10],
 		['rhs_weap_rpg26', 100],
-		['rhs_weap_rshg2', 50],
+		['rhs_weap_rshg2', 100],
 
 		['VTN_SP81', 50],
 
@@ -51,14 +51,15 @@ class det5_crate(Crate):
 		['rhs_mag_zarya2', 100],
 		['rhs_mag_plamyam', 100],
 		
-		['rhs_mag_rdg2_white', 100],
-		['rhs_mag_rdg2_black', 100],
+		['VTN_RDG2B', 100],
+		['VTN_RDG2CH', 100],
 
 		['VTN_NSPD', 100],
 		['VTN_NSP_RED', 100],
 		['VTN_NSP_YELLOW', 100],
 		['VTN_NSP_GREEN', 100],
 		
+		['rhs_mag_rgd5', 100],
 		['VTN_RGO', 100],
 		['VTN_RGN', 100],
 		['VTN_RDGM', 100],
@@ -72,6 +73,8 @@ class det5_crate(Crate):
 		['VTN_VGS402', 100],
 		['VTN_VG40TB', 100],
 
+		['rhs_10Rnd_762x54mmR_7N1', 500],
+		
 		['VTN_AK74_30p_SC', 500],
 		['VTN_AK74_30p_TRC', 500],
 		['VTN_AK74_30p_AP', 500],
@@ -105,36 +108,29 @@ class det5_crate(Crate):
 
 		['rhs_rpg7_PG7VL_mag', 200],
 		['rhs_rpg7_PG7VR_mag', 200],
-		['rhs_rpg7_OG7V_mag', 200],
-		['rhs_rshg2_mag', 50],
+		['rhs_rpg7_TBG7V_mag', 200],
+
+		['rhs_rshg2_mag', 100],
+		['rhs_rpg26_mag', 100],
 
 		['VTN_PK_100s_SC', 200],
 		['VTN_PK_100s_TRC', 200],
 		['VTN_PK_100s_AP', 200],
 		['VTN_PK_100s_INC', 200],
 		['VTN_PK_100s_API', 200],
-		
 
 		['SLAMDirectionalMine_Wire_Mag', 50],
 		['ClaymoreDirectionalMine_Remote_Mag', 50],
 		['DemoCharge_Remote_Mag', 50],
 		['SatchelCharge_Remote_Mag', 50],
 		['APERSTripMine_Wire_Mag', 50],
+		['rhs_mine_pmn2_mag', 50],
+		['rhs_mine_tm62m_mag', 50],
 	]
 	
 	backpacks = [
-		['B_AssaultPack_cbr', 10],
-		['B_Kitbag_cbr', 10],
 		['tf_rt1523g_green', 10],
-		
-		['B_Kitbag_mcamo', 10],
-		['B_AssaultPack_mcamo', 10],
-		
-		['B_Carryall_cbr', 10],
-
-		['B_Carryall_mcamo', 10],
 		['B_Parachute', 10],
-
 	]
 
 	items = [
@@ -152,8 +148,14 @@ class det5_crate(Crate):
 		['VTN_MUZZLE_PBS1', 5],
 
 		['VTN_FLASHLIGHT_2PS_KLESHCH', 5],
-		
+
+		['VTN_OPTIC_1P76', 5],
 		['VTN_OPTIC_1P77', 5],
+		['VTN_OPTIC_1P78', 5],
+		['VTN_OPTIC_TA_01NSN', 5],
+		['VTN_OPTIC_RAKURS_PM', 5],
+		['rhs_acc_pgo7v', 5],
+
 		['VTN_6CH3_3', 5],
 		['rhs_acc_pso1m2', 5],
 

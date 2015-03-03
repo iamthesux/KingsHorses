@@ -7,14 +7,18 @@ class header {
 
 author = "Spearhead Gaming";
 onLoadMission = "Murica. Fuck yeah";
-onLoadName = "Kings Horses";
+onLoadName = "Kings Horses v3";
 
 respawn = "BASE";
 //respawnTemplates[] = {"MenuPosition"};
 RespawnDialog = 0;
+respawnDelay  = 30;
 aikills = 1;
 disabledAI = 1;
 enableDebugConsole=1;
+corpseManagerMode = 2;
+
+
 class CfgFunctions
 {
 #include "sux_load\cfgFunctions.hpp"

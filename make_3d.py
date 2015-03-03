@@ -18,6 +18,7 @@ dic = {}
 vics = [
 	'B_Quadbike_01_F',
 	'B_G_Quadbike_01_F',
+	'rhs_uaz_open_vdv',
 	'rhs_tigr_vmf',
 
 	'rhsusf_m1a1fep_wd',
@@ -33,7 +34,7 @@ vics = [
 	'RHS_Mi24V_vdv',
 	'RHS_Su25SM_vvsc',
 	
-	'rhs_t72bc_tv',	
+	'rhs_t80bv',	
 	'rhs_gaz66o_msv',
 	'rhs_bmp1_vv',
 	'RHS_UAZ_MSV_01',
@@ -57,14 +58,19 @@ for part in parts3d:
 	k['side'] = "EMPTY"
 	k['vehicle'] = part('Arguments')['TYPE']
 	k['skill'] = 1.0
-	k['init'] = "this setPos [%f, %f, %f];" % tuple(pos)
-	if k['vehicle'] not in vics and not k['vehicle'].startswith('sh_alive_'):
-		k['init'] += "[this] call kh_fnc_disable_sim;"
-	
 	if part('Arguments')['NAME']:
 		k['text'] = part('Arguments')['NAME']
+
 	if part('Arguments')['INIT']:
-		k['init'] += part('Arguments')['INIT']
+		k['init'] = part('Arguments')['INIT']
+		if k['init'][-1] != ';': k['init'] += ';'
+	else:
+		k['init'] = ''
+	if k['vehicle'] not in vics:
+		k['init'] += "this setPos [%f, %f, %f];" % tuple(pos)
+	if k['vehicle'] not in vics and not k['vehicle'].startswith('sh_alive_') and k['vehicle'] != 'Land_Campfire_F':
+		k['init'] += "[this] call kh_fnc_disable_sim;"
+	
 	if k['vehicle'] in medical:
 		k['init'] += 'this setvariable["cse_medical_facility", true];'
 
@@ -74,9 +80,9 @@ for part in parts3d:
 	mish2d("Mission")("Vehicles")(k)
 	mish2d("Mission")("Vehicles")["items"] = c
 	dic[part('Arguments')['TYPE']] = 1
-mish2d("Mission")("Intel")["briefingName"] = "Kings Horses";
+mish2d("Mission")("Intel")["briefingName"] = "Kings Horses v3";
 Writer('KingsHorses.Chernarus_Summer/mission.sqm').write(mish2d)
 
-# for k in dic.keys():
-	# if k not in vics and k not in medical:
-		# print k
+for k in dic.keys():
+	if k not in vics and k not in medical:
+		print k
