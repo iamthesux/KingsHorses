@@ -1,7 +1,8 @@
 from p4a.formats.rap.text import Reader, Writer
 from p4a.formats.rap import Klass
 from copy import deepcopy
-import math
+import math, os
+import settings as cfg
 
 class Vector:
 	def __init__(self, x, y):
@@ -253,12 +254,12 @@ teams['pubs'] = dict(
 		# pubbie hq
 		[
 			{ 'role': "Platoon Leader", 'loadout': 'cdf_pl', 'callsign': 'HOMELAND 1-6', },
-			{ 'role': "Assistant Platoon Leader", 'loadout': 'cdf_pl', 'callsign': 'HOMELAND 1-7', },
+			{ 'role': "Assistant Platoon Leader", 'loadout': 'cdf_rto', 'callsign': 'HOMELAND 1-7', },
 		],
 		[
-			{ 'name': '3ACR', 'role': "SL / BTR Commander", 'loadout': 'cdf_asl_gunner', 'callsign': 'THUNDER 1-1'},
-			{ 'name': '3ACR', 'role': "BTR Driver", 'loadout': 'cdf_crew', },
-			{ 'name': '3ACR', 'role': "BTR Gunner", 'loadout': 'cdf_asl_gunner', },
+			{ 'name': '3ACR', 'role': "SL / BMP-1 Commander", 'loadout': 'cdf_asl_gunner', 'callsign': 'THUNDER 1-1'},
+			{ 'name': '3ACR', 'role': "BMP-1 Driver", 'loadout': 'cdf_crew', },
+			{ 'name': '3ACR', 'role': "BMP-1 Gunner", 'loadout': 'cdf_asl_gunner', },
 			{ 'role': "Senior Rifleman", 'loadout': 'cdf_tl', 'callsign': 'HOMELAND 1-1'},
 			{ 'role': "Machine Gunner", 'loadout': 'cdf_mg', },
 			{ 'role': "Medic", 'loadout': 'cdf_medic', 'medic': 1},
@@ -267,9 +268,9 @@ teams['pubs'] = dict(
 			{ 'role': "Rifleman", 'loadout': 'cdf_rifleman' },
 		],
 		[
-			{ 'name': '3ACR', 'role': "SL / BTR Commander", 'loadout': 'cdf_asl_gunner', 'callsign': 'THUNDER 1-2'},
-			{ 'name': '3ACR', 'role': "BTR Driver", 'loadout': 'cdf_crew', },
-			{ 'name': '3ACR', 'role': "BTR Gunner", 'loadout': 'cdf_asl_gunner', },
+			{ 'name': '3ACR', 'role': "SL / BMP-1 Commander", 'loadout': 'cdf_asl_gunner', 'callsign': 'THUNDER 1-2'},
+			{ 'name': '3ACR', 'role': "BMP-1 Driver", 'loadout': 'cdf_crew', },
+			{ 'name': '3ACR', 'role': "BMP-1 Gunner", 'loadout': 'cdf_asl_gunner', },
 			{ 'role': "Senior Rifleman", 'loadout': 'cdf_tl', 'callsign': 'HOMELAND 1-2'},
 			{ 'role': "Machine Gunner", 'loadout': 'cdf_mg', },
 			{ 'role': "Medic", 'loadout': 'cdf_medic', 'medic': 1},
@@ -278,9 +279,9 @@ teams['pubs'] = dict(
 			{ 'role': "Rifleman", 'loadout': 'cdf_rifleman' },
 		],
 		[
-			{ 'name': '3ACR', 'role': "SL / BTR Commander", 'loadout': 'cdf_asl_gunner', 'callsign': 'THUNDER 1-3'},
-			{ 'name': '3ACR', 'role': "BTR Driver", 'loadout': 'cdf_crew', },
-			{ 'name': '3ACR', 'role': "BTR Gunner", 'loadout': 'cdf_asl_gunner', },
+			{ 'name': '3ACR', 'role': "SL / BMP-1 Commander", 'loadout': 'cdf_asl_gunner', 'callsign': 'THUNDER 1-3'},
+			{ 'name': '3ACR', 'role': "BMP-1 Driver", 'loadout': 'cdf_crew', },
+			{ 'name': '3ACR', 'role': "BMP-1 Gunner", 'loadout': 'cdf_asl_gunner', },
 			{ 'role': "Senior Rifleman", 'loadout': 'cdf_tl', 'callsign': 'HOMELAND 1-3'},
 			{ 'role': "Machine Gunner", 'loadout': 'cdf_mg', },
 			{ 'role': "Medic", 'loadout': 'cdf_medic', 'medic': 1},
@@ -289,9 +290,9 @@ teams['pubs'] = dict(
 			{ 'role': "Rifleman", 'loadout': 'cdf_rifleman' },
 		],
 		[
-			{ 'role': "T-72 Commander", 'loadout': 'cdf_asl_gunner', 'callsign': 'THUNDER 1-3' },
-			{ 'role': "Driver", 'loadout': 'cdf_crew' },
-			{ 'role': "Gunner", 'loadout': 'cdf_crew' },
+			{ 'name': '3ACR', 'role': "T-72 Commander", 'loadout': 'cdf_asl_gunner', 'callsign': 'THUNDER 1-3' },
+			{ 'name': '3ACR', 'role': "Driver", 'loadout': 'cdf_crew' },
+			{ 'name': '3ACR', 'role': "Gunner", 'loadout': 'cdf_crew' },
 		],	
 	]
 )
@@ -363,5 +364,5 @@ for team in kys:
 		mish('Mission')('Groups')['items'] = g_count
 		mish('Mission')('Groups')(g)
 
-Writer('KingsHorses.Chernarus_Summer/mission.sqm').write(mish)
+Writer(os.path.join(cfg.mish,'mission.sqm')).write(mish)
 

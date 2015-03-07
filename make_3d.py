@@ -1,8 +1,10 @@
 from p4a.formats.rap import Klass
 from p4a.formats.rap.text import Reader, Writer
+import os
+import settings as cfg
 
-mish2d = Reader('KingsHorses.Chernarus_Summer/mission.sqm').read()
-mish3d = Reader('kingshorses_3dbase.chernarus_Summer/mission.biedi').read()
+mish2d = Reader(os.path.join(cfg.mish,'mission.sqm')).read()
+mish3d = Reader(os.path.join(cfg.mish_3d,'mission.biedi')).read()
 
 parts3d = mish3d.filter(lambda x: x['objectType'] == "vehicle")
 
@@ -34,7 +36,7 @@ vics = [
 	'RHS_Mi24V_vdv',
 	'RHS_Su25SM_vvsc',
 	
-	'rhs_t80bv',	
+	'rhs_t80bv',
 	'rhs_gaz66o_msv',
 	'rhs_bmp1_vv',
 	'RHS_UAZ_MSV_01',
@@ -80,8 +82,8 @@ for part in parts3d:
 	mish2d("Mission")("Vehicles")(k)
 	mish2d("Mission")("Vehicles")["items"] = c
 	dic[part('Arguments')['TYPE']] = 1
-mish2d("Mission")("Intel")["briefingName"] = "Kings Horses v3";
-Writer('KingsHorses.Chernarus_Summer/mission.sqm').write(mish2d)
+mish2d("Mission")("Intel")["briefingName"] = "%s v%d" % (cfg.name, cfg.version)
+Writer(os.path.join(cfg.mish, 'mission.sqm')).write(mish2d)
 
 for k in dic.keys():
 	if k not in vics and k not in medical:
