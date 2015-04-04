@@ -2,51 +2,55 @@ import base
 
 class marine_base(base.Base):
 	class NoWrite: pass
-	headgear = 'H_VTN_LWH_WDL'
+	headgear = 'rhsusf_mich_helmet_marpatwd'
 
 	class Primary:
-		optic = 'VTN_OPTIC_TA_31RCO_USMC'
-		rail = 'VTN_TPIAL_ANPEQ15_D'
+		optic = 'rhsusf_acc_ACOG_USMC'
+		rail = 'rhsusf_acc_anpeq15'
 	
 	class Uniform:
-		type = 'VTN_U_FROG_WDL'
+		type = 'rhs_uniform_FROG01_wd'
 		items = base.Base.Uniform.items + [
-			['AGM_IR_Strobe_Item', 1],
 		]
 	class Vest:
-		type = 'V_SPC_RFL'
+		type = 'rhsusf_spc'
 		items = [
-			['rhs_mag_m67', 2],
+			['rhs_mag_m67', 1],
+			['rhs_mag_an_m8hc', 1],
 		]
 	class Backpack:
-		type = 'B_VTN_ILBE'
+		type = 'rhsusf_assault_eagleaiii_coy'
 		items = [
 			['rhsusf_ANPVS_14', 1],
 			['rhs_mag_m67', 1],
+			['rhs_mag_an_m8hc', 1],
 		]
 
 class marine_rifleman(marine_base):
 	class Primary(marine_base.Primary):
-		weapon = 'VTN_FN_M16A4'
+		weapon = 'rhs_weap_m16a4_carryhandle'
 		mags = [
-			['VTN_STANAG4172_30p_SC', 30],
+			['rhs_mag_30Rnd_556x45_M855A1_Stanag_No_Tracer', 30],
 		]
 	class Vest(marine_base.Vest):
 		items = marine_base.Vest.items + [
-			['VTN_STANAG4172_30p_SC', 8],
-			['VTN_STANAG4172_30p_TRC', 2],
+			['rhs_mag_30Rnd_556x45_M855A1_Stanag_No_Tracer', 2],
+			['rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red', 2],
 		]
 	class Backpack(marine_base.Backpack):
 		items = marine_base.Backpack.items + [
-			['VTN_M83W', 2],
+			['rhs_mag_30Rnd_556x45_M855A1_Stanag_No_Tracer', 2],
+			['rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red', 2],
 		]
 
 class marine_tl(marine_rifleman):
+	binoc = 'Binocular'
+	items = marine_rifleman.items + ['tf_rf7800str']
 	class Primary(marine_base.Primary):
-		weapon = 'VTN_FN_M16A4_M203'
+		weapon = 'RH_M16A4gl'
 		mags = [
-			['VTN_STANAG4172_30p_SC', 30],
-			['VTN_M406', 1],
+			['rhs_mag_30Rnd_556x45_M855A1_Stanag_No_Tracer', 30],
+			['rhs_mag_M433_HEDP', 1],
 		]
 	class Uniform(marine_base.Uniform):
 		items = marine_base.Uniform.items + [
@@ -54,33 +58,29 @@ class marine_tl(marine_rifleman):
 			['cw_item_9liner_cas', 1],
 			['cw_item_5liner_gcff', 1],
 		]
-	class Vest:
-		type = "V_SPC_GL"
+	class Vest(marine_base.Vest):
 		items = marine_base.Vest.items + [
-			['VTN_M406', 4],
-			['VTN_M713', 2],
-			['VTN_M18R', 1],
-			['VTN_M16P', 1],
+			['rhs_mag_M433_HEDP', 3],
+			['rhs_mag_M714_white', 3],
 		]
 
 	class Backpack(marine_rifleman.Backpack):
 		items = marine_rifleman.Backpack.items + [
-			['VTN_STANAG4172_30p_TRC', 5],
-			['VTN_M406', 8],
-			['VTN_M992', 1],
-			['VTN_M662', 1],
-			['VTN_M583A1', 1],
-			['tf_anprc152', 1],
+			['rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red', 5],
+			['rhs_mag_M433_HEDP', 8],
+			['rhs_mag_M714_white', 6],
+			['rhs_mag_M713_red', 2],
+			['rhs_mag_M585_white', 2],
 		]
 
 class marine_sl(marine_tl):
-	binoc = 'VTN_M24'
-	class Uniform(marine_tl.Uniform):
-		items = marine_tl.Uniform.items + [
+	binoc = 'Binocular'
+	class Backpack(marine_tl.Backpack):
+		items = marine_tl.Backpack.items + [
 			['tf_anprc152', 1],
 		]
 	class Primary(marine_tl.Primary):
-		weapon = 'VTN_C_M4A1_M203'
+		weapon = 'RH_M4A1_ris_M203'
 	class HandGun:
 		weapon = 'RH_m9'
 		mags = [['RH_15Rnd_9x19_M9', 15]]
@@ -89,9 +89,9 @@ class marine_sl(marine_tl):
 
 class marine_ar(marine_base):
 	class Primary(marine_base.Primary):
-		weapon = 'VTN_M249_PARA'
+		weapon = 'rhs_weap_m249_pip'
 		mags = [
-			['VTN_M249_100c_SC', 100],
+			['rhsusf_100Rnd_556x45_soft_pouch', 100],
 		]
 
 	class HandGun:
@@ -100,70 +100,59 @@ class marine_ar(marine_base):
 	class Uniform(marine_base.Uniform):
 		items = marine_base.Uniform.items + [['RH_15Rnd_9x19_M9', 2]]
 
-	class Vest:
-		type = 'V_SPC_MG'
+	class Vest(marine_base.Vest):
 		items = marine_base.Vest.items + [
-			['VTN_M249_200c_SC', 1],
-			['VTN_M249_200c_TRC', 1],
+			['rhsusf_100Rnd_556x45_soft_pouch', 2],
 		]
 	class Backpack(marine_base.Backpack):
 		items = marine_base.Backpack.items + [
-			['VTN_M249_200c_SC', 2],
-			['VTN_M249_200c_TRC', 2],
+			['rhsusf_100Rnd_556x45_soft_pouch', 3],
 		]
 
 class marine_aar(marine_rifleman):
-	binoc = 'VTN_M24'
-	class Vest:
-		type = 'V_SPC_MG'
+	binoc = 'Binocular'
+	class Vest(marine_base.Vest):
 		items = marine_base.Vest.items + [
-			['VTN_STANAG4172_30p_TRC', 5],
-			['VTN_M249_100c_SC', 1],
-			['VTN_M249_100c_TRC', 1],
+			['rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red', 5],
 		]
 	class Backpack(marine_rifleman.Backpack):
 		items = marine_rifleman.Backpack.items + [
-			['VTN_STANAG4172_30p_SC', 3],
-			['VTN_M249_200c_TRC', 2],
+			['rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red', 3],
+			['rhsusf_200Rnd_556x45_soft_pouch', 2],
 		]
 
 class marine_mg(marine_base):
 	class Primary(marine_base):
-		weapon = 'VTN_M240G'
-		mags = [['VTN_M240_50c_TRC', 50]]
-
+		weapon = 'rhs_weap_m240B'
+		optic = 'RH_ta648'
+		mags = [['rhsusf_100Rnd_762x51', 100]]
 	class HandGun:
 		weapon = 'RH_m9'
 		mags = [['RH_15Rnd_9x19_M9', 15]]
 	class Uniform(marine_base.Uniform):
 		items = marine_base.Uniform.items + [['RH_15Rnd_9x19_M9', 2]]
 
-	class Vest:
-		type = 'V_SPC_MG'
+	class Vest(marine_base.Vest):
 		items = marine_base.Vest.items + [
-			['VTN_M240_100c_SC', 1],
-			['VTN_M240_100c_TRC', 1],
+			['rhsusf_100Rnd_762x51', 2],
 		]
 
 	class Backpack(marine_base.Backpack):
 		items = marine_base.Backpack.items + [
-			['VTN_M240_100c_SC', 1],
+			['rhsusf_100Rnd_762x51', 2],
 		]
 
 class marine_amg(marine_rifleman):
-	binoc = 'AGM_Vector'
-	class Vest:
-		type = 'V_MTV_MG'
+	items = marine_rifleman.items + ['tf_rf7800str']
+	binoc = 'Binocular'
+	class Vest(marine_base.Vest):
 		items = marine_base.Vest.items + [
-			['VTN_STANAG4172_30p_TRC', 5],
-			['VTN_M240_100c_SC', 1],
+			['rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red', 6],
 		]
 	class Backpack(marine_rifleman.Backpack):
 		items = marine_rifleman.Backpack.items + [
-			['VTN_STANAG4172_30p_SC', 3],
-			['VTN_M240_100c_SC', 1],
-			['VTN_M240_100c_TRC', 1],
-			['tf_anprc152', 1],
+			['rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red', 2],
+			['rhsusf_100Rnd_762x51', 3],
 		]
 
 class marine_at(marine_rifleman):
@@ -175,11 +164,11 @@ class marine_at(marine_rifleman):
 
 	class Backpack(marine_rifleman.Backpack):
 		items = marine_rifleman.Backpack.items + [
-			['tf_anprc152', 1],
 			['rhs_fgm148_magazine_AT', 1],
 		]
 
 class marine_aat(marine_rifleman):
+	items = marine_rifleman.items + ['tf_rf7800str']
 	binoc = 'AGM_Vector'
 	class Backpack(marine_rifleman.Backpack):
 		items = marine_rifleman.Backpack.items + [
@@ -187,10 +176,11 @@ class marine_aat(marine_rifleman):
 		]
 
 class marine_pl(marine_rifleman):
+	items = marine_rifleman.items + ['tf_rf7800str']
 	binoc = 'AGM_Vector'
 
 	class Primary(marine_tl.Primary):
-		weapon = 'VTN_C_M4A1'
+		weapon = 'rhs_weap_m4a1'
 	class HandGun:
 		weapon = 'RH_m9'
 		mags = [['RH_15Rnd_9x19_M9', 15]]
@@ -203,31 +193,35 @@ class marine_pl(marine_rifleman):
 		]
 
 	class Backpack(marine_rifleman.Backpack):
-		type = 'tf_rt1523g_big'
 		items = marine_rifleman.Backpack.items + [
 			['tf_anprc152', 2],
 			['alive_tablet', 1],
 		]
 	
 class marine_rto(marine_rifleman):
-	binoc = 'VTN_M24'
-	class Backpack:
-		type = 'tf_rt1523g_big'
+	items = marine_rifleman.items + ['tf_rf7800str']
+	binoc = 'Binocular'
+	class Backpack(marine_rifleman.Backpack):
+		type = "tf_rt1523g_big"
 		items = marine_rifleman.Backpack.items + [
 			['alive_tablet', 1],
-			['tf_anprc152', 3],
+			['tf_anprc152', 2],
 		]
 
 class marine_corpsman(marine_rifleman):
+	items = marine_rifleman.items + ['tf_rf7800str']
 	class Backpack(marine_base.Backpack):
 		items = marine_base.Backpack.items + base.MedicSupplies + [
 			['tf_anprc152', 1],
 		]
 
 class marine_crewman(marine_rifleman):
-	headgear = 'H_VTN_DH132A'
+	items = marine_rifleman.items + ['tf_rf7800str']
+	headgear = 'rhsusf_cvc_green_helmet'
 
 class marine_commander(marine_rifleman):
+	items = marine_rifleman.items + ['tf_rf7800str']
+	headgear = 'rhsusf_cvc_green_ess'
 	class HandGun:
 		weapon = 'RH_m9'
 		mags = [['RH_15Rnd_9x19_M9', 15]]

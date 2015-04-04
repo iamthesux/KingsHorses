@@ -7,7 +7,7 @@ class header {
 
 author = "Spearhead Gaming";
 onLoadMission = "Murica. Fuck yeah";
-onLoadName = "Kings Horses v3";
+onLoadName = "Kings Horses v6";
 
 respawn = "BASE";
 //respawnTemplates[] = {"MenuPosition"};
@@ -21,8 +21,8 @@ corpseManagerMode = 2;
 
 class CfgFunctions
 {
-#include "sux_load\cfgFunctions.hpp"
-
+	#include "sux_load\cfgFunctions.hpp"
+	#include "vip_cmn\fn\vip_cmn_fnc.hpp"
 	class kh
 	{
 		class mission_stuff
@@ -32,4 +32,10 @@ class CfgFunctions
 			class make_medic { recompile = 1; };
 		};
 	};
+};
+#include "R3F_LOG\desc_include.h"
+
+class CfgSounds 
+{
+	#include "vip_lit\resource\vip_lit_cfgSounds.hpp"
 };

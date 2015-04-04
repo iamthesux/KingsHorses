@@ -1,0 +1,231 @@
+class CfgPatches
+{
+	class sh_factions
+	{
+		units[]=
+		{
+			"sh_cdf_bmp1",
+			"sh_cdf_t80bv",
+			"sh_cdf_gaz66_ammo",
+			"sh_cdf_ural_fuel",
+			"sh_cdf_gaz66_repair",
+			"sh_cdf_gaz66",
+			"sh_cdf_uaz_open",
+			"sh_cdf_uaz",
+			"sh_cdf_ural",
+			"sh_marines_rg31",
+			"sh_marines_m1a1",
+			"sh_cdn_su25",
+			"sh_cdn_mi24",
+			"sh_cdn_mi8"
+		};
+		weapons[]={};
+		requiredVersion=0.10000000149;
+		requiredAddons[]={};
+	};
+};
+
+class CfgFactionClasses
+{
+	class sh_faction_cdf
+	{
+		displayName="pubs";
+		side=0;
+	};
+	class sh_faction_det5
+	{
+		displayName="DET5";
+		side=0;
+	};
+	class sh_faction_sasr
+	{
+		displayName="SASR";
+		side=0;
+	};
+	class sh_faction_marines
+	{
+		displayName="Marines";
+		side=0;
+	};
+	class sh_faction_cdn
+	{
+		displayName="CDN";
+		side=0;
+	};
+};
+
+class CfgVehicles
+{
+	class B_Soldier_F;
+
+	class rhs_bmp1_vv;
+	class rhs_t80bv;
+	class rhs_gaz66_ammo_vmf;
+	class RHS_Ural_Fuel_VMF_01;
+	class rhs_gaz66_repair_vdv;
+	class rhs_gaz66o_msv;
+	class rhs_uaz_open_vdv;
+	class RHS_UAZ_MSV_01;
+	class rhs_ural_vv_01;
+	class rhsusf_m1a1fep_wd;
+	class ffaa_et_rg31_samson;
+	class RHS_Mi8AMTSh_vvs;
+	class RHS_Mi24V_vdv;
+	class RHS_Su25SM_vvsc;
+	
+	class sh_faction_cdf_unit : B_Soldier_F
+	{
+		faction = "sh_faction_cdf";
+		scope = 0;
+	};
+	class sh_faction_det5_unit : B_Soldier_F
+	{
+		faction = "sh_faction_det5";
+		scope = 0;
+	};
+	class sh_faction_sasr_unit : B_Soldier_F
+	{
+		faction = "sh_faction_sasr";
+		scope = 0;
+	};
+	class sh_faction_marines_unit : B_Soldier_F
+	{
+		faction = "sh_faction_marines";
+		scope = 0;
+	};
+	class sh_faction_cdn_unit : B_Soldier_F
+	{
+		faction = "sh_faction_cdn";
+		scope = 0;
+	};
+	
+	class sh_cdf_bmp1 : rhs_bmp1_vv
+	{
+		scope=2;
+		side=1;
+		faction="sh_faction_cdf";
+		crew="";
+		typicalCargo[]={};
+		vehicleClass="Armored";
+	};
+	class sh_cdf_t80bv : rhs_t80bv
+	{
+		scope=2;
+		side=1;
+		faction="sh_faction_cdf";
+		crew="";
+		typicalCargo[]={};
+		vehicleClass="Armored";
+	};
+	class sh_cdf_gaz66_ammo : rhs_gaz66_ammo_vmf
+	{
+		scope=2;
+		side=1;
+		faction="sh_faction_cdf";
+		crew="";
+		typicalCargo[]={};
+		vehicleClass="Supports";
+	};
+	class sh_cdf_ural_fuel : RHS_Ural_Fuel_VMF_01
+	{
+		scope=2;
+		side=1;
+		faction="sh_faction_cdf";
+		crew="";
+		typicalCargo[]={};
+		vehicleClass="Supports";
+	};
+	class sh_cdf_gaz66_repair : rhs_gaz66_repair_vdv
+	{
+		scope=2;
+		side=1;
+		faction="sh_faction_cdf";
+		crew="";
+		typicalCargo[]={};
+		vehicleClass="Supports";
+	};
+	class sh_cdf_gaz66 : rhs_gaz66o_msv
+	{
+		scope=2;
+		side=1;
+		faction="sh_faction_cdf";
+		crew="";
+		typicalCargo[]={};
+		vehicleClass="Cars";
+	};
+	class sh_cdf_uaz_open : rhs_uaz_open_vdv
+	{
+		scope=2;
+		side=1;
+		faction="sh_faction_cdf";
+		crew="";
+		typicalCargo[]={};
+		vehicleClass="Cars";
+	};
+	class sh_cdf_uaz : RHS_UAZ_MSV_01
+	{
+		scope=2;
+		side=1;
+		faction="sh_faction_cdf";
+		crew="";
+		typicalCargo[]={};
+		vehicleClass="Cars";
+	};
+	class sh_cdf_ural : rhs_ural_vv_01
+	{
+		scope=2;
+		side=1;
+		faction="sh_faction_cdf";
+		crew="";
+		typicalCargo[]={};
+		vehicleClass="Cars";
+	};
+	
+	
+	class sh_marines_rg31 : ffaa_et_rg31_samson
+	{
+		scope=2;
+		side=1;
+		faction="sh_faction_marines";
+		crew="";
+		typicalCargo[]={};
+		vehicleClass="Cars";
+	};
+	class sh_marines_m1a1 : rhsusf_m1a1fep_wd
+	{
+		scope=2;
+		side=1;
+		faction="sh_faction_marines";
+		crew="";
+		typicalCargo[]={};
+		vehicleClass="Armored";
+	};
+	class sh_cdn_mi8 : RHS_Mi8AMTSh_vvs
+	{
+		scope=2;
+		side=1;
+		faction="sh_faction_cdn";
+		crew="";
+		typicalCargo[]={};
+		vehicleClass="Air";
+	};
+	class sh_cdn_m24 : RHS_Mi24V_vdv
+	{
+		scope=2;
+		side=1;
+		faction="sh_faction_cdn";
+		crew="";
+		typicalCargo[]={};
+		vehicleClass="Air";
+	};
+	class sh_cdn_su25 : RHS_Su25SM_vvsc
+	{
+		scope=2;
+		side=1;
+		faction="sh_faction_cdn";
+		crew="";
+		typicalCargo[]={};
+		vehicleClass="Air";
+	};
+};
+

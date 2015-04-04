@@ -1,23 +1,31 @@
+from p4a.loadout import Crate
+
 class us_vic(Crate):
-    weapons = [
+	vehicle = True
+	weapons = [
 		['rhs_weap_M136', 3],
 	]
 	magazines = [
-		['VTN_STANAG4172_30p_SC', 50],
-		['VTN_STANAG4172_30p_TRC', 35],
-		['VTN_M583A1', 25],
-		['VTN_M585', 10],
-		['VTN_M661', 10],
-		['VTN_M662', 10],
-		['VTN_M433', 20],
+		['rhs_mag_30Rnd_556x45_M855A1_Stanag_No_Tracer', 50],
+		['rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red', 25],
+		['rhsusf_100Rnd_556x45_soft_pouch', 10],
+		['rhsusf_200Rnd_556x45_soft_pouch', 5],
+		['rhs_mag_an_m8hc', 15],
+		['rhs_mag_m18_purple', 5],
+		['rhs_mag_m18_green', 5],
+		['rhs_mag_m18_red', 5],
+		['rhs_mag_m18_yellow', 5],
 		['rhs_mag_m67', 10],
-		['SmokeShellBlue', 5],
-		['SmokeShell', 10],
+		['SatchelCharge_Remote_Mag', 1],
+		['rhs_m136_mag', 3],
+	]
+	items = [
 		['cse_bandage_basic', 25],
 		['cse_bandageElastic', 15],
-		['cse_tourniquet', 5],
-		['DemoCharge_Remote_Mag', 1],
-		['rhs_m136_mag', 3],
-		['cse_waterbottle', 5],
-		['cse_US_MRE_PorkRib', 5],
+		['cse_morphine', 5],
+		['cse_epinephrine', 5],
+		['cse_saline_iv', 5],
+		['cse_saline_iv_500', 5],
+		['cse_saline_iv_250', 5],
+		['cse_tourniquet', 5],	
 	]

@@ -8,10 +8,8 @@ class Base(LoadOut):
 		self.clear('all')
 
 	items = [
-		'ItemGPS',
 		'ItemMap',
 		'ItemCompass',
-		'tf_microdagr',
 	]
 	
 	class Uniform:

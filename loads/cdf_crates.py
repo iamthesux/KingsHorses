@@ -2,52 +2,59 @@ from p4a.loadout import Crate
 
 class cdf_explosives(Crate):
 	title = 'CDF Explosives and CSW'
- 	base = 'VTN_WPNE_LMG_BOX'
+ 	base = 'CUP_RUVehicleBox'
 	weapons = [
-		['VTN_SP81', 50],
-		['VTN_RSP30_RED', 200],
-		['VTN_RSP30_GREEN', 200],
-		['VTN_RSP30_WHITE', 200],
+		['rhs_weap_rsp30_white', 500],
+		['rhs_weap_rsp30_red', 200],
+		['rhs_weap_rsp30_green', 200],
 	]
 	magazines = [
-		['VTN_OP_1k_WHITE', 500],
-		['VTN_SP_1k_WHITE', 100],
-		['VTN_SP_1k_RED', 100],
-		['VTN_SP_1k_GREEN', 100],
-		['VTN_SP_1k_YELLOW', 100],
+		['rhs_mag_rsp30_white', 500],
+		['rhs_mag_rsp30_red', 200],
+		['rhs_mag_rsp30_green', 200],
 		
 		['rhs_mag_rgd5', 200],
-		['VTN_RDG2B', 500],
-		['VTN_RDG2CH', 500],
+		['rhs_mag_rdg2_white', 500],
+		['rhs_mag_rdg2_black', 500],
 
-		['VTN_NSPD', 500],
-		['VTN_NSP_RED', 50],
-		['VTN_NSP_YELLOW', 50],
-		['VTN_NSP_GREEN', 50],
+		['rhs_mag_nspd', 400],
+		['rhs_mag_nspn_red', 100],
+		['rhs_mag_nspn_yellow', 100],
+		['rhs_mag_nspn_green', 100],
 		['rhs_mine_tm62m_mag', 100],
 
-		['VTN_VOG25', 100],
-		['VTN_VOG25P', 100],
-		['VTN_VG40MD', 100],
-		['VTN_VG40OP', 100],
-		['VTN_VGS401', 100],
-		['VTN_VGS402', 100],
+		['rhs_VOG25', 100],
+		['rhs_VOG25p', 100],
+		['rhs_vg40op_white', 100],
+		['rhs_vg40op_green', 100],
+		['rhs_vg40op_red', 100],
+		
+		['rhs_GRD40_white', 100],
+		['rhs_GRD40_green', 100],
+		['rhs_GRD40_red', 100],
+
 	]
 
 	backpacks = [
 		['RHS_NSV_Gun_Bag', 10],
-		['RHS_NSV_Gun_Bag', 10],
+		['RHS_NSV_Tripod_Bag', 10],
 		
 		['RDS_DShkM_Gun_Bag', 10],
 		['RDS_DShkM_TripodLow_Bag', 10],
 
 		['RDS_AGS30_Gun_Bag', 10],
 		['RDS_AGS30_Tripod_Bag', 10],
+
+		['RDS_Metis_Gun_Bag', 10],
+		['RDS_Metis_Tripod_Bag', 10],
+
+		['RDS_SPG9_Gun_Bag', 10],
+		['RDS_SPG9_Tripod_Bag', 10],
 	]
 
 class cdf_launchers(Crate):
 	title = 'CDF Launchers and Warheads'
- 	base = 'VTN_WPNE_SN_BOX'
+ 	base = 'CUP_RUSpecialWeaponsBox'
 	weapons = [
 		['rhs_weap_rpg7', 10],
 		['rhs_weap_rpg26', 500],
@@ -62,20 +69,15 @@ class cdf_launchers(Crate):
 
 class cdf_weapons(Crate):
 	title = 'CDF Rifles and Ammo'
- 	base = 'VTN_WPNE_LMG_BOX'
-	weapons = [
-		['VTN_AK74_76', 10],
-		['VTN_AKM', 10],
-		['VTN_AK74_GP25', 5],
-		['VTN_AKS74U_B', 5],
-		['VTN_PKP', 5],
-	]
+ 	base = 'CUP_RUBasicWeaponsBox'
 	magazines = [
-		['VTN_AK74_30b_SC', 500],
-		['VTN_AK74_30b_TRC', 500],
-		['VTN_AKM_30b_SC', 500],
-		['VTN_AKM_30b_TRC', 500],
-		['VTN_PK_100s_SC', 200],
-		['VTN_PK_100s_TRC', 200],
+		['rhs_30Rnd_762x39mm', 500],
+		['rhs_30Rnd_762x39mm_tracer', 500],
+		
+		['rhs_30Rnd_545x39_AK', 500],
+		['rhs_30Rnd_545x39_AK_green', 500],
+
+		['rhs_100Rnd_762x54mmR', 500],
+		['rhs_100Rnd_762x54mmR_green', 500],
 	]
 

@@ -16,32 +16,31 @@ else:
 id = mish2d("Mission").nextid()
 
 dic = {}
-
 vics = [
 	'B_Quadbike_01_F',
 	'B_G_Quadbike_01_F',
-	'rhs_uaz_open_vdv',
-	'rhs_tigr_vmf',
-
-	'rhsusf_m1a1fep_wd',
-	'ffaa_et_rg31_samson',
-	'RHS_Ural_Fuel_VMF_01',
-
-	'rhs_gaz66_repair_vdv',
-	'rhs_gaz66_ammo_vmf',
-	
-	'rhs_uaz_open_MSV_01',
-	
-	'RHS_Mi8AMTSh_vvs',
-	'RHS_Mi24V_vdv',
-	'RHS_Su25SM_vvsc',
-	
-	'rhs_t80bv',
-	'rhs_gaz66o_msv',
-	'rhs_bmp1_vv',
-	'RHS_UAZ_MSV_01',
+	'sh_cdf_uaz',
 ]
 medical = ['US_WarfareBFieldhHospital_Base_EP1','MASH_EP1']
+
+# find zeus
+zues_mod = mish2d("Mission")("Groups").filter(lambda x: x('Vehicles') and x('Vehicles')('Item0') and x('Vehicles')('Item0')['vehicle'] == "ModuleCuratorAddEditableObjects")[0]('Vehicles')('Item0')
+if 'syncId' not in zues_mod:
+	zues_mod['syncId'] = mish2d.nextsid()
+	zues_mod['synchronizations'] = []
+zues_sid = zues_mod['syncId']
+	
+
+base_vic_mod = mish2d("Mission")("Groups").filter(lambda x: x('Vehicles') and x('Vehicles')('Item0') and x('Vehicles')('Item0')['text'] == "kh_mod_base_trans_respawn")[0]('Vehicles')('Item0')
+if 'syncId' not in base_vic_mod:
+	base_vic_mod['syncId'] = mish2d.nextsid()
+	base_vic_mod['synchronizations'] = []
+base_vic_id = base_vic_mod['syncId']
+
+print "z %d" % zues_sid
+print "bv %d" % base_vic_id
+
+
 for part in parts3d:
 	# if part('Arguments')['TYPE'] not in vics:
 		# continue
@@ -70,12 +69,25 @@ for part in parts3d:
 		k['init'] = ''
 	if k['vehicle'] not in vics:
 		k['init'] += "this setPos [%f, %f, %f];" % tuple(pos)
-	if k['vehicle'] not in vics and not k['vehicle'].startswith('sh_alive_') and k['vehicle'] != 'Land_Campfire_F':
+	if k['vehicle'] not in vics and not k['vehicle'].startswith('sh_alive_') and k['vehicle'] not in ['Land_Cargo20_military_green_F','Land_Campfire_F']:
 		k['init'] += "[this] call kh_fnc_disable_sim;"
-	
+	if k['vehicle'] == 'Land_Cargo20_military_green_F':
+		k['init'] += "_nul = [this] execVM 'base_part_box.sqf'"
+		
+	if k['vehicle'].startswith('sh_alive_'):
+		k['init'] += "this setVariable ['R3F_LOG_disabled', true];this allowDamage false;"
+		k['syncId'] = mish2d.nextsid()
+		k['synchronizations'] = [zues_mod['syncId']]
+		zues_mod['synchronizations'].append(k['syncId'])
+ 
+	if k['vehicle'] == 'sh_cdf_uaz':
+		k['syncId'] = mish2d.nextsid()
+		k['synchronizations'] = [base_vic_mod['syncId']]
+		base_vic_mod['synchronizations'].append(k['syncId'])
+
 	if k['vehicle'] in medical:
 		k['init'] += 'this setvariable["cse_medical_facility", true];'
-
+		
 	# increment our item counter and set the number of items in our Vehicles class
 	c+=1
 	id+=1

@@ -1,7 +1,7 @@
 from p4a.loadout import Crate
 
 class int_supplies(Crate):
-	base = 'VTN_WPNW_FN_M_BOX'
+	base = 'CUP_RUBasicAmmunitionBox'
 	title = 'International Rations'
 	items = [
 		['cse_canteen', 500],

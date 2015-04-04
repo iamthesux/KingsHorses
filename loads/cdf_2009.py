@@ -19,7 +19,9 @@ class cdf_base(base.Base):
 	class Vest:
 		type = 'V_CHICOM_KHAKI'
 		items = [
-			['VTN_RDG2B', 2],
+			['rhs_mag_rdg2_white', 2],
+			['Chemlight_blue', 1],
+			['Chemlight_red', 1],
 		]
 	class Backpack:
 		type = 'B_VTN_6SH92_FLORA'
@@ -30,32 +32,32 @@ class cdf_base(base.Base):
 
 class cdf_rifleman(cdf_base):
 	class Primary:
-		weapon = 'VTN_AKM'
+		weapon = 'rhs_weap_akm'
 		mags = [
-			['VTN_AKM_30b_TRC', 30],
+			['rhs_30Rnd_762x39mm_tracer', 30],
 		]
 	class Vest(cdf_base.Vest):
 		items = cdf_base.Vest.items + [
-			['VTN_AKM_30b_SC', 5],
+			['rhs_30Rnd_762x39mm', 5],
 		]
 	class Backpack(cdf_base.Backpack):
 		items = cdf_base.Backpack.items + [
-			['VTN_AKM_30b_TRC', 5],
+			['rhs_30Rnd_762x39mm_tracer', 5],
 		]
 
 class cdf_rifleman_light(cdf_base):
 	class Primary:
-		weapon = 'VTN_AK74_76'
+		weapon = 'rhs_weap_ak74m_2mag'
 		mags = [
-			['VTN_AK74_30b_TRC', 30],
+			['rhs_30Rnd_545x39_AK_green', 30],
 		]
 	class Vest(cdf_base.Vest):
 	        items = cdf_base.Vest.items + [
-			['VTN_AK74_30b_TRC', 5],
+			['rhs_30Rnd_545x39_AK', 5],
 		]
 	class Backpack(cdf_base.Backpack):
 		items = cdf_base.Backpack.items + [
-			['VTN_AK74_30b_TRC', 5],
+			['rhs_30Rnd_545x39_AK_green', 5],
 		]
 
 		
@@ -63,10 +65,10 @@ class cdf_rifleman_light(cdf_base):
 
 class cdf_grenadier(cdf_rifleman_light):
 	class Primary:
-		weapon = 'VTN_AK74_GP25'
+		weapon = 'rhs_weap_ak74m_gp25'
 		mags = [
-			['VTN_AK74_30b_TRC', 30],
-			['VTN_VOG25', 1],
+			['rhs_30Rnd_545x39_AK_green', 30],
+			['rhs_VOG25', 1],
 		]
 
 	class Secondary:
@@ -77,33 +79,33 @@ class cdf_grenadier(cdf_rifleman_light):
 	class Vest(cdf_rifleman_light.Vest):
 		type = 'V_6SH104_AKGP'
 		items = cdf_rifleman_light.Vest.items + [
-			['VTN_VOG25', 5],
+			['rhs_VOG25', 5],
 		]
 
 	class Backpack(cdf_rifleman_light.Backpack):
-		type = 'B_VTN_6SH92_FLORA'
 		items = cdf_rifleman_light.Backpack.items + [
-			['VTN_VOG25P', 5],
-			['VTN_VG40MD', 5],
-			['VTN_VG40OP', 10],
+			['rhs_VOG25', 5],
+			['rhs_GRD40_white', 5],
+			['rhs_vg40op_white', 10],
 		]
 
 ################  Squad Leader
 
-class cdf_sl(cdf_rifleman):
-	headgear = 'rhs_6b28_green'
+class cdf_tl(cdf_rifleman):
+	headgear = 'rhs_6b27m_green'
 	items = cdf_rifleman.items + ['tf_anprc154']
+	binoc = 'Binocular'
 
 	class Primary:
-		weapon = 'VTN_AKM_GP25_30b'
+		weapon = 'rhs_weap_akm_gp25'
 		mags = [
-			['VTN_AKM_30b_TRC', 30],
-			['VTN_VOG25', 1],
+			['rhs_30Rnd_762x39mm_tracer', 30],
+			['rhs_VOG25', 1],
 		]
 	class Vest(cdf_rifleman.Vest):
 		type = 'V_KORA_K_6Sh92GP'
 		items = cdf_rifleman.Vest.items + [
-			['VTN_VOG25P', 5],
+			['rhs_VOG25', 5],
 		]
 
 	class Uniform(cdf_rifleman.Uniform):
@@ -115,54 +117,58 @@ class cdf_sl(cdf_rifleman):
 		]
 	class Backpack(cdf_rifleman.Backpack):
 		items = cdf_rifleman.Backpack.items + [
-			['VTN_VG40MD', 5],
-			['VTN_VG40OP', 10],
-			['VTN_VGS401', 5],
-			['VTN_VGS402', 5],
-			['VTN_BN1', 1],
+			['rhsusf_ANPVS_14', 1],
+			['rhs_GRD40_white', 5],
+			['rhs_vg40op_white', 10],
+			['rhs_GRD40_red', 5],
 		]
 		
-class cdf_tl(cdf_sl):
-	headgear = 'rhs_6b27m_green'
+class cdf_sl(cdf_tl):
+	headgear = 'rhs_6b28_green'
+	class Backpack(cdf_rifleman.Backpack):
+		items = cdf_rifleman.Backpack.items + [
+			['tf_fadak', 1],
+		]
 ################  Vehicle Crew Driver/Gunner
 
-class cdf_crew(cdf_rifleman_light):
+class cdf_crew(cdf_rifleman):
 	headgear = 'rhs_tsh4'
 	items = cdf_base.items + ['tf_anprc154']
 
 	class Primary:
-		weapon = 'VTN_AKS74U_B'
+		weapon = 'rhs_weap_akms'
 		mags = [
-			['VTN_AK74_30b_SC', 30],
+			['rhs_30Rnd_762x39mm', 30],
 		]
 	class Backpack(cdf_rifleman_light.Backpack):
 		items = cdf_rifleman_light.Backpack.items + [
-			['VTN_1PN74', 1],
+			['rhsusf_ANPVS_14', 1],
 		]
 class cdf_asl_gunner(cdf_crew):
 	class Backpack(cdf_crew.Backpack):
 		items = cdf_crew.Backpack.items + [
-			['tf_anprc154', 1],
+			['rhsusf_ANPVS_14', 1],
+			['tf_fadak', 1],
 		]
 
 
 
 ################  Medium Machine Gunner
 class cdf_mg(cdf_base):
-	binoc = 'VTN_B8'
+	binoc = 'Binocular'
 	class Primary:
-		weapon = 'VTN_PKP'
+		weapon = 'rhs_weap_pkm'
 		mags = [
-			['VTN_PK_100s_TRC', 100],
+			['rhs_100Rnd_762x54mmR_green', 100],
 		]
 	class Vest(cdf_base.Vest):
 		type = 'V_6SH104_PK'
 		items = cdf_base.Vest.items + [
-			['VTN_PK_100s_TRC', 1],
+			['rhs_100Rnd_762x54mmR_green', 1],
 		]
 	class Backpack(cdf_base.Backpack):
 		items = cdf_base.Backpack.items + [
-			['VTN_PK_100s_SC', 2],
+			['rhs_100Rnd_762x54mmR', 2],
 		]
 
 ################  Medic
@@ -170,18 +176,14 @@ class cdf_medic(cdf_rifleman_light):
 	items = cdf_crew.items + [
 		'tf_anprc154',
 	]
-	class Primary:
-		weapon = 'VTN_AKS74U_B'
-		mags = [
-			['VTN_AK74_30b_TRC', 30],
-		]
 	class Vest(cdf_rifleman_light.Vest):
 		items = cdf_rifleman_light.Vest.items + [
-			['VTN_RDG2B', 2],
+			['cw_item_9liner_medivac', 1],
+			['rhs_mag_rdg2_white', 2],
 		]
 	class Backpack(cdf_rifleman_light.Backpack):
 		items = cdf_base.Backpack.items + base.MedicSupplies + [
-			['VTN_RDG2B', 2],
+			['rhs_mag_rdg2_white', 2],
 		]
 
 
@@ -189,24 +191,21 @@ class cdf_medic(cdf_rifleman_light):
 
 class cdf_pl(cdf_rifleman):
 	items = cdf_rifleman.items + ['tf_anprc154']
-	binoc = 'VTN_B8'
+	binoc = 'Binocular'
 	headgear = 'H_VTN_BERET'
 	class Primary:
-		weapon = 'VTN_AKMS_P'
-		optic = 'VTN_6CH3'
-		suppressor = 'VTN_MUZZLE_DTK1L'
+		weapon = 'rhs_weap_akms'
 		mags = [
-			['VTN_AKM_30s_TRC', 30],
+			['rhs_30Rnd_762x39mm_tracer', 30],
 		]
 	class HandGun:
-		weapon = 'VTN_SP81'
+		weapon = 'rhs_weap_rsp30_white'
 		mags = [
-			['VTN_OP_1k_WHITE', 1],
+			['rhs_mag_rsp30_white', 1],
 		]
 	class Uniform(cdf_rifleman.Uniform):
 		type = 'sh_cdf_uniform_02'
 		items = cdf_rifleman.Uniform.items + [
-			['tf_fadak', 1],
 			['cw_item_9liner_medivac', 1],
 			['cw_item_9liner_cas', 1],
 			['cw_item_5liner_gcff', 1],
@@ -214,23 +213,23 @@ class cdf_pl(cdf_rifleman):
 	class Vest(cdf_rifleman.Vest):
 		type = 'V_KORA_K_CHICOM'
 		items = cdf_base.Vest.items + [
-			['VTN_AKM_30s_TRC', 5],
+			['tf_anprc152', 1],
+			['rhs_30Rnd_762x39mm_tracer', 5],
 		]
 	class Backpack(cdf_base.Backpack):
 		items = cdf_base.Backpack.items + [
-			['VTN_OP_1k_WHITE', 15],
-			['VTN_RDG2B', 4],
-			['VTN_BN1', 1],
-			['alive_tablet', 1],
+			['rhs_weap_rsp30_white', 5],
+			['rhs_mag_rdg2_white', 2],
+			['rhsusf_ANPVS_14', 1],
 		]
 
 ################  Platoon RTO
 
 class cdf_rto(cdf_rifleman_light):
-	binoc = 'VTN_B8'
+	binoc = 'Binocular'
 	items = cdf_rifleman_light.items + ['tf_anprc154']
-	class Backpack(cdf_rifleman_light):
+	class Backpack:
 		type = 'tf_anprc155'
 		items = cdf_rifleman_light.Backpack.items + [
-			['tf_anprc154', 1],
+			['tf_fadak', 1],
 		]

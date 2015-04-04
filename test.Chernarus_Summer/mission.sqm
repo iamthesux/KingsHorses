@@ -3,26 +3,21 @@ class Mission
 {
 	addOns[]=
 	{
-		"A3_Soft_F_MRAP_01",
-		"aia_chernarus_summer_config",
 		"A3_Characters_F_BLUFOR",
-		"vtn_underwear_r",
+		"a3_characters_f",
 		"A3_Modules_F_Curator_Curator",
-		"task_force_radio_items",
-		"alive_main",
+		"aia_chernarus_summer_config",
 		"alive_sys_playeroptions"
 	};
 	addOnsAuto[]=
 	{
 		"A3_Characters_F_BLUFOR",
-		"vtn_underwear_r",
+		"a3_characters_f",
 		"A3_Modules_F_Curator_Curator",
-		"task_force_radio_items",
-		"alive_main",
 		"alive_sys_playeroptions",
 		"aia_chernarus_summer_config"
 	};
-	randomSeed=6122413;
+	randomSeed=12386365;
 	class Intel
 	{
 		timeOfChanges=1800.0002;
@@ -43,16 +38,17 @@ class Mission
 	};
 	class Groups
 	{
-		items=5;
+		items=3;
 		class Item0
 		{
 			side="WEST";
 			class Vehicles
 			{
-				items=2;
+				items=1;
 				class Item0
 				{
-					position[]={6603.6548,351.95856,5699.8394};
+					position[]={4384.5107,328.07721,8052.5923};
+					azimut=-141.802;
 					id=0;
 					side="WEST";
 					vehicle="B_Soldier_F";
@@ -60,16 +56,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="p1";
-				};
-				class Item1
-				{
-					position[]={6613.9414,352.55664,5695.9604};
-					id=1;
-					side="WEST";
-					vehicle="B_Soldier_F";
-					player="PLAY CDG";
-					skill=0.60000002;
-					text="p2";
+					init="this allowDamage false; this setCaptive true;";
 				};
 			};
 		};
@@ -81,7 +68,8 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={6631.6719,352.31378,5697.7627};
+					position[]={4380.3706,327.76547,8056.9966};
+					azimut=219.05522;
 					class args
 					{
 						items=4;
@@ -99,7 +87,7 @@ class Mission
 						};
 						class Item2
 						{
-							value="3";
+							value="2";
 							parentCls="ModuleCurator_F";
 							typeName="Addons";
 						};
@@ -110,7 +98,7 @@ class Mission
 							typeName="Forced";
 						};
 					};
-					id=2;
+					id=1;
 					side="LOGIC";
 					vehicle="ModuleCurator_F";
 					leader=1;
@@ -127,129 +115,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={6592.4365,351.03882,5706.2925};
-					class args
-					{
-						items=7;
-						class Item0
-						{
-							value="0";
-							parentCls="tfar_ModuleTaskForceRadioEnforceUsage";
-							typeName="TeamLeaderRadio";
-						};
-						class Item1
-						{
-							value="0";
-							parentCls="tfar_ModuleTaskForceRadioEnforceUsage";
-							typeName="RiflemanRadio";
-						};
-						class Item2
-						{
-							value="7";
-							parentCls="tfar_ModuleTaskForceRadioEnforceUsage";
-							typeName="terrain_interception_coefficient";
-						};
-						class Item3
-						{
-							value="TaskForceRadio";
-							parentCls="tfar_ModuleTaskForceRadioEnforceUsage";
-							typeName="radio_channel_name";
-						};
-						class Item4
-						{
-							value="123";
-							parentCls="tfar_ModuleTaskForceRadioEnforceUsage";
-							typeName="radio_channel_password";
-						};
-						class Item5
-						{
-							value="1";
-							parentCls="tfar_ModuleTaskForceRadioEnforceUsage";
-							typeName="same_sw_frequencies_for_side";
-						};
-						class Item6
-						{
-							value="1";
-							parentCls="tfar_ModuleTaskForceRadioEnforceUsage";
-							typeName="same_lr_frequencies_for_side";
-						};
-					};
-					id=3;
-					side="LOGIC";
-					vehicle="tfar_ModuleTaskForceRadioEnforceUsage";
-					leader=1;
-					lock="UNLOCKED";
-					skill=0.60000002;
-				};
-			};
-		};
-		class Item3
-		{
-			side="LOGIC";
-			class Vehicles
-			{
-				items=1;
-				class Item0
-				{
-					position[]={6568.041,348.41232,5722.9478};
-					class args
-					{
-						items=6;
-						class Item0
-						{
-							value="true";
-							parentCls="ALiVE_require";
-							typeName="debug";
-						};
-						class Item1
-						{
-							value="warning";
-							parentCls="ALiVE_require";
-							typeName="ALiVE_Versioning";
-						};
-						class Item2
-						{
-							value="true";
-							parentCls="ALiVE_require";
-							typeName="ALiVE_DISABLESAVE";
-						};
-						class Item3
-						{
-							value="300";
-							parentCls="ALiVE_require";
-							typeName="ALiVE_GC_INTERVAL";
-						};
-						class Item4
-						{
-							value="100";
-							parentCls="ALiVE_require";
-							typeName="ALiVE_GC_THRESHHOLD";
-						};
-						class Item5
-						{
-							value="";
-							parentCls="ALiVE_require";
-							typeName="ALiVE_GC_INDIVIDUALTYPES";
-						};
-					};
-					id=4;
-					side="LOGIC";
-					vehicle="ALiVE_require";
-					leader=1;
-					lock="UNLOCKED";
-					skill=0.60000002;
-				};
-			};
-		};
-		class Item4
-		{
-			side="LOGIC";
-			class Vehicles
-			{
-				items=1;
-				class Item0
-				{
-					position[]={6568.041,346.85315,5731.8428};
+					position[]={4383.3711,328.3187,8056.0654};
 					class args
 					{
 						items=35;
@@ -464,7 +330,7 @@ class Mission
 							typeName="playertags_thisgroupcolour_setting";
 						};
 					};
-					id=5;
+					id=2;
 					side="LOGIC";
 					vehicle="ALiVE_SYS_playeroptions";
 					leader=1;
@@ -485,7 +351,7 @@ class Intro
 	{
 		"aia_chernarus_summer_config"
 	};
-	randomSeed=9028733;
+	randomSeed=1103907;
 	class Intel
 	{
 		timeOfChanges=1800.0002;
@@ -515,7 +381,7 @@ class OutroWin
 	{
 		"aia_chernarus_summer_config"
 	};
-	randomSeed=8970003;
+	randomSeed=1519146;
 	class Intel
 	{
 		timeOfChanges=1800.0002;
@@ -545,7 +411,7 @@ class OutroLoose
 	{
 		"aia_chernarus_summer_config"
 	};
-	randomSeed=4762495;
+	randomSeed=9080956;
 	class Intel
 	{
 		timeOfChanges=1800.0002;

@@ -8,22 +8,24 @@ import importlib
 
 import loads.cdf_crates as cdf
 from loads.cse_medical import med_supplies
-from loads.cse_rations import int_supplies
-from loads.cse_usrations import us_supplies
 
 cfg = Klass()
 
 class empty_crate(Crate):
-	base = 'rhs_weapons_crate_ak_ammo_545x39_standard'
+	base = 'CUP_USBasicAmmunitionBox'
 	title = 'Empty Crate'
 
 class empty_crate_lg(Crate):
-	base = 'B_supplyCrate_F'
+	base = 'CUP_USVehicleBox'
+	title = 'Empty Crate (Large)'
+class empty_crate_lg_ru(Crate):
+	base = 'CUP_RUVehicleBox'
 	title = 'Empty Crate (Large)'
 
 class cdf_medical(med_supplies):
-	base = 'rhs_weapons_crate_ak_ammo_545x39_standard'
+	base = 'CUP_RUBasicAmmunitionBox'
 	title = 'CDF Medical Supplies'
+
 
 patch = Klass('sh_alive_boxes')
 patch['units'] = []
@@ -41,13 +43,13 @@ base_classes = {}
 crates = [
 	empty_crate(prefix='sh_alive_').generate_config(),
 	empty_crate_lg(prefix='sh_alive_').generate_config(),
+	empty_crate_lg_ru(prefix='sh_alive_').generate_config(),
 	med_supplies(prefix='sh_alive_').generate_config(),
 	cdf_medical(prefix='sh_alive_').generate_config(),
-	int_supplies(prefix='sh_alive_').generate_config(),
-	us_supplies(prefix='sh_alive_').generate_config(),
 ]
 
-for grp in ['cdf_crates', 'marines_crates', 'cdf_recce_crates', 'soar_crates']:
+
+for grp in ['cdf_crates', 'marines_crates', 'soar_crates']:
 	lib = importlib.import_module('loads.' + grp)
 	for name, obj in inspect.getmembers(lib):
 		if inspect.isclass(obj) and 'NoWrite' not in obj.__dict__:

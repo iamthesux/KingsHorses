@@ -1,6 +1,15 @@
+version = 6
 
-mish = "KingsHorses.Chernarus_Summer"
+name = "Kings Horses"
+safe_name = "KingsHorses"
+map_name = "Chernarus_Summer"
 
+mish = safe_name + '.' + map_name
+mish_core = safe_name + '_core.' + map_name
+mish_3d = safe_name + '_3dbase.' + map_name
+mish_test = 'test.' + map_name
+def mish_versioned():
+	return "%sv%d.%s" % (safe_name, version, map_name)
 try:
     from local_settings import *
 except ImportError:

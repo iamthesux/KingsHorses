@@ -16,7 +16,7 @@ class Vector:
 		return Vector(self.y, -self.x)
 
 spawns = dict(
-	sasr = dict(
+	det5 = dict(
 		azimuth = 30.05,
 		pos = Vector(5157,2370),
 		limit = 'x',
@@ -33,12 +33,6 @@ spawns = dict(
 		pos = Vector(4760.5,2551.5),
 		limit = 'y',
 		max = 10,
-	),
-	det5 = dict(
-		azimuth = 27.5045,
-		pos = Vector(4392,2248),
-		limit = 'x',
-		max = 2,
 	),
 	cdn = dict(
 		azimuth = 356.2,
@@ -85,24 +79,11 @@ teams['sfqc'] = dict(
 	groups = [
 		[
 			{ 'role': "SGT Smith", 'loadout': 'rifleman_det5', 'medic': 1, },
-			{ 'role': "SGT Bayley", 'loadout': 'commo_det5', 'medic': 1, },
-			{ 'role': "SGT Griffin", 'loadout': 'medic_det5', 'medic': 1, },
+			{ 'role': "SSG Bayley", 'loadout': 'commo_det5', 'medic': 1, },
+			{ 'role': "SGT Griffin", 'loadout': 'medic_det5_1tk', 'medic': 1, },
+			{ 'role': "SFC Knezevic", 'loadout': 'demolitions_det5', 'medic': 1, },
+			{ 'role': "SGT Shearer", 'loadout': 'commo_det5', 'medic': 1, },
 		]
-	],
-)
-teams['sasr'] = dict(
-	spawn = 'sasr',
-	name = 'CDF Recon',
-	faction = 'sasr',
-	side = 'WEST',
-	groups = [
-		[
-			{ 'role': "MAJ Pursehouse", 'loadout': 'cdf_recce_rto', 'callsign': 'SNAKEYES',},
-			{ 'role': "CPT Constanti", 'loadout': 'cdf_recce_medic', 'medic': 1, },
-			{ 'role': "SSGT MacDowell", 'loadout': 'cdf_recce_tl', },
-			{ 'role': "CPL Sowers", 'loadout': 'cdf_recce_lmg', },
-			{ 'role': "CPL Deckert", 'loadout': 'cdf_recce_svd', },
-		],
 	],
 )
 
@@ -163,7 +144,7 @@ teams['rifles'] = dict(
 	],
 )
 
-for i in range(1,4):
+for i in range(1,3):
 	teams['rifles']['groups'].append([
 		{ 'role': "Squad Leader", 'loadout': 'marine_sl', 'callsign': 'IRONMAN 1-%d' % i },
 		
@@ -198,10 +179,8 @@ teams['weapons'] = dict(
 		],
 	],
 )
-teams['weapons']['groups'].append([
-	{ 'role': "MG Section Leader", 'loadout': 'marine_sl', 'callsign': 'IRONMAN 4-%d' % i, },
-])
-for i in range(1,4):
+
+for i in range(1,3):
 	teams['weapons']['groups'].append([
 		{ 'role': "MG Squad Leader", 'loadout': 'marine_sl', 'callsign': 'IRONMAN 4-%d' % i, },
 		
@@ -212,10 +191,8 @@ for i in range(1,4):
 		{ 'role': "Gunner", 'loadout': 'marine_mg' },
 		{ 'role': "Ammuntion Bearer", 'loadout': 'marine_amg' },
 	])
-teams['weapons']['groups'].append([
-	{ 'role': "MG Section Leader", 'loadout': 'marine_sl', 'callsign': 'IRONMAN 4-%d' % i, },
-])
-for i in range(1,4):
+
+for i in range(1,3):
 	teams['weapons']['groups'].append([
 		{ 'role': "Squad Leader/Gunner", 'loadout': 'marine_at_sl', 'callsign': 'IRONMAN 4-%d' % i, },
 		{ 'role': "Assistant Gunner", 'loadout': 'marine_aat' },
@@ -290,7 +267,18 @@ teams['pubs'] = dict(
 			{ 'role': "Rifleman", 'loadout': 'cdf_rifleman' },
 		],
 		[
-			{ 'name': '3ACR', 'role': "T-72 Commander", 'loadout': 'cdf_asl_gunner', 'callsign': 'THUNDER 1-3' },
+			{ 'name': '3ACR', 'role': "SL / BMP-1 Commander", 'loadout': 'cdf_asl_gunner', 'callsign': 'THUNDER 1-4'},
+			{ 'name': '3ACR', 'role': "BMP-1 Driver", 'loadout': 'cdf_crew', },
+			{ 'name': '3ACR', 'role': "BMP-1 Gunner", 'loadout': 'cdf_asl_gunner', },
+			{ 'role': "Senior Rifleman", 'loadout': 'cdf_tl', 'callsign': 'HOMELAND 1-4'},
+			{ 'role': "Machine Gunner", 'loadout': 'cdf_mg', },
+			{ 'role': "Medic", 'loadout': 'cdf_medic', 'medic': 1},
+			{ 'role': "Grenadier", 'loadout': 'cdf_grenadier' },
+			{ 'role': "Asst. Grenadier", 'loadout': 'cdf_grenadier' },
+			{ 'role': "Rifleman", 'loadout': 'cdf_rifleman' },
+		],
+		[
+			{ 'name': '3ACR', 'role': "T-72 Commander", 'loadout': 'cdf_asl_gunner', 'callsign': 'THUNDER 2-1' },
 			{ 'name': '3ACR', 'role': "Driver", 'loadout': 'cdf_crew' },
 			{ 'name': '3ACR', 'role': "Gunner", 'loadout': 'cdf_crew' },
 		],	
@@ -303,7 +291,7 @@ g_count = mish('Mission')('Groups')['items']
 
 fh = open('slots.txt', 'w')
 
-kys = ['pubs','sasr','company_hq','rifles','weapons','tanks','soar','det5','sfqc']
+kys = ['pubs','company_hq','rifles','weapons','tanks','soar','det5','sfqc']
 
 for team in kys:
 	for grp in teams[team]['groups']:

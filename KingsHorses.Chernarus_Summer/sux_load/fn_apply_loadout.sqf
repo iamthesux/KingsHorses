@@ -109,7 +109,8 @@ _flags = _load select _FLAGS;
 
 if (REMOVE_ALL in _flags) then 
 {
-	//diag_log "removing all";
+	removeAllPrimaryWeaponItems _unit;
+	removeAllHandgunItems _unit;
 	removeAllWeapons _unit; 
 	removeAllItems _unit;
 	removeAllAssignedItems _unit;

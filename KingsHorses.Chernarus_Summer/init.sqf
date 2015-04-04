@@ -1,6 +1,8 @@
 
 #include "initBriefing.hpp";
-
+//call compile preprocessFileLineNumbers "disable_map_textures.sqf";
+[true, true, false, [true, 0],[true,1000], true] execVM "vip_lit\vip_lit_init.sqf";
+execVM "R3F_LOG\init.sqf";
 
 RHSDecalsOff = true;
 tf_same_sw_frequencies_for_side = true;
@@ -21,12 +23,10 @@ if (!isDedicated) then {
 		player addmpeventhandler ["mprespawn", "_load = (_this select 0) getVariable 'sux_loadout'; [_this select 0, _load] call suxlo_fnc_apply_loadout;"];
 	};
 };
-
 lw_freqs = ["36.6","42.7","48.2","51.8","53.3","57.3","59.5","60.4","62.8"];
-if (isServer) then {
+if(isServer) then {
 	_sw = false call TFAR_fnc_generateSwSettings;
 	_lw = false call TFAR_fnc_generateLrSettings;
-	//diag_log _sw;
 	
 	_lw set [2, lw_freqs];
 	tf_freq_west_lr = _lw;
@@ -44,4 +44,11 @@ if (isServer) then {
 	publicVariable "tf_freq_west_lr";
 	publicVariable "tf_freq_east_lr";
 	publicVariable "tf_freq_guer_lr";
+
+	[] spawn {
+		waitUntil {!isNil "ALiVE_STATIC_DATA_LOADED"};
+		[ALIVE_factionDefaultTransport, "sh_opfor_chdkz", ["sh_chdkz_ural"]] call ALIVE_fnc_hashSet;
+		diag_log format ["____________ %1", ALIVE_factionDefaultTransport];
+	};
 };
+

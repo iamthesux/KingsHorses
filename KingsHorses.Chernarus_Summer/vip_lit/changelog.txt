@@ -1,0 +1,18 @@
+2015/03/12 - v1.0 Public Release
+====================
+
+
+2015/03/14 - v1.1
+====================
+
+-changed: added option for red flashlight
+-changed: added option for larger flashlight size
+-fixed: flashlight would not work on VR map (BIS did not define "mapSize" in VR's config)
+
+
+2015/03/19 - v1.2
+====================
+
+-changed: chemlights illuminate map
+-changed: tweaked moon brightness
+-fixed: flashlight now supports non-round ui scales (no more black/white lines)

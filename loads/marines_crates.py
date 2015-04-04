@@ -2,101 +2,73 @@ from p4a.loadout import Crate
  
 class marine_explosives(Crate):
 	title = 'Marine Explosives and CSW'
-	base = 'B_supplyCrate_F'
+	base = 'CUP_USSpecialWeaponsBox'
 	magazines = [
 		['rhs_mag_m67', 100],
-		['SmokeShell', 100],
-		['SmokeShellBlue', 100],
-		['SmokeShellGreen', 100],
-		['SmokeShellOrange', 100],
-		['SmokeShellRed', 100],
-		['SmokeShellYellow', 100],
+		['rhs_mag_an_m8hc', 100],
+		['rhs_mag_m18_purple', 100],
+		['rhs_mag_m18_green', 100],
+		['rhs_mag_m18_red', 100],
+		['rhs_mag_m18_yellow', 100],
+		['rhs_mine_M19_mag', 100],
+		['SatchelCharge_Remote_Mag', 100],
 		['DemoCharge_Remote_Mag', 100],
 
-		['VTN_M406', 200],
-		['VTN_M433', 200],
-		['VTN_M583A1', 500],
-		['VTN_M585', 500],
-		['VTN_M661', 500],
-		['VTN_M662', 500],
-		['VTN_M713', 300],
-		['VTN_M714', 300],
-		['VTN_M715', 300],
-		['VTN_M716', 300],
-		['VTN_M992', 50],
-		
+		['rhs_mag_M433_HEDP', 200],
+		['rhs_mag_M585_white', 200],
+		['rhs_mag_M661_green', 500],
+		['rhs_mag_M662_red', 500],
+		['rhs_mag_M713_red', 500],
+		['rhs_mag_M714_white', 500],
+		['rhs_mag_M715_green', 300],
+		['rhs_mag_M716_yellow', 300],
 	]
 	backpacks = [
 		['RHS_M2_MiniTripod_Bag', 10],
 		['RHS_M2_Gun_Bag', 10],
+		['RHS_Mk19_Tripod_Bag', 10],
+		['RHS_Mk19_Gun_Bag', 10],
 	]
  
 class marine_launchers(Crate):
 	title = 'Marine Launchers and Warheads'
-	base = 'B_supplyCrate_F'
+	base = 'CUP_USBasicWeaponsBox'
 	weapons = [
 		['rhs_weap_fgm148', 10],
-		['rhs_weap_M136', 200],
-		['rhs_weap_M136_hedp', 200],
-		['rhs_weap_M136_hp', 200],
-		['VTN_MK153MOD0', 10],
+		['rhs_weap_M136', 400],
+		['rhs_weap_M136_hedp', 400],
+		['rhs_weap_M136_hp', 400],
 	]
-	magazines = [
-		['VTN_MK3MOD0', 200],
-		['VTN_MK6MOD0', 200],
-		['VTN_MK80MOD0', 100],
-		
-		['rhs_m136_mag', 200],
-		['rhs_m136_hedp_mag', 200],
-		['rhs_m136_hp_mag', 200],
-		['rhs_fgm148_magazine_AT', 200],
+	magazines = [		
+		['rhs_m136_mag', 400],
+		['rhs_m136_hedp_mag', 400],
+		['rhs_m136_hp_mag', 400],
+		['rhs_fgm148_magazine_AT', 400],
 	]
 class marine_weapons(Crate):
 	title = 'Marine Rifles and Ammo'
-	base = 'B_supplyCrate_F'
+	base = 'CUP_USBasicWeaponsBox'
 	weapons = [
-		['VTN_C_M4A1', 10],
-		['VTN_C_M4A1_M203', 10],
-		['VTN_FN_M16A4', 50],
-		['VTN_FN_M16A4_M203', 10],
-		['VTN_M249_SAW', 10],
-		['VTN_M240G', 10],
-		
-		['RH_m9', 10],
 	]
 	magazines = [
-		['VTN_M249_100c_SC', 200],
-		['VTN_M249_100c_TRC', 200],
-		['VTN_M249_100c_TRCN', 200],
+		['rhs_mag_30Rnd_556x45_M855A1_Stanag', 200],
+		['rhs_mag_30Rnd_556x45_M855A1_Stanag_No_Tracer', 200],
+		['rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red', 200],
 		
-		['VTN_M249_200c_SC', 200],
-		['VTN_M249_200c_TRC', 200],
-		['VTN_M249_200c_TRCN', 200],
+		['rhsusf_100Rnd_556x45_soft_pouch', 500],
+		['rhsusf_200Rnd_556x45_soft_pouch', 300],
 
-		['VTN_M240_50c_SC', 200],
-		['VTN_M240_50c_TRC', 200],
-		['VTN_M240_50c_TRCN', 200],
-		
-		['VTN_M240_100c_SC', 200],
-		['VTN_M240_100c_TRC', 200],
-		['VTN_M240_100c_TRCN', 200],
-		
-		['VTN_STANAG4172_30p_SC', 500],
-		['VTN_STANAG4172_30p_TRC', 500],
-		['VTN_STANAG4172_30p_TRCN', 500],
+		['rhsusf_100Rnd_762x51', 500],
 
 		['RH_15Rnd_9x19_M9', 85],
 	]
 
 class marine_radios(Crate):
 	title = 'Marine Radios'
-	base = 'B_supplyCrate_F'
+	base = 'CUP_USBasicAmmunitionBox'
 	items = [
-		['tf_rf7800str', 100],
-		['tf_anprc152', 40],
-		['tf_anprc152', 40],
+		['tf_anprc152', 50],
 	]
-
 	backpacks = [
-		['tf_rt1523g_big', 4],
+		['tf_rt1523g_big', 10],
 	]
